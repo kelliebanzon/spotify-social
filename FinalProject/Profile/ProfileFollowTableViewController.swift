@@ -33,7 +33,7 @@ class ProfileFollowTableViewController: UITableViewController, IndicatorInfoProv
     
     override func viewDidLoad() {
         //self.tableView.register(ProfileTimelineTableViewCell.self, forCellReuseIdentifier: "PFTVCell")
-        self.tableView.backgroundView?.backgroundColor = UIColor.SpotifyColor.gray
+        
         super.viewDidLoad()
     }
     
@@ -44,6 +44,7 @@ class ProfileFollowTableViewController: UITableViewController, IndicatorInfoProv
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PFTVCell", for: indexPath) as! ProfileFollowTableViewCell
         cell.nameLabel.text = "some person"
+        cell.nameLabel.textColor = .white
         return cell
     }
     

@@ -16,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // set up your background color view
+        let colorView = UIView()
+        colorView.backgroundColor = UIColor.SpotifyColor.gray
+        
+        // use UITableViewCell.appearance() to configure the default appearance of all UITableViewCells
+        UITableViewCell.appearance().backgroundColor = UIColor.SpotifyColor.darkGray
+        UITableViewCell.appearance().selectedBackgroundView = colorView
+        UITableView.appearance().backgroundColor = UIColor.SpotifyColor.darkGray
+        
         return true
     }
 

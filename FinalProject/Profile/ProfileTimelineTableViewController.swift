@@ -27,6 +27,7 @@ class ProfileTimelineTableViewController: UITableViewController, IndicatorInfoPr
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PTimelineTVCell", for: indexPath) as! ProfileTimelineTableViewCell
         cell.titleLabel.text = "12"
+        cell.titleLabel.textColor = .white
         return cell
     }
     
