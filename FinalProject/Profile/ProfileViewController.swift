@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        print("viewDidLoad(): ProfileViewController")
         displayNavBar()
         
         /*self.profilePictureImageView.layer.cornerRadius = self.profilePictureImageView.frame.size.width / 2
