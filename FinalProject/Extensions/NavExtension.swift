@@ -26,12 +26,15 @@ extension UIViewController {
         homeButtonImageView.contentMode = .scaleAspectFit
         let chatButtonImageView = UIImageView(image: UIImage(named: "chat_transparent.png"))
         chatButtonImageView.contentMode = .scaleAspectFit
+        let searchButtonImageView = UIImageView(image: UIImage(named: "search_transparent.png"))
+        searchButtonImageView.contentMode = .scaleAspectFit
         
         let settingsButton = UIBarButtonItem(customView: settingsButtonImageView)
         let profileButton = UIBarButtonItem(customView: profileButtonImageView)
         let homeButton = UIBarButtonItem(customView: homeButtonImageView)
         let chatButton = UIBarButtonItem(customView: chatButtonImageView)
-        navigationItem.setLeftBarButton(homeButton, animated: true)
+        let searchButton = UIBarButtonItem(customView: searchButtonImageView)
+        navigationItem.setLeftBarButtonItems([homeButton, searchButton], animated: true)
         navigationItem.setRightBarButtonItems([settingsButton, profileButton, chatButton], animated: true)
     }
     
