@@ -69,9 +69,9 @@ class LoginViewController: UIViewController {
         // the main thread, we must add this code to the main thread's queue
         
         DispatchQueue.main.async {
-            let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Error", message: "Something went wrong! Please try again." /*error.localizedDescription*/, preferredStyle: .alert)
             
-            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
             alertController.addAction(okAction)
             
             self.present(alertController, animated: true, completion: nil)
