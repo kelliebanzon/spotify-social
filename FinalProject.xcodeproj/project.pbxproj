@@ -35,6 +35,11 @@
 		AB73636020B968C8000AEA34 /* ProfileFollowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73635F20B968C8000AEA34 /* ProfileFollowTableViewController.swift */; };
 		AB73636220B96930000AEA34 /* ProfileFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73636120B96930000AEA34 /* ProfileFollowTableViewCell.swift */; };
 		AB73636420B96A28000AEA34 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73636320B96A28000AEA34 /* ColorExtension.swift */; };
+		AB73636B20B9EC91000AEA34 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73636A20B9EC91000AEA34 /* Constants.swift */; };
+		AB73636D20B9ED68000AEA34 /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB73636C20B9ED68000AEA34 /* SpotifyAudioPlayback.framework */; };
+		AB73636F20B9F122000AEA34 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73636E20B9F122000AEA34 /* LoginViewController.swift */; };
+		AB73637120B9F4FB000AEA34 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73637020B9F4FB000AEA34 /* NotificationExtension.swift */; };
+		AB73637320B9F7E4000AEA34 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73637220B9F7E4000AEA34 /* HomeViewController.swift */; };
 		AB77E96A20AFFE2100F4968A /* circular-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB77E96220AFFE1E00F4968A /* circular-medium.otf */; };
 		AB77E96B20AFFE2100F4968A /* circular-book.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB77E96320AFFE1F00F4968A /* circular-book.otf */; };
 		AB77E96C20AFFE2100F4968A /* circular-medium-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB77E96420AFFE1F00F4968A /* circular-medium-italic.otf */; };
@@ -78,6 +83,12 @@
 		AB73635F20B968C8000AEA34 /* ProfileFollowTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFollowTableViewController.swift; sourceTree = "<group>"; };
 		AB73636120B96930000AEA34 /* ProfileFollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFollowTableViewCell.swift; sourceTree = "<group>"; };
 		AB73636320B96A28000AEA34 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		AB73636620B9EA33000AEA34 /* FinalProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FinalProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		AB73636A20B9EC91000AEA34 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AB73636C20B9ED68000AEA34 /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
+		AB73636E20B9F122000AEA34 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AB73637020B9F4FB000AEA34 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
+		AB73637220B9F7E4000AEA34 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AB77E96220AFFE1E00F4968A /* circular-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-medium.otf"; sourceTree = "<group>"; };
 		AB77E96320AFFE1F00F4968A /* circular-book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-book.otf"; sourceTree = "<group>"; };
 		AB77E96420AFFE1F00F4968A /* circular-medium-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-medium-italic.otf"; sourceTree = "<group>"; };
@@ -95,6 +106,7 @@
 			files = (
 				AB2E936120A2CBB4004835A8 /* SpotifyAuthentication.framework in Frameworks */,
 				84C4594B092CA5DAFC9E5C94 /* Pods_FinalProject.framework in Frameworks */,
+				AB73636D20B9ED68000AEA34 /* SpotifyAudioPlayback.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,9 +127,9 @@
 			isa = PBXGroup;
 			children = (
 				AB2E934220A18ECC004835A8 /* FinalProject */,
-				AB2E934120A18ECC004835A8 /* Products */,
-				AB77E97220AFFE2B00F4968A /* Fonts */,
 				AB0D561420B8F296002AD1DD /* Images */,
+				AB77E97220AFFE2B00F4968A /* Fonts */,
+				AB2E934120A18ECC004835A8 /* Products */,
 				AB2E935F20A2CBB3004835A8 /* Frameworks */,
 				C942B3543367AE88CB6B4783 /* Pods */,
 			);
@@ -136,12 +148,17 @@
 			children = (
 				AB2E934320A18ECC004835A8 /* AppDelegate.swift */,
 				AB2E934520A18ECC004835A8 /* ViewController.swift */,
+				AB73637220B9F7E4000AEA34 /* HomeViewController.swift */,
+				AB73636E20B9F122000AEA34 /* LoginViewController.swift */,
 				AB2E934720A18ECC004835A8 /* Main.storyboard */,
 				AB73635E20B96832000AEA34 /* Profile */,
+				AB73636520B9E780000AEA34 /* Objects */,
 				AB38273C20B90E950006DA8C /* Extensions */,
 				AB2E934A20A18ED0004835A8 /* Assets.xcassets */,
 				AB2E934C20A18ED0004835A8 /* LaunchScreen.storyboard */,
 				AB2E934F20A18ED0004835A8 /* Info.plist */,
+				AB73636620B9EA33000AEA34 /* FinalProject-Bridging-Header.h */,
+				AB73636A20B9EC91000AEA34 /* Constants.swift */,
 			);
 			path = FinalProject;
 			sourceTree = "<group>";
@@ -149,6 +166,7 @@
 		AB2E935F20A2CBB3004835A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB73636C20B9ED68000AEA34 /* SpotifyAudioPlayback.framework */,
 				AB2E936020A2CBB4004835A8 /* SpotifyAuthentication.framework */,
 				21DDF2A226045A830500AA24 /* Pods_FinalProject.framework */,
 			);
@@ -177,6 +195,7 @@
 				AB38273420B900E30006DA8C /* NavExtension.swift */,
 				AB38273A20B90E8E0006DA8C /* ImageViewExtension.swift */,
 				AB73636320B96A28000AEA34 /* ColorExtension.swift */,
+				AB73637020B9F4FB000AEA34 /* NotificationExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -193,6 +212,13 @@
 				AB73636120B96930000AEA34 /* ProfileFollowTableViewCell.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		AB73636520B9E780000AEA34 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 		AB77E97220AFFE2B00F4968A /* Fonts */ = {
@@ -253,6 +279,7 @@
 				TargetAttributes = {
 					AB2E933F20A18ECC004835A8 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -350,6 +377,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB73637120B9F4FB000AEA34 /* NotificationExtension.swift in Sources */,
+				AB73636F20B9F122000AEA34 /* LoginViewController.swift in Sources */,
 				AB73635B20B9624F000AEA34 /* ProfileTimelineTableViewController.swift in Sources */,
 				AB73636220B96930000AEA34 /* ProfileFollowTableViewCell.swift in Sources */,
 				AB2E935620A190DE004835A8 /* ProfileViewController.swift in Sources */,
@@ -357,7 +386,9 @@
 				AB38274A20B92D5E0006DA8C /* ProfileTabViewController.swift in Sources */,
 				AB2E934620A18ECC004835A8 /* ViewController.swift in Sources */,
 				AB38274E20B937430006DA8C /* ProfileFavoritesTabViewController.swift in Sources */,
+				AB73636B20B9EC91000AEA34 /* Constants.swift in Sources */,
 				AB73636020B968C8000AEA34 /* ProfileFollowTableViewController.swift in Sources */,
+				AB73637320B9F7E4000AEA34 /* HomeViewController.swift in Sources */,
 				AB38273B20B90E8E0006DA8C /* ImageViewExtension.swift in Sources */,
 				AB73635D20B96361000AEA34 /* ProfileTimelineTableViewCell.swift in Sources */,
 				AB2E934420A18ECC004835A8 /* AppDelegate.swift in Sources */,
@@ -506,6 +537,7 @@
 			baseConfigurationReference = 7653480830B011213548943D /* Pods-FinalProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -519,6 +551,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.calpoly.kmbanzon.FinalProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FinalProject/FinalProject-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -529,6 +563,7 @@
 			baseConfigurationReference = 08076E27C7A211235D29F029 /* Pods-FinalProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -542,6 +577,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.calpoly.kmbanzon.FinalProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FinalProject/FinalProject-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

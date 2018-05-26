@@ -12,8 +12,7 @@ import UIKit
 extension UIViewController {
     
 
-    
-    func displayNavBar(){
+    func displayNavBar() /*-> CGFloat*/ {
         let navController = self.navigationController
         let navBar = navController?.navigationBar
         navBar?.barStyle = .blackTranslucent
@@ -36,6 +35,9 @@ extension UIViewController {
         let searchButton = UIBarButtonItem(customView: searchButtonImageView)
         navigationItem.setLeftBarButtonItems([homeButton, searchButton], animated: true)
         navigationItem.setRightBarButtonItems([settingsButton, profileButton, chatButton], animated: true)
+        
+        //return (navBar?.frame.height)!
+        
     }
     
     
