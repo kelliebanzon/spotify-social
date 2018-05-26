@@ -40,6 +40,7 @@
 		AB73636F20B9F122000AEA34 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73636E20B9F122000AEA34 /* LoginViewController.swift */; };
 		AB73637120B9F4FB000AEA34 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73637020B9F4FB000AEA34 /* NotificationExtension.swift */; };
 		AB73637320B9F7E4000AEA34 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73637220B9F7E4000AEA34 /* HomeViewController.swift */; };
+		AB73637520BA13BD000AEA34 /* connectWithSpotifyButton.png in Resources */ = {isa = PBXBuildFile; fileRef = AB73637420BA13BD000AEA34 /* connectWithSpotifyButton.png */; };
 		AB77E96A20AFFE2100F4968A /* circular-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB77E96220AFFE1E00F4968A /* circular-medium.otf */; };
 		AB77E96B20AFFE2100F4968A /* circular-book.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB77E96320AFFE1F00F4968A /* circular-book.otf */; };
 		AB77E96C20AFFE2100F4968A /* circular-medium-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB77E96420AFFE1F00F4968A /* circular-medium-italic.otf */; };
@@ -89,6 +90,7 @@
 		AB73636E20B9F122000AEA34 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB73637020B9F4FB000AEA34 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		AB73637220B9F7E4000AEA34 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AB73637420BA13BD000AEA34 /* connectWithSpotifyButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connectWithSpotifyButton.png; sourceTree = "<group>"; };
 		AB77E96220AFFE1E00F4968A /* circular-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-medium.otf"; sourceTree = "<group>"; };
 		AB77E96320AFFE1F00F4968A /* circular-book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-book.otf"; sourceTree = "<group>"; };
 		AB77E96420AFFE1F00F4968A /* circular-medium-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-medium-italic.otf"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		AB0D561420B8F296002AD1DD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AB73637420BA13BD000AEA34 /* connectWithSpotifyButton.png */,
 				AB38272F20B8F3090006DA8C /* Icons */,
 				AB2E935720A1926A004835A8 /* kellie_profile.jpg */,
 				AB2E935D20A21989004835A8 /* djmonkey icon.jpg */,
@@ -308,6 +311,7 @@
 			files = (
 				AB38274420B919E30006DA8C /* chat_transparent_large.png in Resources */,
 				AB38273F20B9142F0006DA8C /* profile_transparent.png in Resources */,
+				AB73637520BA13BD000AEA34 /* connectWithSpotifyButton.png in Resources */,
 				AB38274820B920B30006DA8C /* search_transparent.png in Resources */,
 				AB77E96D20AFFE2100F4968A /* circular-book-italic.otf in Resources */,
 				AB2E935820A1926A004835A8 /* kellie_profile.jpg in Resources */,

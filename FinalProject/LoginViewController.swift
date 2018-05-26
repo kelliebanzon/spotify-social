@@ -11,6 +11,7 @@ import SafariServices
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var loginButton: UIButton!
     var spotifyAuthWebView: SFSafariViewController?
     
     override func viewDidLoad(){
