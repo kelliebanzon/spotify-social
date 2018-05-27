@@ -10,25 +10,17 @@ import Foundation
 
 struct SPTUserPrivate: Codable {
     var display_name: String?
-    //var followers: Int /*var followers: Follower*/
+    var followers: SPTFollowers
     var href: String
     var id: String
-    var images: [Image?]
-    var type: String?
+    var images: [SPTImage]?
+    var type: String
     
     var description: String {
-        return "\(String(describing: display_name)), id: \(id). type: \(String(describing: type)), href: \(href). images: \(images)"
+        return "\(String(describing: display_name)), id: \(id), numfollowers: \(followers.total) type: \(type), href: \(href). images: \(String(describing: images))"
     }
-    
-    /*private enum CodingKeys: String, CodingKey {
-        case followers = "followers.total"
-    }*/
+
 }
 
-struct Image: Codable {
-    var height: Int?
-    var width: Int?
-    var url: String
-}
 
 

@@ -9,10 +9,11 @@
 import UIKit
 
 class ProfileFollowTableViewCell: UITableViewCell {
+   
+    @IBOutlet weak var artistPictureImageView: UIImageView!
+    @IBOutlet weak var artistNameLabel: UILabel!
+    @IBOutlet weak var artistNumFollowersLabel: UILabel!
     
-    @IBOutlet weak var nameLabel: UILabel!
-    
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -52,6 +52,12 @@
 		ABB47FC520BA58D2006B83EB /* SPTUserPrivate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB47FC420BA58D2006B83EB /* SPTUserPrivate.swift */; };
 		ABB47FC720BA8F25006B83EB /* defaultprofilepic.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB47FC620BA8F25006B83EB /* defaultprofilepic.png */; };
 		ABB47FC920BAB8BB006B83EB /* edit_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB47FC820BAB8BA006B83EB /* edit_transparent.png */; };
+		ABB47FCB20BAC519006B83EB /* SPTArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB47FCA20BAC519006B83EB /* SPTArtist.swift */; };
+		ABB47FCD20BAC55C006B83EB /* SPTExternalURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB47FCC20BAC55C006B83EB /* SPTExternalURL.swift */; };
+		ABB47FCF20BAC6A1006B83EB /* SPTImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB47FCE20BAC6A1006B83EB /* SPTImage.swift */; };
+		ABB47FD120BAC8C8006B83EB /* SPTFollowers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB47FD020BAC8C8006B83EB /* SPTFollowers.swift */; };
+		ABB47FD320BAD452006B83EB /* defaultArtistProfilePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB47FD220BAD452006B83EB /* defaultArtistProfilePicture.png */; };
+		ABB47FD520BAD83B006B83EB /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB47FD420BAD83B006B83EB /* IntExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +111,12 @@
 		ABB47FC420BA58D2006B83EB /* SPTUserPrivate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTUserPrivate.swift; sourceTree = "<group>"; };
 		ABB47FC620BA8F25006B83EB /* defaultprofilepic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultprofilepic.png; sourceTree = "<group>"; };
 		ABB47FC820BAB8BA006B83EB /* edit_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_transparent.png; sourceTree = "<group>"; };
+		ABB47FCA20BAC519006B83EB /* SPTArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTArtist.swift; sourceTree = "<group>"; };
+		ABB47FCC20BAC55C006B83EB /* SPTExternalURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTExternalURL.swift; sourceTree = "<group>"; };
+		ABB47FCE20BAC6A1006B83EB /* SPTImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTImage.swift; sourceTree = "<group>"; };
+		ABB47FD020BAC8C8006B83EB /* SPTFollowers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTFollowers.swift; sourceTree = "<group>"; };
+		ABB47FD220BAD452006B83EB /* defaultArtistProfilePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = defaultArtistProfilePicture.png; path = Images/defaultArtistProfilePicture.png; sourceTree = SOURCE_ROOT; };
+		ABB47FD420BAD83B006B83EB /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +136,7 @@
 		AB0D561420B8F296002AD1DD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				ABB47FD220BAD452006B83EB /* defaultArtistProfilePicture.png */,
 				ABB47FC620BA8F25006B83EB /* defaultprofilepic.png */,
 				AB73637420BA13BD000AEA34 /* connectWithSpotifyButton.png */,
 				AB38272F20B8F3090006DA8C /* Icons */,
@@ -158,8 +171,8 @@
 			children = (
 				AB2E934320A18ECC004835A8 /* AppDelegate.swift */,
 				AB2E934520A18ECC004835A8 /* ViewController.swift */,
-				AB73637220B9F7E4000AEA34 /* HomeViewController.swift */,
 				AB73636E20B9F122000AEA34 /* LoginViewController.swift */,
+				AB73637220B9F7E4000AEA34 /* HomeViewController.swift */,
 				AB2E934720A18ECC004835A8 /* Main.storyboard */,
 				AB73636A20B9EC91000AEA34 /* Constants.swift */,
 				AB73635E20B96832000AEA34 /* Profile */,
@@ -207,6 +220,7 @@
 				AB38273A20B90E8E0006DA8C /* ImageViewExtension.swift */,
 				AB73636320B96A28000AEA34 /* ColorExtension.swift */,
 				AB73637020B9F4FB000AEA34 /* NotificationExtension.swift */,
+				ABB47FD420BAD83B006B83EB /* IntExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -229,6 +243,10 @@
 			isa = PBXGroup;
 			children = (
 				ABB47FC420BA58D2006B83EB /* SPTUserPrivate.swift */,
+				ABB47FCA20BAC519006B83EB /* SPTArtist.swift */,
+				ABB47FCC20BAC55C006B83EB /* SPTExternalURL.swift */,
+				ABB47FCE20BAC6A1006B83EB /* SPTImage.swift */,
+				ABB47FD020BAC8C8006B83EB /* SPTFollowers.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -329,6 +347,7 @@
 				AB77E96B20AFFE2100F4968A /* circular-book.otf in Resources */,
 				AB2E934E20A18ED0004835A8 /* LaunchScreen.storyboard in Resources */,
 				AB38274220B917610006DA8C /* home_transparent.png in Resources */,
+				ABB47FD320BAD452006B83EB /* defaultArtistProfilePicture.png in Resources */,
 				AB2E934B20A18ED0004835A8 /* Assets.xcassets in Resources */,
 				AB77E97020AFFE2100F4968A /* circular-black-italic.otf in Resources */,
 				AB2E934920A18ECC004835A8 /* Main.storyboard in Resources */,
@@ -394,9 +413,14 @@
 			files = (
 				AB73637120B9F4FB000AEA34 /* NotificationExtension.swift in Sources */,
 				AB73636F20B9F122000AEA34 /* LoginViewController.swift in Sources */,
+				ABB47FCD20BAC55C006B83EB /* SPTExternalURL.swift in Sources */,
+				ABB47FCF20BAC6A1006B83EB /* SPTImage.swift in Sources */,
+				ABB47FCB20BAC519006B83EB /* SPTArtist.swift in Sources */,
+				ABB47FD520BAD83B006B83EB /* IntExtension.swift in Sources */,
 				AB73635B20B9624F000AEA34 /* ProfileTimelineTableViewController.swift in Sources */,
 				AB73636220B96930000AEA34 /* ProfileFollowTableViewCell.swift in Sources */,
 				AB2E935620A190DE004835A8 /* ProfileViewController.swift in Sources */,
+				ABB47FD120BAC8C8006B83EB /* SPTFollowers.swift in Sources */,
 				ABB47FC520BA58D2006B83EB /* SPTUserPrivate.swift in Sources */,
 				AB73636420B96A28000AEA34 /* ColorExtension.swift in Sources */,
 				AB38274A20B92D5E0006DA8C /* ProfileTabViewController.swift in Sources */,

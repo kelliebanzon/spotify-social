@@ -62,10 +62,8 @@ class ProfileTabViewController: ButtonBarPagerTabStripViewController {
         let timeline = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "child1")
         let favorites = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "child2")
         let following = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "child3")
-        //let following = ProfileFollowTableViewController(style: .plain, itemInfo: IndicatorInfo(title: "Following"))
-        //let followers = ProfileFollowTableViewController(style: .plain, itemInfo: IndicatorInfo(title: "Followers"))
         
-        return [timeline, favorites, following/*, followers*/]
+        return [timeline, favorites, following]
     }
     
     

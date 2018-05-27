@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        
     }
     
     
@@ -63,6 +64,7 @@ class LoginViewController: UIViewController {
                 SPTAudioStreamingController.sharedInstance().delegate = self
                 SPTAudioStreamingController.sharedInstance().login(withAccessToken: session.accessToken)
                 self.authKey = session.accessToken!
+                Constants.authKey = self.authKey
             }
         }
     }
@@ -89,15 +91,6 @@ class LoginViewController: UIViewController {
         DispatchQueue.main.async {
             // Present next view controller or use performSegue(withIdentifier:, sender:)
             self.performSegue(withIdentifier: "successfulLoginShow", sender: self)
-            //self.present(HomeViewController(), animated: true, completion: nil)
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "successfulLoginShow"){ // TODO: update this to proper whatever
-            let destVC = segue.destination as! HomeViewController
-            destVC.authKey = self.authKey
-            Constants.authKey = self.authKey
         }
     }
     

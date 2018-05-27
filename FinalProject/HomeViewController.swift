@@ -49,11 +49,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // MARK: - Navigation
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "temp"){ // TODO: update this to proper whatever
-            let destVC = segue.destination as! ProfileViewController
-            destVC.authKey = self.authKey
-        }
-    }
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+    }*/
 
 }

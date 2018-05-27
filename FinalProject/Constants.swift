@@ -15,4 +15,7 @@ struct Constants {
     static var authKey = ""
     static var currentUser: SPTUserPrivate? = nil
     //static let navBarHeight = 42
+    
+    static let defaultCurrentUserProfilePictureName = "defaultUserProfilePicture"
+    static let defaultArtistProfilePictureName = "defaultArtistProfilePicture"
 }

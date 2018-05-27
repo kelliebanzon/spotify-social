@@ -58,17 +58,17 @@ class ProfileViewController: UIViewController {
     func displayProfilePicture(){
         /*self.profilePictureImageView.layer.cornerRadius = self.profilePictureImageView.frame.size.width / 2
          self.profilePictureImageView.clipsToBounds = true*/
-        print(Constants.currentUser)
+        print(Constants.currentUser as Any)
         if let imgList = Constants.currentUser?.images, imgList.count > 0 {
             print("if let")
-            if verifyUrl(urlString: imgList[0]?.url) == true {
+            if verifyUrl(urlString: imgList[0].url) == true {
                 //try profilePictureImageView.downloadedFrom(url: URL(string: imgObject.url)!)
                 print("attempt photo download")
-                profilePictureImageView.downloadedFrom(url: URL(string: imgList[0]!.url)!, contentMode: .scaleAspectFill)
+                profilePictureImageView.downloadedFrom(url: URL(string: imgList[0].url)!, contentMode: .scaleAspectFill)
             }
         }
         else{
-            profilePictureImageView.image = UIImage(named: "defaultprofilepic.png")
+            profilePictureImageView.image = UIImage(named: Constants.defaultCurrentUserProfilePictureName)
         }
         //profilePictureImageView.roundCorners()
     }
