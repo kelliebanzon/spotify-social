@@ -49,6 +49,9 @@
 		AB77E96F20AFFE2100F4968A /* circular-bold-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB77E96720AFFE2000F4968A /* circular-bold-italic.otf */; };
 		AB77E97020AFFE2100F4968A /* circular-black-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB77E96820AFFE2000F4968A /* circular-black-italic.otf */; };
 		AB77E97120AFFE2100F4968A /* circular-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB77E96920AFFE2100F4968A /* circular-bold.otf */; };
+		ABB47FC520BA58D2006B83EB /* SPTUserPrivate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB47FC420BA58D2006B83EB /* SPTUserPrivate.swift */; };
+		ABB47FC720BA8F25006B83EB /* defaultprofilepic.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB47FC620BA8F25006B83EB /* defaultprofilepic.png */; };
+		ABB47FC920BAB8BB006B83EB /* edit_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB47FC820BAB8BA006B83EB /* edit_transparent.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +102,9 @@
 		AB77E96720AFFE2000F4968A /* circular-bold-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-bold-italic.otf"; sourceTree = "<group>"; };
 		AB77E96820AFFE2000F4968A /* circular-black-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-black-italic.otf"; sourceTree = "<group>"; };
 		AB77E96920AFFE2100F4968A /* circular-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-bold.otf"; sourceTree = "<group>"; };
+		ABB47FC420BA58D2006B83EB /* SPTUserPrivate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTUserPrivate.swift; sourceTree = "<group>"; };
+		ABB47FC620BA8F25006B83EB /* defaultprofilepic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultprofilepic.png; sourceTree = "<group>"; };
+		ABB47FC820BAB8BA006B83EB /* edit_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_transparent.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,7 @@
 		AB0D561420B8F296002AD1DD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				ABB47FC620BA8F25006B83EB /* defaultprofilepic.png */,
 				AB73637420BA13BD000AEA34 /* connectWithSpotifyButton.png */,
 				AB38272F20B8F3090006DA8C /* Icons */,
 				AB2E935720A1926A004835A8 /* kellie_profile.jpg */,
@@ -154,6 +161,7 @@
 				AB73637220B9F7E4000AEA34 /* HomeViewController.swift */,
 				AB73636E20B9F122000AEA34 /* LoginViewController.swift */,
 				AB2E934720A18ECC004835A8 /* Main.storyboard */,
+				AB73636A20B9EC91000AEA34 /* Constants.swift */,
 				AB73635E20B96832000AEA34 /* Profile */,
 				AB73636520B9E780000AEA34 /* Objects */,
 				AB38273C20B90E950006DA8C /* Extensions */,
@@ -161,7 +169,6 @@
 				AB2E934C20A18ED0004835A8 /* LaunchScreen.storyboard */,
 				AB2E934F20A18ED0004835A8 /* Info.plist */,
 				AB73636620B9EA33000AEA34 /* FinalProject-Bridging-Header.h */,
-				AB73636A20B9EC91000AEA34 /* Constants.swift */,
 			);
 			path = FinalProject;
 			sourceTree = "<group>";
@@ -182,6 +189,7 @@
 				AB38274520B91AF60006DA8C /* chat_transparent.png */,
 				AB38274320B919E20006DA8C /* chat_transparent_large.png */,
 				AB38274120B917610006DA8C /* home_transparent.png */,
+				ABB47FC820BAB8BA006B83EB /* edit_transparent.png */,
 				AB38273D20B9142F0006DA8C /* profile_transparent.png */,
 				AB38273E20B9142F0006DA8C /* profile80.png */,
 				AB38274720B920B30006DA8C /* search_transparent.png */,
@@ -220,6 +228,7 @@
 		AB73636520B9E780000AEA34 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				ABB47FC420BA58D2006B83EB /* SPTUserPrivate.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -327,9 +336,11 @@
 				AB38274620B91AF60006DA8C /* chat_transparent.png in Resources */,
 				AB77E96A20AFFE2100F4968A /* circular-medium.otf in Resources */,
 				AB77E96E20AFFE2100F4968A /* circular-black.otf in Resources */,
+				ABB47FC720BA8F25006B83EB /* defaultprofilepic.png in Resources */,
 				AB77E96F20AFFE2100F4968A /* circular-bold-italic.otf in Resources */,
 				AB77E97120AFFE2100F4968A /* circular-bold.otf in Resources */,
 				AB38273920B909DB0006DA8C /* settings_transparent.png in Resources */,
+				ABB47FC920BAB8BB006B83EB /* edit_transparent.png in Resources */,
 				AB77E96C20AFFE2100F4968A /* circular-medium-italic.otf in Resources */,
 				AB38273720B908680006DA8C /* settings80.png in Resources */,
 			);
@@ -386,6 +397,7 @@
 				AB73635B20B9624F000AEA34 /* ProfileTimelineTableViewController.swift in Sources */,
 				AB73636220B96930000AEA34 /* ProfileFollowTableViewCell.swift in Sources */,
 				AB2E935620A190DE004835A8 /* ProfileViewController.swift in Sources */,
+				ABB47FC520BA58D2006B83EB /* SPTUserPrivate.swift in Sources */,
 				AB73636420B96A28000AEA34 /* ColorExtension.swift in Sources */,
 				AB38274A20B92D5E0006DA8C /* ProfileTabViewController.swift in Sources */,
 				AB2E934620A18ECC004835A8 /* ViewController.swift in Sources */,

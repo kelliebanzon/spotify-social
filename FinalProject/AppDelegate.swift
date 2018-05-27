@@ -20,12 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // set up your background color view
         let colorView = UIView()
-        colorView.backgroundColor = UIColor.SpotifyColor.gray
+        colorView.backgroundColor = UIColor(named: "SPTGray")
         
         // use UITableViewCell.appearance() to configure the default appearance of all UITableViewCells
-        UITableViewCell.appearance().backgroundColor = UIColor.SpotifyColor.darkGray
+        UITableViewCell.appearance().backgroundColor = UIColor(named: "SPTDarkGray")
         UITableViewCell.appearance().selectedBackgroundView = colorView
-        UITableView.appearance().backgroundColor = UIColor.SpotifyColor.darkGray
+        UITableView.appearance().backgroundColor = UIColor(named: "SPTDarkGray")
         
         
         return true
@@ -38,10 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SPTAuth.defaultInstance().sessionUserDefaultsKey = Constants.sessionKey
         
         //For this application we just want to stream music, so we will only request the streaming scope
-        SPTAuth.defaultInstance().requestedScopes = [SPTAuthStreamingScope]
+        SPTAuth.defaultInstance().requestedScopes = [SPTAuthStreamingScope, SPTAuthUserFollowModifyScope, SPTAuthUserFollowReadScope, SPTAuthUserReadPrivateScope, SPTAuthUserReadTopScope, SPTAuthUserReadBirthDateScope, SPTAuthUserReadEmailScope]
         
-        // Start the player (this is only need for applications that using streaming, which we will use
-        // in this tutorial)
+        // Start the player
         do {
             try SPTAudioStreamingController.sharedInstance().start(withClientId: Constants.clientID)
         } catch {

@@ -11,6 +11,8 @@ import SafariServices
 
 class LoginViewController: UIViewController {
     
+    var authKey: String!
+    
     @IBOutlet weak var loginButton: UIButton!
     var spotifyAuthWebView: SFSafariViewController?
     
@@ -60,6 +62,7 @@ class LoginViewController: UIViewController {
                 // was logged in through a delegate, so we need to implement those methods
                 SPTAudioStreamingController.sharedInstance().delegate = self
                 SPTAudioStreamingController.sharedInstance().login(withAccessToken: session.accessToken)
+                self.authKey = session.accessToken!
             }
         }
     }
@@ -72,8 +75,8 @@ class LoginViewController: UIViewController {
         DispatchQueue.main.async {
             let alertController = UIAlertController(title: "Error", message: "Something went wrong! Please try again." /*error.localizedDescription*/, preferredStyle: .alert)
             
-            let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
-            alertController.addAction(okAction)
+            let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            alertController.addAction(okayAction)
             
             self.present(alertController, animated: true, completion: nil)
         }
@@ -83,12 +86,18 @@ class LoginViewController: UIViewController {
         // When changing the UI, all actions must be done on the main thread,
         // since this can be called from a notification which doesn't run on
         // the main thread, we must add this code to the main thread's queue
-        print("successfulLogin")
         DispatchQueue.main.async {
-            print("should present")
             // Present next view controller or use performSegue(withIdentifier:, sender:)
             self.performSegue(withIdentifier: "successfulLoginShow", sender: self)
             //self.present(HomeViewController(), animated: true, completion: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "successfulLoginShow"){ // TODO: update this to proper whatever
+            let destVC = segue.destination as! HomeViewController
+            destVC.authKey = self.authKey
+            Constants.authKey = self.authKey
         }
     }
     

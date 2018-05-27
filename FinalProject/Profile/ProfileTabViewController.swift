@@ -12,15 +12,12 @@ import UIKit
 
 
 class ProfileTabViewController: ButtonBarPagerTabStripViewController {
-    
-    let graySpotifyColor = UIColor(red: 21/255.0, green: 21/255.0, blue: 24/255.0, alpha: 1.0)
-    let darkGraySpotifyColor = UIColor(red: 19/255.0, green: 20/255.0, blue: 20/255.0, alpha: 1.0)
 
     override func viewDidLoad() {
         
         // change selected bar color
-        settings.style.buttonBarBackgroundColor = graySpotifyColor
-        settings.style.buttonBarItemBackgroundColor = graySpotifyColor
+        settings.style.buttonBarBackgroundColor = UIColor(named: "SPTDarkGray")
+        settings.style.buttonBarItemBackgroundColor = UIColor(named: "SPTDarkGray")
         settings.style.selectedBarBackgroundColor = UIColor(red: 33/255.0, green: 174/255.0, blue: 67/255.0, alpha: 1.0)
         settings.style.buttonBarItemFont = UIFont(name: "HelveticaNeue-Light", size:14) ?? UIFont.systemFont(ofSize: 14)
         settings.style.selectedBarHeight = 3.0

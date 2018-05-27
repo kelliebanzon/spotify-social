@@ -24,12 +24,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kellie_profile.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="WBL-RX-hYW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WBL-RX-hYW">
                                 <rect key="frame" x="247" y="84" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XO-1N-8wB">
-                                <rect key="frame" x="16" y="84" width="193" height="21"/>
+                                <rect key="frame" x="16" y="84" width="223" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="21"/>
                                 <nil key="textColor"/>
@@ -48,6 +48,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="3Au-Ha-LHS"/>
                     <connections>
+                        <outlet property="profileDisplayNameLabel" destination="7XO-1N-8wB" id="wCo-TQ-oVH"/>
                         <outlet property="profilePictureImageView" destination="WBL-RX-hYW" id="3O8-SD-Ikr"/>
                     </connections>
                 </viewController>
@@ -79,12 +80,12 @@
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="pk2-xK-pee" id="BoD-nd-Afx"/>
-                        <segue destination="C45-i7-JdK" kind="show" identifier="successfulLoginShow" id="7cC-Qo-Qc9"/>
+                        <segue destination="C45-i7-JdK" kind="show" identifier="successfulLoginShow" id="nPK-hC-JjD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgH-nW-zPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="119.2" y="-734.48275862068976"/>
+            <point key="canvasLocation" x="-188" y="-892"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="YZF-7y-PHt">
@@ -114,6 +115,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="K69-og-1M2" kind="show" identifier="temp" id="UhZ-A9-3Kx"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -138,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lWI-gE-18J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="33.733133433283363"/>
+            <point key="canvasLocation" x="-188" y="34"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cgy-Ic-ulv">
@@ -330,9 +334,11 @@
     </scenes>
     <resources>
         <image name="connectWithSpotifyButton.png" width="537" height="94"/>
-        <image name="kellie_profile.jpg" width="1080" height="1080"/>
         <namedColor name="SPTWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="UhZ-A9-3Kx"/>
+    </inferredMetricsTieBreakers>
 </document>

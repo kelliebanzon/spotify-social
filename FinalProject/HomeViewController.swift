@@ -12,7 +12,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var tableView: UITableView!
     var constraints = [NSLayoutConstraint]()
-    
+    var authKey: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,15 +44,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeFeedItem", for: indexPath) as UITableViewCell
         return cell
     }
+    
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "temp"){ // TODO: update this to proper whatever
+            let destVC = segue.destination as! ProfileViewController
+            destVC.authKey = self.authKey
+        }
     }
-    */
 
 }

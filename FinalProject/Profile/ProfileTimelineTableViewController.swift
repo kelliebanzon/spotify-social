@@ -33,7 +33,7 @@ class ProfileTimelineTableViewController: UITableViewController, IndicatorInfoPr
     
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "Timeline")
+        return IndicatorInfo(title: "Recent Activity")
     }
     
     
