@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SPTUserPrivate: Codable {
+struct SPTUser: Codable {
     var display_name: String?
     var followers: SPTFollowers
     var href: String

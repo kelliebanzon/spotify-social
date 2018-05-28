@@ -11,7 +11,9 @@ import SafariServices
 
 class LoginViewController: UIViewController {
     
+    let apiStringCurrentUser = "https://api.spotify.com/v1/me"
     var authKey: String!
+    var currentUser: SPTUser!
     
     @IBOutlet weak var loginButton: UIButton!
     var spotifyAuthWebView: SFSafariViewController?
@@ -90,6 +92,28 @@ class LoginViewController: UIViewController {
         // the main thread, we must add this code to the main thread's queue
         DispatchQueue.main.async {
             // Present next view controller or use performSegue(withIdentifier:, sender:)
+            
+            let session = URLSession(configuration: URLSessionConfiguration.default)
+            var request = URLRequest(url: URL(string: self.apiStringCurrentUser)!)
+            request.addValue("Bearer \(Constants.authKey)", forHTTPHeaderField: "Authorization")
+            let task: URLSessionDataTask = session.dataTask(with: request)
+            { (receivedData, response, error) -> Void in
+                if error != nil {
+                    print(error as Any)
+                }
+                else if let data = receivedData {
+                    do {
+                        let decoder = JSONDecoder()
+                        self.currentUser = try decoder.decode(SPTUser.self, from: data)
+                        Constants.currentUser = self.currentUser
+                        
+                    } catch {
+                        print("Exception on Decode: \(error)")
+                    }
+                }
+            }
+            task.resume()
+            
             self.performSegue(withIdentifier: "successfulLoginShow", sender: self)
         }
     }

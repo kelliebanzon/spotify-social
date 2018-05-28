@@ -13,8 +13,10 @@ struct Constants {
     static let redirectURI = URL(string: "finalproject://")!
     static let sessionKey = "spotifySessionKey"
     static var authKey = ""
-    static var currentUser: SPTUserPrivate? = nil
+    static var currentUser: SPTUser? = nil
     //static let navBarHeight = 42
+    
+    static let sendBirdAppID = "D3A9F0C0-21AC-4A27-AA11-F5CC25B99710"
     
     static let defaultCurrentUserProfilePictureName = "defaultUserProfilePicture"
     static let defaultArtistProfilePictureName = "defaultArtistProfilePicture"

@@ -10,6 +10,10 @@
 		84C4594B092CA5DAFC9E5C94 /* Pods_FinalProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21DDF2A226045A830500AA24 /* Pods_FinalProject.framework */; };
 		AB0DE6DD20BBD981000DE675 /* ProfileFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0DE6DC20BBD980000DE675 /* ProfileFollowTableViewCell.swift */; };
 		AB0DE6DF20BBE3C4000DE675 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0DE6DE20BBE3C4000DE675 /* SettingsViewController.swift */; };
+		AB0DE6E220BBFBBB000DE675 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0DE6E120BBFBBB000DE675 /* SearchViewController.swift */; };
+		AB0DE6E420BBFCFE000DE675 /* SPTPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0DE6E320BBFCFE000DE675 /* SPTPlaylist.swift */; };
+		AB0DE6E620BC01B9000DE675 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB0DE6E520BC01B8000DE675 /* GoogleService-Info.plist */; };
+		AB0EAC1420BC1457007D81D5 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0EAC1320BC1457007D81D5 /* ChatViewController.swift */; };
 		AB2E934420A18ECC004835A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2E934320A18ECC004835A8 /* AppDelegate.swift */; };
 		AB2E934620A18ECC004835A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2E934520A18ECC004835A8 /* ViewController.swift */; };
 		AB2E934920A18ECC004835A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB2E934720A18ECC004835A8 /* Main.storyboard */; };
@@ -50,7 +54,7 @@
 		AB77E96F20AFFE2100F4968A /* circular-bold-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB77E96720AFFE2000F4968A /* circular-bold-italic.otf */; };
 		AB77E97020AFFE2100F4968A /* circular-black-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB77E96820AFFE2000F4968A /* circular-black-italic.otf */; };
 		AB77E97120AFFE2100F4968A /* circular-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB77E96920AFFE2100F4968A /* circular-bold.otf */; };
-		ABB47FC520BA58D2006B83EB /* SPTUserPrivate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB47FC420BA58D2006B83EB /* SPTUserPrivate.swift */; };
+		ABB47FC520BA58D2006B83EB /* SPTUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB47FC420BA58D2006B83EB /* SPTUser.swift */; };
 		ABB47FC720BA8F25006B83EB /* defaultprofilepic.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB47FC620BA8F25006B83EB /* defaultprofilepic.png */; };
 		ABB47FC920BAB8BB006B83EB /* edit_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB47FC820BAB8BA006B83EB /* edit_transparent.png */; };
 		ABB47FCB20BAC519006B83EB /* SPTArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB47FCA20BAC519006B83EB /* SPTArtist.swift */; };
@@ -69,6 +73,10 @@
 		7653480830B011213548943D /* Pods-FinalProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject.debug.xcconfig"; sourceTree = "<group>"; };
 		AB0DE6DC20BBD980000DE675 /* ProfileFollowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileFollowTableViewCell.swift; sourceTree = "<group>"; };
 		AB0DE6DE20BBE3C4000DE675 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		AB0DE6E120BBFBBB000DE675 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		AB0DE6E320BBFCFE000DE675 /* SPTPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTPlaylist.swift; sourceTree = "<group>"; };
+		AB0DE6E520BC01B8000DE675 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AB0EAC1320BC1457007D81D5 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		AB2E934020A18ECC004835A8 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2E934320A18ECC004835A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB2E934520A18ECC004835A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,7 +120,7 @@
 		AB77E96720AFFE2000F4968A /* circular-bold-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-bold-italic.otf"; sourceTree = "<group>"; };
 		AB77E96820AFFE2000F4968A /* circular-black-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-black-italic.otf"; sourceTree = "<group>"; };
 		AB77E96920AFFE2100F4968A /* circular-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-bold.otf"; sourceTree = "<group>"; };
-		ABB47FC420BA58D2006B83EB /* SPTUserPrivate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTUserPrivate.swift; sourceTree = "<group>"; };
+		ABB47FC420BA58D2006B83EB /* SPTUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTUser.swift; sourceTree = "<group>"; };
 		ABB47FC620BA8F25006B83EB /* defaultprofilepic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultprofilepic.png; sourceTree = "<group>"; };
 		ABB47FC820BAB8BA006B83EB /* edit_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_transparent.png; sourceTree = "<group>"; };
 		ABB47FCA20BAC519006B83EB /* SPTArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTArtist.swift; sourceTree = "<group>"; };
@@ -185,8 +193,10 @@
 			children = (
 				AB2E934320A18ECC004835A8 /* AppDelegate.swift */,
 				AB2E934520A18ECC004835A8 /* ViewController.swift */,
-				AB73636E20B9F122000AEA34 /* LoginViewController.swift */,
+				AB0EAC1320BC1457007D81D5 /* ChatViewController.swift */,
 				AB73637220B9F7E4000AEA34 /* HomeViewController.swift */,
+				AB73636E20B9F122000AEA34 /* LoginViewController.swift */,
+				AB0DE6E120BBFBBB000DE675 /* SearchViewController.swift */,
 				AB2E934720A18ECC004835A8 /* Main.storyboard */,
 				AB73636A20B9EC91000AEA34 /* Constants.swift */,
 				AB73635E20B96832000AEA34 /* Profile */,
@@ -196,6 +206,7 @@
 				AB2E934A20A18ED0004835A8 /* Assets.xcassets */,
 				AB2E934C20A18ED0004835A8 /* LaunchScreen.storyboard */,
 				AB2E934F20A18ED0004835A8 /* Info.plist */,
+				AB0DE6E520BC01B8000DE675 /* GoogleService-Info.plist */,
 				AB73636620B9EA33000AEA34 /* FinalProject-Bridging-Header.h */,
 			);
 			path = FinalProject;
@@ -262,8 +273,9 @@
 				ABB47FCC20BAC55C006B83EB /* SPTExternalURL.swift */,
 				ABB47FD020BAC8C8006B83EB /* SPTFollowers.swift */,
 				ABB47FCE20BAC6A1006B83EB /* SPTImage.swift */,
+				AB0DE6E320BBFCFE000DE675 /* SPTPlaylist.swift */,
 				ABB47FD620BB751D006B83EB /* SPTTrack.swift */,
-				ABB47FC420BA58D2006B83EB /* SPTUserPrivate.swift */,
+				ABB47FC420BA58D2006B83EB /* SPTUser.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -364,6 +376,7 @@
 				AB77E96B20AFFE2100F4968A /* circular-book.otf in Resources */,
 				AB2E934E20A18ED0004835A8 /* LaunchScreen.storyboard in Resources */,
 				AB38274220B917610006DA8C /* home_transparent.png in Resources */,
+				AB0DE6E620BC01B9000DE675 /* GoogleService-Info.plist in Resources */,
 				ABB47FD320BAD452006B83EB /* defaultArtistProfilePicture.png in Resources */,
 				AB2E934B20A18ED0004835A8 /* Assets.xcassets in Resources */,
 				AB77E97020AFFE2100F4968A /* circular-black-italic.otf in Resources */,
@@ -392,11 +405,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${PODS_ROOT}/SendBirdSDK/SendBirdSDK.framework",
+				"${PODS_ROOT}/SendBirdSDK/SendBirdSDK.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SendBirdSDK.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/SendBirdSDK.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -430,18 +451,21 @@
 			files = (
 				AB73637120B9F4FB000AEA34 /* NotificationExtension.swift in Sources */,
 				ABB47FD920BB7561006B83EB /* SPTAlbum.swift in Sources */,
+				AB0DE6E420BBFCFE000DE675 /* SPTPlaylist.swift in Sources */,
 				AB73636F20B9F122000AEA34 /* LoginViewController.swift in Sources */,
 				ABB47FCD20BAC55C006B83EB /* SPTExternalURL.swift in Sources */,
 				AB0DE6DD20BBD981000DE675 /* ProfileFollowTableViewCell.swift in Sources */,
 				ABB47FCF20BAC6A1006B83EB /* SPTImage.swift in Sources */,
 				ABB47FCB20BAC519006B83EB /* SPTArtist.swift in Sources */,
 				ABB47FD720BB751D006B83EB /* SPTTrack.swift in Sources */,
+				AB0DE6E220BBFBBB000DE675 /* SearchViewController.swift in Sources */,
+				AB0EAC1420BC1457007D81D5 /* ChatViewController.swift in Sources */,
 				AB0DE6DF20BBE3C4000DE675 /* SettingsViewController.swift in Sources */,
 				ABB47FD520BAD83B006B83EB /* IntExtension.swift in Sources */,
 				AB73635B20B9624F000AEA34 /* ProfileTimelineTableViewController.swift in Sources */,
 				AB2E935620A190DE004835A8 /* ProfileViewController.swift in Sources */,
 				ABB47FD120BAC8C8006B83EB /* SPTFollowers.swift in Sources */,
-				ABB47FC520BA58D2006B83EB /* SPTUserPrivate.swift in Sources */,
+				ABB47FC520BA58D2006B83EB /* SPTUser.swift in Sources */,
 				AB73636420B96A28000AEA34 /* ColorExtension.swift in Sources */,
 				AB38274A20B92D5E0006DA8C /* ProfileTabViewController.swift in Sources */,
 				AB2E934620A18ECC004835A8 /* ViewController.swift in Sources */,

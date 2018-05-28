@@ -12,7 +12,7 @@ import UIKit
 extension UIViewController {
     
 
-    func displayNavBar() /*-> CGFloat*/ {
+    /*func displayNavBar() /*-> CGFloat*/ {
         let navController = self.navigationController
         let navBar = navController?.navigationBar
         navBar?.barStyle = .blackTranslucent
@@ -69,7 +69,7 @@ extension UIViewController {
     @objc func segueToSettings(_ sender: UIBarButtonItem!){
         print("segueToSettings")
         performSegue(withIdentifier: "showSettingsVC", sender: sender)
-    }
+    }*/
     
     
     

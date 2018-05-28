@@ -7,5 +7,7 @@ target 'FinalProject' do
 
   # Pods for FinalProject
   pod 'XLPagerTabStrip', '~> 8.0'
+  pod 'Firebase/Core'
+  pod 'SendBirdSDK'
 
 end

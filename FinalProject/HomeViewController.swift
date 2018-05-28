@@ -18,7 +18,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        displayNavBar()
+        //displayNavBar()
         
         /*let navBarHeight = displayNavBar()
         constraints.append(NSLayoutConstraint(item: tableView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: navBarHeight))

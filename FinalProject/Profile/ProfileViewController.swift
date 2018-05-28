@@ -16,15 +16,17 @@ class ProfileViewController: UIViewController {
     
     let apiStringCurrentUser = "https://api.spotify.com/v1/me"
     var authKey: String!
-    var currentUser: SPTUserPrivate!
+    var currentUser: SPTUser!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        displayNavBar()
+        //displayNavBar()
+        
+        self.profilePictureImageView.defaultOrDownloadedFrom(imageList: Constants.currentUser?.images, defaultName: Constants.defaultCurrentUserProfilePictureName)
+        self.displayDisplayName()
         
         
-        
-        let session = URLSession(configuration: URLSessionConfiguration.default)
+        /*let session = URLSession(configuration: URLSessionConfiguration.default)
         var request = URLRequest(url: URL(string: apiStringCurrentUser)!)
         request.addValue("Bearer \(Constants.authKey)", forHTTPHeaderField: "Authorization")
         let task: URLSessionDataTask = session.dataTask(with: request)
@@ -35,7 +37,7 @@ class ProfileViewController: UIViewController {
             else if let data = receivedData {
                 do {
                     let decoder = JSONDecoder()
-                    self.currentUser = try decoder.decode(SPTUserPrivate.self, from: data)
+                    self.currentUser = try decoder.decode(SPTUser.self, from: data)
                     Constants.currentUser = self.currentUser
                     print(Constants.currentUser as Any)
                     
@@ -49,7 +51,7 @@ class ProfileViewController: UIViewController {
                 }
             }
         }
-        task.resume()
+        task.resume()*/
         
     }
     
