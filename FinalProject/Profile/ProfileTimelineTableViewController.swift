@@ -12,24 +12,142 @@ import UIKit
 
 class ProfileTimelineTableViewController: UITableViewController, IndicatorInfoProvider {
     
+    let apiURLCurrentUserTop = URL(string: "https://api.spotify.com/v1/me/top/")!
+
     var itemInfo: IndicatorInfo!
     var blackTheme = false
-    
+    var currentUserTopArtists: [SPTArtist]?
+    var currentUserTopTracks: [SPTTrack]?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+        var requestTracks = URLRequest(url: URL(string: "tracks?time_range=short_term&limit=10", relativeTo: apiURLCurrentUserTop)!)
+        requestTracks.addValue("Bearer \(Constants.authKey)", forHTTPHeaderField: "Authorization")
+        let taskTracks: URLSessionDataTask = session.dataTask(with: requestTracks)
+        { (receivedData, response, error) -> Void in
+            if error != nil {
+                print(error as Any)
+            }
+            else if let data = receivedData {
+                do {
+                    let decoder = JSONDecoder()
+                    let trackList = try decoder.decode(SPTTrackList.self, from: data)
+                    self.currentUserTopTracks = trackList.items
+                    //let artistList = try decoder.decode(SPTArtistList.self, from: data)
+                    //self.currentUserTopArtists = artistList.items
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
+                } catch {
+                    print("Exception on Decode: \(error)")
+                }
+            }
+        }
+        taskTracks.resume()
+        
+        var requestArtists = URLRequest(url: URL(string: "artists?time_range=short_term&limit=10", relativeTo: apiURLCurrentUserTop)!)
+        requestArtists.addValue("Bearer \(Constants.authKey)", forHTTPHeaderField: "Authorization")
+        let taskArtists: URLSessionDataTask = session.dataTask(with: requestArtists)
+        { (receivedData, response, error) -> Void in
+            if error != nil {
+                print(error as Any)
+            }
+            else if let data = receivedData {
+                do {
+                    let decoder = JSONDecoder()
+                    let artistList = try decoder.decode(SPTArtistList.self, from: data)
+                    self.currentUserTopArtists = artistList.items
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
+                } catch {
+                    print("Exception on Decode: \(error)")
+                }
+            }
+        }
+        taskArtists.resume()
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    /*override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return ["Recently Played Tracks", "Recently Played Artists"]
+    }*/
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Top Tracks"
+        case 1:
+            return "Top Artists"
+        default:
+            return ""
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 25
+        switch section {
+        case 0:
+            return (currentUserTopTracks?.count) ?? 0
+        case 1:
+            return (currentUserTopArtists?.count) ?? 0
+        default:
+            return 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PTimelineTVCell", for: indexPath) as! ProfileTimelineTableViewCell
-        cell.titleLabel.text = "12"
-        cell.titleLabel.textColor = .white
+        let cell = tableView.dequeueReusableCell(withIdentifier: "garbage", for: indexPath) as! ProfileTimelineTableViewCell
+        switch indexPath.section {
+        case 0:
+            cell.titleLabel.text = currentUserTopTracks![indexPath.row].name
+        case 1:
+            cell.titleLabel.text = currentUserTopArtists![indexPath.row].name
+        default:
+            cell.titleLabel.text = "unrecognized"
+        }
+        cell.titleLabel.textColor = UIColor(named: "SPTWhite")
         return cell
     }
+    
+    /*override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.section{
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PTimelineTrackTVCell", for: indexPath) as! ProfileTimelineTrackTVCell
+            let track = currentUserTopTracks![indexPath.row]
+            cell.titleLabel.text = track.name
+            cell.titleLabel.textColor = UIColor(named: "SPTWhite")
+            cell.artistLabel.text = track.artists.description
+            cell.titleLabel.textColor = UIColor(named: "SPTWhite")
+            //cell.titleLabel.text = track.description
+            //cell.titleLabel.textColor = .white
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PTimelineArtistTVCell", for: indexPath) as! ProfileTimelineArtistTVCell
+            let artist = currentUserTopArtists![indexPath.row]
+            cell.artistNameLabel.text = artist.name
+            cell.artistProfilePictureImageView.defaultOrDownloadedFrom(imageList: artist.images, defaultName: Constants.defaultArtistProfilePictureName)
+            //cell.titleLabel.text = artist.description
+            //cell.titleLabel.textColor = .white
+            return cell
+        default:
+            return UITableViewCell()
+        }
+        
+    }*/
     
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {

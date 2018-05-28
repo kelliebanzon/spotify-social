@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		84C4594B092CA5DAFC9E5C94 /* Pods_FinalProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21DDF2A226045A830500AA24 /* Pods_FinalProject.framework */; };
+		AB0DE6DD20BBD981000DE675 /* ProfileFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0DE6DC20BBD980000DE675 /* ProfileFollowTableViewCell.swift */; };
+		AB0DE6DF20BBE3C4000DE675 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0DE6DE20BBE3C4000DE675 /* SettingsViewController.swift */; };
 		AB2E934420A18ECC004835A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2E934320A18ECC004835A8 /* AppDelegate.swift */; };
 		AB2E934620A18ECC004835A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2E934520A18ECC004835A8 /* ViewController.swift */; };
 		AB2E934920A18ECC004835A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB2E934720A18ECC004835A8 /* Main.storyboard */; };
@@ -33,7 +35,6 @@
 		AB73635B20B9624F000AEA34 /* ProfileTimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73635A20B9624F000AEA34 /* ProfileTimelineTableViewController.swift */; };
 		AB73635D20B96361000AEA34 /* ProfileTimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73635C20B96361000AEA34 /* ProfileTimelineTableViewCell.swift */; };
 		AB73636020B968C8000AEA34 /* ProfileFollowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73635F20B968C8000AEA34 /* ProfileFollowTableViewController.swift */; };
-		AB73636220B96930000AEA34 /* ProfileFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73636120B96930000AEA34 /* ProfileFollowTableViewCell.swift */; };
 		AB73636420B96A28000AEA34 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73636320B96A28000AEA34 /* ColorExtension.swift */; };
 		AB73636B20B9EC91000AEA34 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73636A20B9EC91000AEA34 /* Constants.swift */; };
 		AB73636D20B9ED68000AEA34 /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB73636C20B9ED68000AEA34 /* SpotifyAudioPlayback.framework */; };
@@ -58,12 +59,16 @@
 		ABB47FD120BAC8C8006B83EB /* SPTFollowers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB47FD020BAC8C8006B83EB /* SPTFollowers.swift */; };
 		ABB47FD320BAD452006B83EB /* defaultArtistProfilePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB47FD220BAD452006B83EB /* defaultArtistProfilePicture.png */; };
 		ABB47FD520BAD83B006B83EB /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB47FD420BAD83B006B83EB /* IntExtension.swift */; };
+		ABB47FD720BB751D006B83EB /* SPTTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB47FD620BB751D006B83EB /* SPTTrack.swift */; };
+		ABB47FD920BB7561006B83EB /* SPTAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB47FD820BB7561006B83EB /* SPTAlbum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		08076E27C7A211235D29F029 /* Pods-FinalProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject.release.xcconfig"; sourceTree = "<group>"; };
 		21DDF2A226045A830500AA24 /* Pods_FinalProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7653480830B011213548943D /* Pods-FinalProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject.debug.xcconfig"; sourceTree = "<group>"; };
+		AB0DE6DC20BBD980000DE675 /* ProfileFollowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileFollowTableViewCell.swift; sourceTree = "<group>"; };
+		AB0DE6DE20BBE3C4000DE675 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		AB2E934020A18ECC004835A8 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2E934320A18ECC004835A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB2E934520A18ECC004835A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +96,6 @@
 		AB73635A20B9624F000AEA34 /* ProfileTimelineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTimelineTableViewController.swift; sourceTree = "<group>"; };
 		AB73635C20B96361000AEA34 /* ProfileTimelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTimelineTableViewCell.swift; sourceTree = "<group>"; };
 		AB73635F20B968C8000AEA34 /* ProfileFollowTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFollowTableViewController.swift; sourceTree = "<group>"; };
-		AB73636120B96930000AEA34 /* ProfileFollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFollowTableViewCell.swift; sourceTree = "<group>"; };
 		AB73636320B96A28000AEA34 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		AB73636620B9EA33000AEA34 /* FinalProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FinalProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		AB73636A20B9EC91000AEA34 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 		ABB47FD020BAC8C8006B83EB /* SPTFollowers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTFollowers.swift; sourceTree = "<group>"; };
 		ABB47FD220BAD452006B83EB /* defaultArtistProfilePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = defaultArtistProfilePicture.png; path = Images/defaultArtistProfilePicture.png; sourceTree = SOURCE_ROOT; };
 		ABB47FD420BAD83B006B83EB /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
+		ABB47FD620BB751D006B83EB /* SPTTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTTrack.swift; sourceTree = "<group>"; };
+		ABB47FD820BB7561006B83EB /* SPTAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTAlbum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +150,14 @@
 				AB2E935D20A21989004835A8 /* djmonkey icon.jpg */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		AB0DE6E020BBE3CE000DE675 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AB0DE6DE20BBE3C4000DE675 /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		AB2E933720A18ECC004835A8 = {
@@ -176,6 +190,7 @@
 				AB2E934720A18ECC004835A8 /* Main.storyboard */,
 				AB73636A20B9EC91000AEA34 /* Constants.swift */,
 				AB73635E20B96832000AEA34 /* Profile */,
+				AB0DE6E020BBE3CE000DE675 /* Settings */,
 				AB73636520B9E780000AEA34 /* Objects */,
 				AB38273C20B90E950006DA8C /* Extensions */,
 				AB2E934A20A18ED0004835A8 /* Assets.xcassets */,
@@ -201,8 +216,8 @@
 			children = (
 				AB38274520B91AF60006DA8C /* chat_transparent.png */,
 				AB38274320B919E20006DA8C /* chat_transparent_large.png */,
-				AB38274120B917610006DA8C /* home_transparent.png */,
 				ABB47FC820BAB8BA006B83EB /* edit_transparent.png */,
+				AB38274120B917610006DA8C /* home_transparent.png */,
 				AB38273D20B9142F0006DA8C /* profile_transparent.png */,
 				AB38273E20B9142F0006DA8C /* profile80.png */,
 				AB38274720B920B30006DA8C /* search_transparent.png */,
@@ -234,7 +249,7 @@
 				AB73635C20B96361000AEA34 /* ProfileTimelineTableViewCell.swift */,
 				AB38274D20B937430006DA8C /* ProfileFavoritesTabViewController.swift */,
 				AB73635F20B968C8000AEA34 /* ProfileFollowTableViewController.swift */,
-				AB73636120B96930000AEA34 /* ProfileFollowTableViewCell.swift */,
+				AB0DE6DC20BBD980000DE675 /* ProfileFollowTableViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -242,11 +257,13 @@
 		AB73636520B9E780000AEA34 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				ABB47FC420BA58D2006B83EB /* SPTUserPrivate.swift */,
+				ABB47FD820BB7561006B83EB /* SPTAlbum.swift */,
 				ABB47FCA20BAC519006B83EB /* SPTArtist.swift */,
 				ABB47FCC20BAC55C006B83EB /* SPTExternalURL.swift */,
-				ABB47FCE20BAC6A1006B83EB /* SPTImage.swift */,
 				ABB47FD020BAC8C8006B83EB /* SPTFollowers.swift */,
+				ABB47FCE20BAC6A1006B83EB /* SPTImage.swift */,
+				ABB47FD620BB751D006B83EB /* SPTTrack.swift */,
+				ABB47FC420BA58D2006B83EB /* SPTUserPrivate.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -412,13 +429,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB73637120B9F4FB000AEA34 /* NotificationExtension.swift in Sources */,
+				ABB47FD920BB7561006B83EB /* SPTAlbum.swift in Sources */,
 				AB73636F20B9F122000AEA34 /* LoginViewController.swift in Sources */,
 				ABB47FCD20BAC55C006B83EB /* SPTExternalURL.swift in Sources */,
+				AB0DE6DD20BBD981000DE675 /* ProfileFollowTableViewCell.swift in Sources */,
 				ABB47FCF20BAC6A1006B83EB /* SPTImage.swift in Sources */,
 				ABB47FCB20BAC519006B83EB /* SPTArtist.swift in Sources */,
+				ABB47FD720BB751D006B83EB /* SPTTrack.swift in Sources */,
+				AB0DE6DF20BBE3C4000DE675 /* SettingsViewController.swift in Sources */,
 				ABB47FD520BAD83B006B83EB /* IntExtension.swift in Sources */,
 				AB73635B20B9624F000AEA34 /* ProfileTimelineTableViewController.swift in Sources */,
-				AB73636220B96930000AEA34 /* ProfileFollowTableViewCell.swift in Sources */,
 				AB2E935620A190DE004835A8 /* ProfileViewController.swift in Sources */,
 				ABB47FD120BAC8C8006B83EB /* SPTFollowers.swift in Sources */,
 				ABB47FC520BA58D2006B83EB /* SPTUserPrivate.swift in Sources */,

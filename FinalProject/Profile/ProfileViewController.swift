@@ -26,7 +26,6 @@ class ProfileViewController: UIViewController {
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
         var request = URLRequest(url: URL(string: apiStringCurrentUser)!)
-        //request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("Bearer \(Constants.authKey)", forHTTPHeaderField: "Authorization")
         let task: URLSessionDataTask = session.dataTask(with: request)
         { (receivedData, response, error) -> Void in
@@ -38,9 +37,10 @@ class ProfileViewController: UIViewController {
                     let decoder = JSONDecoder()
                     self.currentUser = try decoder.decode(SPTUserPrivate.self, from: data)
                     Constants.currentUser = self.currentUser
+                    print(Constants.currentUser as Any)
                     
                     DispatchQueue.main.async {
-                        self.displayProfilePicture()
+                        self.profilePictureImageView.defaultOrDownloadedFrom(imageList: Constants.currentUser?.images, defaultName: Constants.defaultCurrentUserProfilePictureName)
                         self.displayDisplayName()
                     }
                     
@@ -51,27 +51,36 @@ class ProfileViewController: UIViewController {
         }
         task.resume()
         
-        
-        
     }
     
-    func displayProfilePicture(){
-        /*self.profilePictureImageView.layer.cornerRadius = self.profilePictureImageView.frame.size.width / 2
-         self.profilePictureImageView.clipsToBounds = true*/
-        print(Constants.currentUser as Any)
-        if let imgList = Constants.currentUser?.images, imgList.count > 0 {
-            print("if let")
-            if verifyUrl(urlString: imgList[0].url) == true {
-                //try profilePictureImageView.downloadedFrom(url: URL(string: imgObject.url)!)
-                print("attempt photo download")
-                profilePictureImageView.downloadedFrom(url: URL(string: imgList[0].url)!, contentMode: .scaleAspectFill)
+/* TODO: escaping closure?
+    mutating func sptQuery(urlString: String, decodeDestination: Any, decodeType: Any, asyncActions: () -> Void) {
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+        var request = URLRequest(url: URL(string: urlString)!)
+        request.addValue("Bearer \(Constants.authKey)", forHTTPHeaderField: "Authorization")
+        let task: URLSessionDataTask = session.dataTask(with: request)
+        { (receivedData, response, error) -> Void in
+            if error != nil {
+                print(error as Any)
+            }
+            else if let data = receivedData {
+                do {
+                    let decoder = JSONDecoder()
+                    decodeDestination = try decoder.decode(decodeType.self, from: data)
+                    Constants.currentUser = self.currentUser
+                    
+                    DispatchQueue.main.async {
+                        self.profilePictureImageView.defaultOrDownloadedFrom(imageList: Constants.currentUser?.images, defaultName: Constants.defaultCurrentUserProfilePictureName)
+                        self.displayDisplayName()
+                    }
+                    
+                } catch {
+                    print("Exception on Decode: \(error)")
+                }
             }
         }
-        else{
-            profilePictureImageView.image = UIImage(named: Constants.defaultCurrentUserProfilePictureName)
-        }
-        //profilePictureImageView.roundCorners()
-    }
+        task.resume()
+    }*/
 
     
     func displayDisplayName(){
@@ -83,16 +92,6 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    func verifyUrl (urlString: String?) -> Bool {
-        //Check for nil
-        if let urlString = urlString {
-            // create NSURL instance
-            if let url = NSURL(string: urlString) {
-                // check if your application can open the NSURL instance
-                return UIApplication.shared.canOpenURL(url as URL)
-            }
-        }
-        return false
-    }
+    
     
 }

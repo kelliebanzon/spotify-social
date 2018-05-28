@@ -39,3 +39,17 @@ struct SPTArtist: Codable {
 }
 
 
+struct SPTArtistSimple: Codable {
+    
+    var external_urls: [String: String]?
+    var href: String
+    var id: String
+    var name: String
+    var type: String
+    
+    var description: String {
+        return "\(String(describing: name)), id: \(id). type: \(type), href: \(href). external_urls: \(String(describing: external_urls))"
+    }
+}
+
+

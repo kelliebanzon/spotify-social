@@ -35,7 +35,6 @@ class ProfileFollowTableViewController: UITableViewController, IndicatorInfoProv
 
     
     override func viewDidLoad() {
-        //self.tableView.register(ProfileTimelineTableViewCell.self, forCellReuseIdentifier: "PFTVCell")
         
         super.viewDidLoad()
         
@@ -54,9 +53,6 @@ class ProfileFollowTableViewController: UITableViewController, IndicatorInfoProv
                     self.currentUserFollowingList = artistListService.artists.items
                     
                     DispatchQueue.main.async {
-                        print(artistListService)
-                        //print(self.currentUserFollowingList.description)
-                        print(self.currentUserFollowingList)
                         self.tableView.reloadData()
                     }
                     
@@ -69,7 +65,6 @@ class ProfileFollowTableViewController: UITableViewController, IndicatorInfoProv
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(currentUserFollowingList?.count)
         return (currentUserFollowingList?.count) ?? 0
     }
     
@@ -84,12 +79,13 @@ class ProfileFollowTableViewController: UITableViewController, IndicatorInfoProv
         cell.artistNameLabel.textColor = UIColor(named: "SPTWhite")
         cell.artistNumFollowersLabel.text = "\(artist.followers.total.withCommas()) Followers"
         cell.artistNumFollowersLabel.textColor = UIColor(named: "SPTWhite")
-        cell.artistPictureImageView.image = UIImage(named: Constants.defaultArtistProfilePictureName)
+        cell.artistPictureImageView.defaultOrDownloadedFrom(imageList: artist.images, defaultName: Constants.defaultArtistProfilePictureName)
         return cell
     }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "Following")
     }
+    
     
 }
