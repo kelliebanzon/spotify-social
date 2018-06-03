@@ -14,8 +14,15 @@ class ChatViewController: UIViewController, SBDConnectionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         SBDMain.connect(withUserId: Constants.currentUser!.id, completionHandler: { (user, error) in
             print("Connected to SendBird database")
+            Constants.currentUserSBD = SBDMain.getCurrentUser()
+            if (Constants.currentUserSBD?.profileUrl != Constants.currentUser?.images?[0].url) || (Constants.currentUserSBD?.nickname != Constants.currentUser!.display_name) {
+                SBDMain.updateCurrentUserInfo(withNickname: (Constants.currentUser!.display_name ?? Constants.currentUser!.id), profileUrl: (Constants.currentUser?.images?[0].url ?? Constants.defaultCurrentUserProfilePictureName), completionHandler: { (error) in
+                    print("Updated nickname and profile picture")
+                })
+            }
         })
     }
     

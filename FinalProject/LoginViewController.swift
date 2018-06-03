@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     var authKey: String!
     var currentUser: SPTUser!
     
+    
     @IBOutlet weak var loginButton: UIButton!
     var spotifyAuthWebView: SFSafariViewController?
     

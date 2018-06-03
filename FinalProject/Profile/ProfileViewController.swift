@@ -14,19 +14,24 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profileDisplayNameLabel: UILabel!
     
+    var decodeVar: Any!
+    
     let apiStringCurrentUser = "https://api.spotify.com/v1/me"
     var authKey: String!
     var currentUser: SPTUser!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //displayNavBar()
+        
+        // TODO: "Argument type 'SPTUser.Type' does not conform to expected type 'Decodable'"
+        //sptQuery(urlString: apiStringCurrentUser, decodeType: SPTUser, completion: displayProfileCompletion)
         
         self.profilePictureImageView.defaultOrDownloadedFrom(imageList: Constants.currentUser?.images, defaultName: Constants.defaultCurrentUserProfilePictureName)
         self.displayDisplayName()
         
         
-        /*let session = URLSession(configuration: URLSessionConfiguration.default)
+        /*
+        let session = URLSession(configuration: URLSessionConfiguration.default)
         var request = URLRequest(url: URL(string: apiStringCurrentUser)!)
         request.addValue("Bearer \(Constants.authKey)", forHTTPHeaderField: "Authorization")
         let task: URLSessionDataTask = session.dataTask(with: request)
@@ -52,11 +57,10 @@ class ProfileViewController: UIViewController {
             }
         }
         task.resume()*/
-        
     }
     
-/* TODO: escaping closure?
-    mutating func sptQuery(urlString: String, decodeDestination: Any, decodeType: Any, asyncActions: () -> Void) {
+// TODO: escaping closure?
+    func sptQuery<T: Codable>(urlString: String, decodeType: T, completion: @escaping () -> ()) {
         let session = URLSession(configuration: URLSessionConfiguration.default)
         var request = URLRequest(url: URL(string: urlString)!)
         request.addValue("Bearer \(Constants.authKey)", forHTTPHeaderField: "Authorization")
@@ -68,12 +72,10 @@ class ProfileViewController: UIViewController {
             else if let data = receivedData {
                 do {
                     let decoder = JSONDecoder()
-                    decodeDestination = try decoder.decode(decodeType.self, from: data)
-                    Constants.currentUser = self.currentUser
+                    self.decodeVar = try decoder.decode(T.self, from: data)
                     
                     DispatchQueue.main.async {
-                        self.profilePictureImageView.defaultOrDownloadedFrom(imageList: Constants.currentUser?.images, defaultName: Constants.defaultCurrentUserProfilePictureName)
-                        self.displayDisplayName()
+                        completion()
                     }
                     
                 } catch {
@@ -82,7 +84,14 @@ class ProfileViewController: UIViewController {
             }
         }
         task.resume()
-    }*/
+    }
+    
+    // TODO:
+    func displayProfileCompletion(){
+        Constants.currentUser = self.decodeVar as! SPTUser
+        self.profilePictureImageView.defaultOrDownloadedFrom(imageList: Constants.currentUser?.images, defaultName: Constants.defaultCurrentUserProfilePictureName)
+        self.displayDisplayName()
+    }
 
     
     func displayDisplayName(){
