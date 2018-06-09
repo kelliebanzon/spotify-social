@@ -9,14 +9,21 @@
 #import "CreateOpenChannelViewControllerA.h"
 #import "SelectOperatorsViewController.h"
 #import "OperatorTableViewCell.h"
+#import "CustomActivityIndicatorView.h"
+#import "CreateOpenChannelNavigationController.h"
 #import <SendBirdSDK/SendBirdSDK.h>
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface CreateOpenChannelViewControllerA ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITextField *channelNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *channelURLTextField;
+@property (weak, nonatomic) IBOutlet CustomActivityIndicatorView *activityIndicatorView;
 
 @property (strong) NSMutableDictionary<NSString *, SBDUser *> *selectedUsers;
+@property (strong) NSMutableArray<SBDUser *> *selectedUsersArray;
 @property (strong) NSData *coverImageData;
 
 @end
@@ -30,9 +37,15 @@
     [self.coverImageView setUserInteractionEnabled:YES];
     [self.coverImageView addGestureRecognizer:clickCoverImageRecognizer];
     
+    self.activityIndicatorView.hidden = YES;
+    [self.view bringSubviewToFront:self.activityIndicatorView];
+
+    
     // Do any additional setup after loading the view.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    self.selectedUsersArray = [[NSMutableArray alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,8 +53,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - TableView
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.selectedUsers.count;
+    printf("numberOfRowsInSection: %i\n", self.selectedUsersArray.count);
+    return self.selectedUsersArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -49,19 +65,35 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    // TODO
-    OperatorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SelectorOperatorsTableViewCell"];
+    OperatorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OperatorTableViewCell"];
     if (cell == nil) {
-        [tableView registerNib:[UINib nibWithNibName:@"SelectorOperatorsTableViewCell" bundle:nil] forCellReuseIdentifier:@"SelectorOperatorsTableViewCell"];
-        cell = [tableView dequeueReusableCellWithIdentifier:@"SelectorOperatorsTableViewCell"];
+        [tableView registerNib:[UINib nibWithNibName:@"OperatorTableViewCell" bundle:nil] forCellReuseIdentifier:@"OperatorTableViewCell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"OperatorTableViewCell"];
     }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        OperatorTableViewCell *updateCell = (OperatorTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+        if (updateCell) {
+            updateCell.nicknameLabel.text = self.selectedUsersArray[indexPath.row].nickname;
+            [updateCell.profilePictureImageView setImageWithURL:[NSURL URLWithString:self.selectedUsersArray[indexPath.row].profileUrl]];
+            
+        }
+    });
+    
     return cell;
 }
 
+- (void)didSelectUsers:(NSMutableDictionary<NSString *, SBDUser *> *)users {
+    [self.selectedUsersArray addObjectsFromArray: self.selectedUsers.allValues];
+    [self.selectedUsersArray addObject: [SBDMain getCurrentUser]];
+    [_tableView reloadData];
+}
+
+#pragma mark - CoverImage
+
 - (void)clickCoverImage:(id)sender {
     UIAlertController *vc = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *takePhotoAction = [UIAlertAction actionWithTitle:@"Take Photo..." style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *takePhotoAction = [UIAlertAction actionWithTitle:@"Take Photo" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         dispatch_async(dispatch_get_main_queue(), ^{
             UIImagePickerController *mediaUI = [[UIImagePickerController alloc] init];
             mediaUI.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -72,7 +104,7 @@
         });
     }];
     
-    UIAlertAction *chooseFromLibraryAction = [UIAlertAction actionWithTitle:@"Choose from Library..." style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *chooseFromLibraryAction = [UIAlertAction actionWithTitle:@"Choose from Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         dispatch_async(dispatch_get_main_queue(), ^{
             UIImagePickerController *mediaUI = [[UIImagePickerController alloc] init];
             mediaUI.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
@@ -155,24 +187,63 @@
     // Use when `applyMaskToCroppedImage` set to YES.
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)clickCancelButton:(id)sender {
+    printf("clickCancelButton\n");
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-*/
 
-/*- (IBAction)unwindFromSelectOperatorsViewController:(UIStoryboardSegue *)segue
+- (IBAction)clickDoneButton:(id)sender {
+    printf("clickDoneButton\n");
+    [self.activityIndicatorView setHidden:NO];
+    [self.activityIndicatorView startAnimating];
+    NSMutableArray<NSString *> *operatorIds = [[NSMutableArray alloc] init];
+    [operatorIds addObjectsFromArray:self.selectedUsers.allKeys];
+    [operatorIds addObject:[SBDMain getCurrentUser].userId];
+    NSString *channelUrl = self.channelURLTextField.text;
+    [SBDOpenChannel createChannelWithName:self.channelNameTextField.text channelUrl:channelUrl coverImage:self.coverImageData coverImageName:@"cover_image.jpg" data:nil operatorUserIds:operatorIds customType:nil progressHandler:nil completionHandler:^(SBDOpenChannel * _Nullable channel, SBDError * _Nullable error) {
+        [self.activityIndicatorView setHidden:YES];
+        [self.activityIndicatorView stopAnimating];
+        
+        if (error != nil) {
+            UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"Error" message:error.domain preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *closeAction = [UIAlertAction actionWithTitle:@"Close" style:UIAlertActionStyleCancel handler:nil];
+            [vc addAction:closeAction];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self presentViewController:vc animated:YES completion:nil];
+            });
+            
+            return;
+        }
+        
+        if ([self.navigationController isKindOfClass:[CreateOpenChannelNavigationController class]]) {
+            CreateOpenChannelNavigationController *nc = (CreateOpenChannelNavigationController *)self.navigationController;
+            
+            if (nc.createChannelDelegate != nil) {
+                [nc.createChannelDelegate didCreate:channel];
+            }
+        }
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+}
+
+
+- (IBAction)unwindFromSelectOperatorsViewController:(UIStoryboardSegue *)segue
 {
     if ([segue.sourceViewController isKindOfClass:[SelectOperatorsViewController class]]) {
         SelectOperatorsViewController *opsVC = segue.sourceViewController;
-        // change data
-        self.selectedUsers = opsVC.selectedUsers;
-        printf("%s\n", self.selectedUsers);
+        if ([segue.identifier isEqualToString:@"unwindDoneFromOpVC"]){
+            printf("unwindDone\n");
+            self.selectedUsers = opsVC.selectedUsers;
+            [self didSelectUsers:self.selectedUsers];
+        }
+        else if ([segue.identifier isEqualToString:@"unwindCancelFromOpVC"]){
+            printf("unwindCancel\n");
+        }
     }
-}*/
+}
 
 @end
