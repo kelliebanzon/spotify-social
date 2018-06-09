@@ -9,7 +9,7 @@
 import UIKit
 import SendBirdSDK
 
-class ChatViewController: UIViewController, SBDConnectionDelegate {
+class ChatViewController: UITableViewController, SBDConnectionDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()

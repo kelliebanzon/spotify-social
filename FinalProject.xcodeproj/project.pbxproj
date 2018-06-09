@@ -55,7 +55,6 @@
 		AB77E97020AFFE2100F4968A /* circular-black-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB77E96820AFFE2000F4968A /* circular-black-italic.otf */; };
 		AB77E97120AFFE2100F4968A /* circular-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB77E96920AFFE2100F4968A /* circular-bold.otf */; };
 		ABB47FC520BA58D2006B83EB /* SPTUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB47FC420BA58D2006B83EB /* SPTUser.swift */; };
-		ABB47FC720BA8F25006B83EB /* defaultprofilepic.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB47FC620BA8F25006B83EB /* defaultprofilepic.png */; };
 		ABB47FC920BAB8BB006B83EB /* edit_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB47FC820BAB8BA006B83EB /* edit_transparent.png */; };
 		ABB47FCB20BAC519006B83EB /* SPTArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB47FCA20BAC519006B83EB /* SPTArtist.swift */; };
 		ABB47FCD20BAC55C006B83EB /* SPTExternalURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB47FCC20BAC55C006B83EB /* SPTExternalURL.swift */; };
@@ -65,6 +64,13 @@
 		ABB47FD520BAD83B006B83EB /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB47FD420BAD83B006B83EB /* IntExtension.swift */; };
 		ABB47FD720BB751D006B83EB /* SPTTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB47FD620BB751D006B83EB /* SPTTrack.swift */; };
 		ABB47FD920BB7561006B83EB /* SPTAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB47FD820BB7561006B83EB /* SPTAlbum.swift */; };
+		ABB6150020CA434300929754 /* CreateOpenChannelViewControllerA.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB614FF20CA434300929754 /* CreateOpenChannelViewControllerA.m */; };
+		ABB6150320CA653900929754 /* SelectOperatorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB6150220CA653900929754 /* SelectOperatorsViewController.m */; };
+		ABB6150A20CA66EE00929754 /* SelectorOperatorsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB6150820CA66EE00929754 /* SelectorOperatorsTableViewCell.m */; };
+		ABB6150B20CA66EE00929754 /* SelectorOperatorsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABB6150920CA66EE00929754 /* SelectorOperatorsTableViewCell.xib */; };
+		ABB6150F20CB448900929754 /* OperatorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB6150D20CB448900929754 /* OperatorTableViewCell.m */; };
+		ABB6151020CB448900929754 /* OperatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABB6150E20CB448900929754 /* OperatorTableViewCell.xib */; };
+		ABB6151220CB4F7400929754 /* defaultChatPic.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB6151120CB4F7400929754 /* defaultChatPic.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,7 +127,6 @@
 		AB77E96820AFFE2000F4968A /* circular-black-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-black-italic.otf"; sourceTree = "<group>"; };
 		AB77E96920AFFE2100F4968A /* circular-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-bold.otf"; sourceTree = "<group>"; };
 		ABB47FC420BA58D2006B83EB /* SPTUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTUser.swift; sourceTree = "<group>"; };
-		ABB47FC620BA8F25006B83EB /* defaultprofilepic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultprofilepic.png; sourceTree = "<group>"; };
 		ABB47FC820BAB8BA006B83EB /* edit_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_transparent.png; sourceTree = "<group>"; };
 		ABB47FCA20BAC519006B83EB /* SPTArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTArtist.swift; sourceTree = "<group>"; };
 		ABB47FCC20BAC55C006B83EB /* SPTExternalURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTExternalURL.swift; sourceTree = "<group>"; };
@@ -131,6 +136,17 @@
 		ABB47FD420BAD83B006B83EB /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		ABB47FD620BB751D006B83EB /* SPTTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTTrack.swift; sourceTree = "<group>"; };
 		ABB47FD820BB7561006B83EB /* SPTAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTAlbum.swift; sourceTree = "<group>"; };
+		ABB614FE20CA434300929754 /* CreateOpenChannelViewControllerA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateOpenChannelViewControllerA.h; sourceTree = "<group>"; };
+		ABB614FF20CA434300929754 /* CreateOpenChannelViewControllerA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateOpenChannelViewControllerA.m; sourceTree = "<group>"; };
+		ABB6150120CA653900929754 /* SelectOperatorsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectOperatorsViewController.h; sourceTree = "<group>"; };
+		ABB6150220CA653900929754 /* SelectOperatorsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectOperatorsViewController.m; sourceTree = "<group>"; };
+		ABB6150720CA66EE00929754 /* SelectorOperatorsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectorOperatorsTableViewCell.h; sourceTree = "<group>"; };
+		ABB6150820CA66EE00929754 /* SelectorOperatorsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectorOperatorsTableViewCell.m; sourceTree = "<group>"; };
+		ABB6150920CA66EE00929754 /* SelectorOperatorsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectorOperatorsTableViewCell.xib; sourceTree = "<group>"; };
+		ABB6150C20CB448900929754 /* OperatorTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperatorTableViewCell.h; sourceTree = "<group>"; };
+		ABB6150D20CB448900929754 /* OperatorTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OperatorTableViewCell.m; sourceTree = "<group>"; };
+		ABB6150E20CB448900929754 /* OperatorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OperatorTableViewCell.xib; sourceTree = "<group>"; };
+		ABB6151120CB4F7400929754 /* defaultChatPic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultChatPic.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,8 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				ABB47FD220BAD452006B83EB /* defaultArtistProfilePicture.png */,
-				ABB47FC620BA8F25006B83EB /* defaultprofilepic.png */,
 				AB73637420BA13BD000AEA34 /* connectWithSpotifyButton.png */,
+				ABB6151120CB4F7400929754 /* defaultChatPic.png */,
 				AB38272F20B8F3090006DA8C /* Icons */,
 				AB2E935720A1926A004835A8 /* kellie_profile.jpg */,
 				AB2E935D20A21989004835A8 /* djmonkey icon.jpg */,
@@ -193,12 +209,12 @@
 			children = (
 				AB2E934320A18ECC004835A8 /* AppDelegate.swift */,
 				AB2E934520A18ECC004835A8 /* ViewController.swift */,
-				AB0EAC1320BC1457007D81D5 /* ChatViewController.swift */,
 				AB73637220B9F7E4000AEA34 /* HomeViewController.swift */,
 				AB73636E20B9F122000AEA34 /* LoginViewController.swift */,
 				AB0DE6E120BBFBBB000DE675 /* SearchViewController.swift */,
 				AB2E934720A18ECC004835A8 /* Main.storyboard */,
 				AB73636A20B9EC91000AEA34 /* Constants.swift */,
+				ABB614FD20CA42F900929754 /* Chat */,
 				AB73635E20B96832000AEA34 /* Profile */,
 				AB0DE6E020BBE3CE000DE675 /* Settings */,
 				AB73636520B9E780000AEA34 /* Objects */,
@@ -295,6 +311,24 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		ABB614FD20CA42F900929754 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				AB0EAC1320BC1457007D81D5 /* ChatViewController.swift */,
+				ABB614FE20CA434300929754 /* CreateOpenChannelViewControllerA.h */,
+				ABB614FF20CA434300929754 /* CreateOpenChannelViewControllerA.m */,
+				ABB6150120CA653900929754 /* SelectOperatorsViewController.h */,
+				ABB6150220CA653900929754 /* SelectOperatorsViewController.m */,
+				ABB6150720CA66EE00929754 /* SelectorOperatorsTableViewCell.h */,
+				ABB6150820CA66EE00929754 /* SelectorOperatorsTableViewCell.m */,
+				ABB6150920CA66EE00929754 /* SelectorOperatorsTableViewCell.xib */,
+				ABB6150C20CB448900929754 /* OperatorTableViewCell.h */,
+				ABB6150D20CB448900929754 /* OperatorTableViewCell.m */,
+				ABB6150E20CB448900929754 /* OperatorTableViewCell.xib */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		C942B3543367AE88CB6B4783 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +399,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABB6151220CB4F7400929754 /* defaultChatPic.png in Resources */,
+				ABB6151020CB448900929754 /* OperatorTableViewCell.xib in Resources */,
 				AB38274420B919E30006DA8C /* chat_transparent_large.png in Resources */,
 				AB38273F20B9142F0006DA8C /* profile_transparent.png in Resources */,
 				AB73637520BA13BD000AEA34 /* connectWithSpotifyButton.png in Resources */,
@@ -385,12 +421,12 @@
 				AB38274620B91AF60006DA8C /* chat_transparent.png in Resources */,
 				AB77E96A20AFFE2100F4968A /* circular-medium.otf in Resources */,
 				AB77E96E20AFFE2100F4968A /* circular-black.otf in Resources */,
-				ABB47FC720BA8F25006B83EB /* defaultprofilepic.png in Resources */,
 				AB77E96F20AFFE2100F4968A /* circular-bold-italic.otf in Resources */,
 				AB77E97120AFFE2100F4968A /* circular-bold.otf in Resources */,
 				AB38273920B909DB0006DA8C /* settings_transparent.png in Resources */,
 				ABB47FC920BAB8BB006B83EB /* edit_transparent.png in Resources */,
 				AB77E96C20AFFE2100F4968A /* circular-medium-italic.otf in Resources */,
+				ABB6150B20CA66EE00929754 /* SelectorOperatorsTableViewCell.xib in Resources */,
 				AB38273720B908680006DA8C /* settings80.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,7 +441,9 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
 				"${PODS_ROOT}/SendBirdSDK/SendBirdSDK.framework",
 				"${PODS_ROOT}/SendBirdSDK/SendBirdSDK.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
@@ -413,7 +451,9 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SendBirdSDK.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/SendBirdSDK.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
@@ -450,17 +490,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB73637120B9F4FB000AEA34 /* NotificationExtension.swift in Sources */,
+				ABB6150F20CB448900929754 /* OperatorTableViewCell.m in Sources */,
 				ABB47FD920BB7561006B83EB /* SPTAlbum.swift in Sources */,
 				AB0DE6E420BBFCFE000DE675 /* SPTPlaylist.swift in Sources */,
 				AB73636F20B9F122000AEA34 /* LoginViewController.swift in Sources */,
 				ABB47FCD20BAC55C006B83EB /* SPTExternalURL.swift in Sources */,
 				AB0DE6DD20BBD981000DE675 /* ProfileFollowTableViewCell.swift in Sources */,
+				ABB6150320CA653900929754 /* SelectOperatorsViewController.m in Sources */,
 				ABB47FCF20BAC6A1006B83EB /* SPTImage.swift in Sources */,
 				ABB47FCB20BAC519006B83EB /* SPTArtist.swift in Sources */,
 				ABB47FD720BB751D006B83EB /* SPTTrack.swift in Sources */,
 				AB0DE6E220BBFBBB000DE675 /* SearchViewController.swift in Sources */,
 				AB0EAC1420BC1457007D81D5 /* ChatViewController.swift in Sources */,
 				AB0DE6DF20BBE3C4000DE675 /* SettingsViewController.swift in Sources */,
+				ABB6150020CA434300929754 /* CreateOpenChannelViewControllerA.m in Sources */,
 				ABB47FD520BAD83B006B83EB /* IntExtension.swift in Sources */,
 				AB73635B20B9624F000AEA34 /* ProfileTimelineTableViewController.swift in Sources */,
 				AB2E935620A190DE004835A8 /* ProfileViewController.swift in Sources */,
@@ -468,6 +511,7 @@
 				ABB47FC520BA58D2006B83EB /* SPTUser.swift in Sources */,
 				AB73636420B96A28000AEA34 /* ColorExtension.swift in Sources */,
 				AB38274A20B92D5E0006DA8C /* ProfileTabViewController.swift in Sources */,
+				ABB6150A20CA66EE00929754 /* SelectorOperatorsTableViewCell.m in Sources */,
 				AB2E934620A18ECC004835A8 /* ViewController.swift in Sources */,
 				AB38274E20B937430006DA8C /* ProfileFavoritesTabViewController.swift in Sources */,
 				AB73636B20B9EC91000AEA34 /* Constants.swift in Sources */,
