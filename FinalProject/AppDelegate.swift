@@ -25,12 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // set up your background color view
         let colorView = UIView()
-        colorView.backgroundColor = UIColor(named: "SPTGray")
+        colorView.backgroundColor = UIColor(named: "SPTBlack")
         
         // use UITableViewCell.appearance() to configure the default appearance of all UITableViewCells
-        UITableViewCell.appearance().backgroundColor = UIColor(named: "SPTDarkGray")
+        UITableViewCell.appearance().backgroundColor = UIColor(named: "SPTBlack")
         UITableViewCell.appearance().selectedBackgroundView = colorView
-        UITableView.appearance().backgroundColor = UIColor(named: "SPTDarkGray")
+        UITableView.appearance().backgroundColor = UIColor(named: "SPTBlack")
+        UINavigationBar.appearance().backgroundColor = UIColor(named: "SPTDarkGray")
         
         
         return true

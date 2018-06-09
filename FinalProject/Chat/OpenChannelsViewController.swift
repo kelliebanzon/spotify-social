@@ -21,12 +21,21 @@ class OpenChannelsViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        DispatchQueue.main.async {
-            self.getOpenChannelList()
-            
-        }
         
-        // Do any additional setup after loading the view.
+        
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
+        self.navigationController?.navigationBar.barTintColor = UIColor(named: "SPTDarkGray")
+        
+        let backButton = UIBarButtonItem(image: UIImage(named: "btn_back"), style: UIBarButtonItemStyle.done, target: self, action: #selector(back))
+        backButton.tintColor = UIColor(named: "SPTWhite")
+        self.navigationItem.leftBarButtonItem = backButton
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        DispatchQueue.main.async {
+            self.refreshOpenChannelList()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +45,7 @@ class OpenChannelsViewController: UIViewController, UITableViewDataSource, UITab
     
     // MARK: - SendBird
     
-    func getOpenChannelList(){
+    func refreshOpenChannelList(){
         openChannelListQuery = SBDOpenChannel.createOpenChannelListQuery()
         self.openChannelListQuery?.loadNextPage(completionHandler: { (channels, error) in
             
@@ -45,6 +54,7 @@ class OpenChannelsViewController: UIViewController, UITableViewDataSource, UITab
             }
             
             else{
+                self.openChannelList.removeAll()
                 for channel in channels! {
                     self.openChannelList.append(channel)
                 }
@@ -67,6 +77,7 @@ class OpenChannelsViewController: UIViewController, UITableViewDataSource, UITab
         let currentChannel = openChannelList[indexPath.row]
         cell.chatNameLabel.text = currentChannel.name
         cell.chatProfilePictureImageView.defaultOrDownloadedFrom(linkString: currentChannel.coverUrl!, defaultName: "defaultChatPicture")
+        cell.chatProfilePictureImageView.roundCorners()
         //cell.chatProfilePictureImageView.setImageWith(URL(string: currentChannel.coverUrl!)!, placeholderImage: UIImage(named: "defaultChatPicture"))
         return cell
     }
@@ -74,6 +85,10 @@ class OpenChannelsViewController: UIViewController, UITableViewDataSource, UITab
 
     
     // MARK: - Navigation
+    
+    @objc func back(){
+        self.dismiss(animated: true, completion: nil)
+    }
 
     /*// In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

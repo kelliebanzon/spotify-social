@@ -46,6 +46,10 @@
     self.tableView.dataSource = self;
     
     self.selectedUsersArray = [[NSMutableArray alloc] init];
+    
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    self.navigationController.navigationBar.barTintColor = [UIColor colorNamed:@"SPTDarkGray"];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -197,37 +201,46 @@
 
 - (IBAction)clickDoneButton:(id)sender {
     printf("clickDoneButton\n");
-    [self.activityIndicatorView setHidden:NO];
-    [self.activityIndicatorView startAnimating];
-    NSMutableArray<NSString *> *operatorIds = [[NSMutableArray alloc] init];
-    [operatorIds addObjectsFromArray:self.selectedUsers.allKeys];
-    [operatorIds addObject:[SBDMain getCurrentUser].userId];
-    NSString *channelUrl = self.channelURLTextField.text;
-    [SBDOpenChannel createChannelWithName:self.channelNameTextField.text channelUrl:channelUrl coverImage:self.coverImageData coverImageName:@"cover_image.jpg" data:nil operatorUserIds:operatorIds customType:nil progressHandler:nil completionHandler:^(SBDOpenChannel * _Nullable channel, SBDError * _Nullable error) {
-        [self.activityIndicatorView setHidden:YES];
-        [self.activityIndicatorView stopAnimating];
+    if ([self.channelNameTextField hasText] == NO){
+        UIAlertController* emptyChatNameAlert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Channel must have a name." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* dismissButton = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleCancel handler:nil];
+        [emptyChatNameAlert addAction:dismissButton];
         
-        if (error != nil) {
-            UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"Error" message:error.domain preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *closeAction = [UIAlertAction actionWithTitle:@"Close" style:UIAlertActionStyleCancel handler:nil];
-            [vc addAction:closeAction];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self presentViewController:vc animated:YES completion:nil];
-            });
+        [self presentViewController:emptyChatNameAlert animated:YES completion:nil];
+    }
+    else {
+        [self.activityIndicatorView setHidden:NO];
+        [self.activityIndicatorView startAnimating];
+        NSMutableArray<NSString *> *operatorIds = [[NSMutableArray alloc] init];
+        [operatorIds addObjectsFromArray:self.selectedUsers.allKeys];
+        [operatorIds addObject:[SBDMain getCurrentUser].userId];
+        NSString *channelUrl = self.channelURLTextField.text;
+        [SBDOpenChannel createChannelWithName:self.channelNameTextField.text channelUrl:channelUrl coverImage:self.coverImageData coverImageName:@"cover_image.jpg" data:nil operatorUserIds:operatorIds customType:nil progressHandler:nil completionHandler:^(SBDOpenChannel * _Nullable channel, SBDError * _Nullable error) {
+            [self.activityIndicatorView setHidden:YES];
+            [self.activityIndicatorView stopAnimating];
             
-            return;
-        }
-        
-        if ([self.navigationController isKindOfClass:[CreateOpenChannelNavigationController class]]) {
-            CreateOpenChannelNavigationController *nc = (CreateOpenChannelNavigationController *)self.navigationController;
-            
-            if (nc.createChannelDelegate != nil) {
-                [nc.createChannelDelegate didCreate:channel];
+            if (error != nil) {
+                UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"Error" message:error.domain preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *closeAction = [UIAlertAction actionWithTitle:@"Close" style:UIAlertActionStyleCancel handler:nil];
+                [vc addAction:closeAction];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self presentViewController:vc animated:YES completion:nil];
+                });
+                
+                return;
             }
-        }
-        
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }];
+            
+            if ([self.navigationController isKindOfClass:[CreateOpenChannelNavigationController class]]) {
+                CreateOpenChannelNavigationController *nc = (CreateOpenChannelNavigationController *)self.navigationController;
+                
+                if (nc.createChannelDelegate != nil) {
+                    [nc.createChannelDelegate didCreate:channel];
+                }
+            }
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+    }
 }
 
 
