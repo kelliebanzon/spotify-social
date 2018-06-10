@@ -43,6 +43,12 @@
 		AB38274A20B92D5E0006DA8C /* ProfileTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB38274920B92D5E0006DA8C /* ProfileTabViewController.swift */; };
 		AB38274E20B937430006DA8C /* ProfileFavoritesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB38274D20B937430006DA8C /* ProfileFavoritesTabViewController.swift */; };
 		AB72ED6120CD02A2000DA5C9 /* TempSearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72ED6020CD02A2000DA5C9 /* TempSearchResultTableViewCell.swift */; };
+		AB72ED6420CD3A51000DA5C9 /* ArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72ED6220CD3A51000DA5C9 /* ArtistTableViewCell.swift */; };
+		AB72ED6520CD3A51000DA5C9 /* ArtistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB72ED6320CD3A51000DA5C9 /* ArtistTableViewCell.xib */; };
+		AB72ED6820CD3D5C000DA5C9 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72ED6620CD3D5C000DA5C9 /* TrackTableViewCell.swift */; };
+		AB72ED6920CD3D5C000DA5C9 /* TrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB72ED6720CD3D5C000DA5C9 /* TrackTableViewCell.xib */; };
+		AB72ED6B20CD4E34000DA5C9 /* TrackDynamicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72ED6A20CD4E34000DA5C9 /* TrackDynamicTableViewCell.swift */; };
+		AB72ED6D20CD4ED6000DA5C9 /* ArtistDynamicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72ED6C20CD4ED6000DA5C9 /* ArtistDynamicTableViewCell.swift */; };
 		AB73635B20B9624F000AEA34 /* ProfileTimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73635A20B9624F000AEA34 /* ProfileTimelineTableViewController.swift */; };
 		AB73635D20B96361000AEA34 /* ProfileTimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73635C20B96361000AEA34 /* ProfileTimelineTableViewCell.swift */; };
 		AB73636020B968C8000AEA34 /* ProfileFollowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73635F20B968C8000AEA34 /* ProfileFollowTableViewController.swift */; };
@@ -125,6 +131,12 @@
 		AB38274920B92D5E0006DA8C /* ProfileTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabViewController.swift; sourceTree = "<group>"; };
 		AB38274D20B937430006DA8C /* ProfileFavoritesTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFavoritesTabViewController.swift; sourceTree = "<group>"; };
 		AB72ED6020CD02A2000DA5C9 /* TempSearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempSearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		AB72ED6220CD3A51000DA5C9 /* ArtistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistTableViewCell.swift; sourceTree = "<group>"; };
+		AB72ED6320CD3A51000DA5C9 /* ArtistTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistTableViewCell.xib; sourceTree = "<group>"; };
+		AB72ED6620CD3D5C000DA5C9 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
+		AB72ED6720CD3D5C000DA5C9 /* TrackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackTableViewCell.xib; sourceTree = "<group>"; };
+		AB72ED6A20CD4E34000DA5C9 /* TrackDynamicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDynamicTableViewCell.swift; sourceTree = "<group>"; };
+		AB72ED6C20CD4ED6000DA5C9 /* ArtistDynamicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDynamicTableViewCell.swift; sourceTree = "<group>"; };
 		AB73635A20B9624F000AEA34 /* ProfileTimelineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTimelineTableViewController.swift; sourceTree = "<group>"; };
 		AB73635C20B96361000AEA34 /* ProfileTimelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTimelineTableViewCell.swift; sourceTree = "<group>"; };
 		AB73635F20B968C8000AEA34 /* ProfileFollowTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFollowTableViewController.swift; sourceTree = "<group>"; };
@@ -311,6 +323,12 @@
 				AB38274D20B937430006DA8C /* ProfileFavoritesTabViewController.swift */,
 				AB73635F20B968C8000AEA34 /* ProfileFollowTableViewController.swift */,
 				AB0DE6DC20BBD980000DE675 /* ProfileFollowTableViewCell.swift */,
+				AB72ED6220CD3A51000DA5C9 /* ArtistTableViewCell.swift */,
+				AB72ED6320CD3A51000DA5C9 /* ArtistTableViewCell.xib */,
+				AB72ED6620CD3D5C000DA5C9 /* TrackTableViewCell.swift */,
+				AB72ED6720CD3D5C000DA5C9 /* TrackTableViewCell.xib */,
+				AB72ED6A20CD4E34000DA5C9 /* TrackDynamicTableViewCell.swift */,
+				AB72ED6C20CD4ED6000DA5C9 /* ArtistDynamicTableViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -478,12 +496,14 @@
 				AB77E96A20AFFE2100F4968A /* circular-medium.otf in Resources */,
 				AB77E96E20AFFE2100F4968A /* circular-black.otf in Resources */,
 				AB77E96F20AFFE2100F4968A /* circular-bold-italic.otf in Resources */,
+				AB72ED6520CD3A51000DA5C9 /* ArtistTableViewCell.xib in Resources */,
 				AB77E97120AFFE2100F4968A /* circular-bold.otf in Resources */,
 				AB38273920B909DB0006DA8C /* settings_transparent.png in Resources */,
 				ABB47FC920BAB8BB006B83EB /* edit_transparent.png in Resources */,
 				AB77E96C20AFFE2100F4968A /* circular-medium-italic.otf in Resources */,
 				ABB6150B20CA66EE00929754 /* SelectorOperatorsTableViewCell.xib in Resources */,
 				AB38273720B908680006DA8C /* settings80.png in Resources */,
+				AB72ED6920CD3D5C000DA5C9 /* TrackTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,7 +574,10 @@
 				AB0DE6DD20BBD981000DE675 /* ProfileFollowTableViewCell.swift in Sources */,
 				ABB6150320CA653900929754 /* SelectOperatorsViewController.m in Sources */,
 				ABB47FCF20BAC6A1006B83EB /* SPTImage.swift in Sources */,
+				AB72ED6B20CD4E34000DA5C9 /* TrackDynamicTableViewCell.swift in Sources */,
 				ABB47FCB20BAC519006B83EB /* SPTArtist.swift in Sources */,
+				AB72ED6420CD3A51000DA5C9 /* ArtistTableViewCell.swift in Sources */,
+				AB72ED6D20CD4ED6000DA5C9 /* ArtistDynamicTableViewCell.swift in Sources */,
 				ABB6152320CB9F9B00929754 /* CreateOpenChannelNavigationController.m in Sources */,
 				AB2DFEE720CBC7C4006DFB70 /* OpenChannelTableViewCell.swift in Sources */,
 				AB2DFEE920CC8544006DFB70 /* OpenChannelChatViewController.swift in Sources */,
@@ -587,6 +610,7 @@
 				AB73635D20B96361000AEA34 /* ProfileTimelineTableViewCell.swift in Sources */,
 				AB2E934420A18ECC004835A8 /* AppDelegate.swift in Sources */,
 				AB38273520B900E30006DA8C /* NavExtension.swift in Sources */,
+				AB72ED6820CD3D5C000DA5C9 /* TrackTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

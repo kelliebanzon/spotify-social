@@ -94,7 +94,7 @@ class ProfileTimelineTableViewController: UITableViewController, IndicatorInfoPr
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 95
     }
     
     
@@ -110,6 +110,69 @@ class ProfileTimelineTableViewController: UITableViewController, IndicatorInfoPr
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "trackDynamicTVCell") as! TrackDynamicTableViewCell
+            let currentTrack = self.currentUserTopTracks![indexPath.row]
+            cell.trackImageView.defaultOrDownloadedFrom(imageList: currentTrack.album.images, defaultName: "defaultSongPictureSquare")
+            cell.trackImageView.roundCorners()
+            cell.trackNameLabel.text = currentTrack.name
+            cell.artistNameLabel.text = currentTrack.artists[0].name
+            cell.albumNameLabel.text = currentTrack.album.name
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "artistDynamicTVCell") as! ArtistDynamicTableViewCell
+            let currentArtist = self.currentUserTopArtists![indexPath.row]
+            cell.artistImageView.defaultOrDownloadedFrom(imageList: currentArtist.images, defaultName: "defaultArtistProfilePicture")
+            cell.artistNameLabel.text = currentArtist.name
+            return cell
+        }
+    }
+    
+    /*override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.section {
+        case 0:
+            var cell = Bundle.main.loadNibNamed("trackTVCell", owner: self, options: nil)?.first as? TrackTableViewCell
+            if (cell == nil) {
+                tableView.register(UINib(nibName: "TrackTableViewCell", bundle: nil), forCellReuseIdentifier: "trackTVCell")
+                cell = tableView.dequeueReusableCell(withIdentifier: "trackTVCell") as? TrackTableViewCell
+            }
+            let currentTrack = self.currentUserTopTracks![indexPath.row]
+            cell?.trackProfileImageView.defaultOrDownloadedFrom(imageList: currentTrack.album.images, defaultName: "defaultSongPictureSquare")
+            cell?.trackProfileImageView.roundCorners()
+            cell?.trackNameLabel.text = currentTrack.name
+            if currentTrack.artists.count == 1 {
+                cell?.trackArtistLabel.text = currentTrack.artists[0].name
+            }
+            else if currentTrack.artists.count > 1 {
+                var artists = currentTrack.artists[0].name
+                for i in 1...currentTrack.artists.count {
+                    artists.append(", " + currentTrack.artists[i].name)
+                }
+                cell?.trackArtistLabel.text = artists
+            }
+            cell?.trackAlbumLabel.text = currentTrack.album.name
+            return cell!
+        case 1:
+            var cell = Bundle.main.loadNibNamed("artistTVCell", owner: self, options: nil)?.first as? ArtistTableViewCell
+            if (cell == nil) {
+                tableView.register(UINib(nibName: "ArtistTableViewCell", bundle: nil), forCellReuseIdentifier: "artistTVCell")
+                cell = tableView.dequeueReusableCell(withIdentifier: "artistTVCell") as? ArtistTableViewCell
+            }
+            let currentArtist = self.currentUserTopArtists![indexPath.row]
+            cell?.artistProfileImageView.defaultOrDownloadedFrom(imageList: currentArtist.images, defaultName: "defaultArtistProfilePicture")
+            cell?.artistNameLabel.text = currentArtist.name
+            return cell!
+        default:
+            let cell = Bundle.main.loadNibNamed("artistTVCell", owner: self, options: nil)?.first as! ArtistTableViewCell
+            let currentArtist = self.currentUserTopArtists![indexPath.row]
+            cell.artistProfileImageView.defaultOrDownloadedFrom(imageList: currentArtist.images, defaultName: "defaultArtistProfilePicture")
+            cell.artistNameLabel.text = currentArtist.name
+            return cell
+        }
+    }*/
+    
+    /*override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "garbage", for: indexPath) as! ProfileTimelineTableViewCell
         switch indexPath.section {
         case 0:
@@ -127,9 +190,10 @@ class ProfileTimelineTableViewController: UITableViewController, IndicatorInfoPr
         cell.titleLabel.textColor = UIColor(named: "SPTWhite")
         
         return cell
-    }
+    }*/
     
-    /*override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    /* OLD OLD
+        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section{
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PTimelineTrackTVCell", for: indexPath) as! ProfileTimelineTrackTVCell
