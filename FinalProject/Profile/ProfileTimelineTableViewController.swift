@@ -113,13 +113,19 @@ class ProfileTimelineTableViewController: UITableViewController, IndicatorInfoPr
         let cell = tableView.dequeueReusableCell(withIdentifier: "garbage", for: indexPath) as! ProfileTimelineTableViewCell
         switch indexPath.section {
         case 0:
-            cell.titleLabel.text = currentUserTopTracks![indexPath.row].name
+            let currentTrack = currentUserTopTracks![indexPath.row]
+            cell.titleLabel.text = currentTrack.name
+            cell.profileImageView.defaultOrDownloadedFrom(linkString: (currentTrack.album.images?[0].url)!, defaultName: "defaultSongPictureSquare")
+            cell.profileImageView.roundCorners()
         case 1:
-            cell.titleLabel.text = currentUserTopArtists![indexPath.row].name
+            let currentArtist = currentUserTopArtists![indexPath.row]
+            cell.titleLabel.text = currentArtist.name
+            cell.profileImageView.defaultOrDownloadedFrom(linkString: (currentArtist.images?[0].url)!, defaultName: "defaultArtistProfilePicture")
         default:
             cell.titleLabel.text = "unrecognized"
         }
         cell.titleLabel.textColor = UIColor(named: "SPTWhite")
+        
         return cell
     }
     
