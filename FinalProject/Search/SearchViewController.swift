@@ -176,7 +176,51 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 95
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "searchTrackTVCell") as! SearchTrackTableViewCell
+            let currentTrack = self.resultsTracks![indexPath.row]
+            cell.trackNameLabel.text = currentTrack.name
+            cell.artistNameLabel.text = currentTrack.artists[0].name
+            cell.albumNameLabel.text = currentTrack.album.name
+            cell.trackImageView.defaultOrDownloadedFrom(imageList: currentTrack.album.images, defaultName: "defaultSongPictureSquare")
+            cell.trackImageView.roundCorners()
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "searchArtistTVCell") as! SearchArtistTableViewCell
+            let currentArtist = self.resultsArtists![indexPath.row]
+            cell.artistNameLabel.text = currentArtist.name
+            cell.artistImageView.defaultOrDownloadedFrom(imageList: currentArtist.images, defaultName: "defaultArtistProfilePicture")
+            cell.artistImageView.roundCorners()
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "searchAlbumTVCell") as! SearchAlbumTableViewCell
+            let currentAlbum = self.resultsAlbums![indexPath.row]
+            cell.albumImageView.defaultOrDownloadedFrom(imageList: currentAlbum.images, defaultName: "defaultSongPictureSquare")
+            cell.albumImageView.roundCorners()
+            cell.albumNameLabel.text = currentAlbum.name
+            cell.artistNameLabel.text = currentAlbum.artists[0].name
+            return cell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "searchPlaylistTVCell") as! SearchPlaylistTableViewCell
+            let currentPlaylist = self.resultsPlaylists![indexPath.row]
+            cell.playlistImageView.defaultOrDownloadedFrom(imageList: currentPlaylist.images, defaultName: "defaultSongPictureSquare")
+            cell.playlistImageView.roundCorners()
+            cell.playlistNameLabel.text = currentPlaylist.name
+            cell.ownerNameLabel.text = currentPlaylist.owner?.display_name ?? currentPlaylist.owner?.id
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "searchArtistTVCell") as! UITableViewCell
+            return cell
+        }
+    }
+    
+    /*func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tempSearchResultTVCell", for: indexPath) as! TempSearchResultTableViewCell
         switch indexPath.section {
         case 0:
@@ -191,7 +235,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.tempLabel.text = "unrecognized"
         }
         return cell
-    }
+    }*/
 
     /*
     // MARK: - Navigation

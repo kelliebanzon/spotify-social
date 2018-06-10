@@ -49,6 +49,10 @@
 		AB72ED6920CD3D5C000DA5C9 /* TrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB72ED6720CD3D5C000DA5C9 /* TrackTableViewCell.xib */; };
 		AB72ED6B20CD4E34000DA5C9 /* TrackDynamicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72ED6A20CD4E34000DA5C9 /* TrackDynamicTableViewCell.swift */; };
 		AB72ED6D20CD4ED6000DA5C9 /* ArtistDynamicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72ED6C20CD4ED6000DA5C9 /* ArtistDynamicTableViewCell.swift */; };
+		AB72ED6F20CD5860000DA5C9 /* SearchTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72ED6E20CD5860000DA5C9 /* SearchTrackTableViewCell.swift */; };
+		AB72ED7120CD5A74000DA5C9 /* SearchArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72ED7020CD5A74000DA5C9 /* SearchArtistTableViewCell.swift */; };
+		AB72ED7320CD5BDC000DA5C9 /* SearchAlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72ED7220CD5BDC000DA5C9 /* SearchAlbumTableViewCell.swift */; };
+		AB72ED7520CD5D80000DA5C9 /* SearchPlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72ED7420CD5D80000DA5C9 /* SearchPlaylistTableViewCell.swift */; };
 		AB73635B20B9624F000AEA34 /* ProfileTimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73635A20B9624F000AEA34 /* ProfileTimelineTableViewController.swift */; };
 		AB73635D20B96361000AEA34 /* ProfileTimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73635C20B96361000AEA34 /* ProfileTimelineTableViewCell.swift */; };
 		AB73636020B968C8000AEA34 /* ProfileFollowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73635F20B968C8000AEA34 /* ProfileFollowTableViewController.swift */; };
@@ -84,8 +88,6 @@
 		ABB6150F20CB448900929754 /* OperatorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB6150D20CB448900929754 /* OperatorTableViewCell.m */; };
 		ABB6151020CB448900929754 /* OperatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABB6150E20CB448900929754 /* OperatorTableViewCell.xib */; };
 		ABB6151220CB4F7400929754 /* defaultChatPic.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB6151120CB4F7400929754 /* defaultChatPic.png */; };
-		ABB6151C20CB953400929754 /* CreateOpenChannelViewControllerB.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB6151A20CB953400929754 /* CreateOpenChannelViewControllerB.m */; };
-		ABB6151D20CB953400929754 /* CreateOpenChannelViewControllerB.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABB6151B20CB953400929754 /* CreateOpenChannelViewControllerB.xib */; };
 		ABB6152020CB9B1700929754 /* CustomActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB6151F20CB9B1700929754 /* CustomActivityIndicatorView.m */; };
 		ABB6152320CB9F9B00929754 /* CreateOpenChannelNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB6152220CB9F9B00929754 /* CreateOpenChannelNavigationController.m */; };
 /* End PBXBuildFile section */
@@ -137,6 +139,10 @@
 		AB72ED6720CD3D5C000DA5C9 /* TrackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackTableViewCell.xib; sourceTree = "<group>"; };
 		AB72ED6A20CD4E34000DA5C9 /* TrackDynamicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDynamicTableViewCell.swift; sourceTree = "<group>"; };
 		AB72ED6C20CD4ED6000DA5C9 /* ArtistDynamicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDynamicTableViewCell.swift; sourceTree = "<group>"; };
+		AB72ED6E20CD5860000DA5C9 /* SearchTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTrackTableViewCell.swift; sourceTree = "<group>"; };
+		AB72ED7020CD5A74000DA5C9 /* SearchArtistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchArtistTableViewCell.swift; sourceTree = "<group>"; };
+		AB72ED7220CD5BDC000DA5C9 /* SearchAlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAlbumTableViewCell.swift; sourceTree = "<group>"; };
+		AB72ED7420CD5D80000DA5C9 /* SearchPlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaylistTableViewCell.swift; sourceTree = "<group>"; };
 		AB73635A20B9624F000AEA34 /* ProfileTimelineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTimelineTableViewController.swift; sourceTree = "<group>"; };
 		AB73635C20B96361000AEA34 /* ProfileTimelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTimelineTableViewCell.swift; sourceTree = "<group>"; };
 		AB73635F20B968C8000AEA34 /* ProfileFollowTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFollowTableViewController.swift; sourceTree = "<group>"; };
@@ -177,9 +183,6 @@
 		ABB6150D20CB448900929754 /* OperatorTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OperatorTableViewCell.m; sourceTree = "<group>"; };
 		ABB6150E20CB448900929754 /* OperatorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OperatorTableViewCell.xib; sourceTree = "<group>"; };
 		ABB6151120CB4F7400929754 /* defaultChatPic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultChatPic.png; sourceTree = "<group>"; };
-		ABB6151920CB953400929754 /* CreateOpenChannelViewControllerB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateOpenChannelViewControllerB.h; sourceTree = "<group>"; };
-		ABB6151A20CB953400929754 /* CreateOpenChannelViewControllerB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateOpenChannelViewControllerB.m; sourceTree = "<group>"; };
-		ABB6151B20CB953400929754 /* CreateOpenChannelViewControllerB.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateOpenChannelViewControllerB.xib; sourceTree = "<group>"; };
 		ABB6151E20CB9B1700929754 /* CustomActivityIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomActivityIndicatorView.h; sourceTree = "<group>"; };
 		ABB6151F20CB9B1700929754 /* CustomActivityIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomActivityIndicatorView.m; sourceTree = "<group>"; };
 		ABB6152120CB9F9B00929754 /* CreateOpenChannelNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateOpenChannelNavigationController.h; sourceTree = "<group>"; };
@@ -309,6 +312,10 @@
 			children = (
 				AB0DE6E120BBFBBB000DE675 /* SearchViewController.swift */,
 				AB72ED6020CD02A2000DA5C9 /* TempSearchResultTableViewCell.swift */,
+				AB72ED6E20CD5860000DA5C9 /* SearchTrackTableViewCell.swift */,
+				AB72ED7020CD5A74000DA5C9 /* SearchArtistTableViewCell.swift */,
+				AB72ED7220CD5BDC000DA5C9 /* SearchAlbumTableViewCell.swift */,
+				AB72ED7420CD5D80000DA5C9 /* SearchPlaylistTableViewCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -374,9 +381,6 @@
 				AB2DFEE820CC8544006DFB70 /* OpenChannelChatViewController.swift */,
 				ABB614FE20CA434300929754 /* CreateOpenChannelViewControllerA.h */,
 				ABB614FF20CA434300929754 /* CreateOpenChannelViewControllerA.m */,
-				ABB6151920CB953400929754 /* CreateOpenChannelViewControllerB.h */,
-				ABB6151A20CB953400929754 /* CreateOpenChannelViewControllerB.m */,
-				ABB6151B20CB953400929754 /* CreateOpenChannelViewControllerB.xib */,
 				ABB6150120CA653900929754 /* SelectOperatorsViewController.h */,
 				ABB6150220CA653900929754 /* SelectOperatorsViewController.m */,
 				ABB6151E20CB9B1700929754 /* CustomActivityIndicatorView.h */,
@@ -477,7 +481,6 @@
 				AB38274420B919E30006DA8C /* chat_transparent_large.png in Resources */,
 				AB38273F20B9142F0006DA8C /* profile_transparent.png in Resources */,
 				AB73637520BA13BD000AEA34 /* connectWithSpotifyButton.png in Resources */,
-				ABB6151D20CB953400929754 /* CreateOpenChannelViewControllerB.xib in Resources */,
 				AB38274820B920B30006DA8C /* search_transparent.png in Resources */,
 				AB77E96D20AFFE2100F4968A /* circular-book-italic.otf in Resources */,
 				AB2E935820A1926A004835A8 /* kellie_profile.jpg in Resources */,
@@ -572,6 +575,7 @@
 				AB73636F20B9F122000AEA34 /* LoginViewController.swift in Sources */,
 				ABB47FCD20BAC55C006B83EB /* SPTExternalURL.swift in Sources */,
 				AB0DE6DD20BBD981000DE675 /* ProfileFollowTableViewCell.swift in Sources */,
+				AB72ED6F20CD5860000DA5C9 /* SearchTrackTableViewCell.swift in Sources */,
 				ABB6150320CA653900929754 /* SelectOperatorsViewController.m in Sources */,
 				ABB47FCF20BAC6A1006B83EB /* SPTImage.swift in Sources */,
 				AB72ED6B20CD4E34000DA5C9 /* TrackDynamicTableViewCell.swift in Sources */,
@@ -583,14 +587,16 @@
 				AB2DFEE920CC8544006DFB70 /* OpenChannelChatViewController.swift in Sources */,
 				ABB47FD720BB751D006B83EB /* SPTTrack.swift in Sources */,
 				AB72ED6120CD02A2000DA5C9 /* TempSearchResultTableViewCell.swift in Sources */,
+				AB72ED7320CD5BDC000DA5C9 /* SearchAlbumTableViewCell.swift in Sources */,
 				AB2DFEE520CBC693006DFB70 /* OpenChannelsViewController.swift in Sources */,
 				AB0DE6E220BBFBBB000DE675 /* SearchViewController.swift in Sources */,
+				AB72ED7520CD5D80000DA5C9 /* SearchPlaylistTableViewCell.swift in Sources */,
 				AB2DFEED20CCEDBC006DFB70 /* SPTSearchResults.swift in Sources */,
 				AB0EAC1420BC1457007D81D5 /* ChatViewController.swift in Sources */,
 				AB0DE6DF20BBE3C4000DE675 /* SettingsViewController.swift in Sources */,
-				ABB6151C20CB953400929754 /* CreateOpenChannelViewControllerB.m in Sources */,
 				ABB6150020CA434300929754 /* CreateOpenChannelViewControllerA.m in Sources */,
 				ABB47FD520BAD83B006B83EB /* IntExtension.swift in Sources */,
+				AB72ED7120CD5A74000DA5C9 /* SearchArtistTableViewCell.swift in Sources */,
 				AB73635B20B9624F000AEA34 /* ProfileTimelineTableViewController.swift in Sources */,
 				AB2E935620A190DE004835A8 /* ProfileViewController.swift in Sources */,
 				ABB47FD120BAC8C8006B83EB /* SPTFollowers.swift in Sources */,
