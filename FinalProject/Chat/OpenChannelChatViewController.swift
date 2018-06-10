@@ -78,6 +78,27 @@ class OpenChannelChatViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let msg = self.previousMessages![indexPath.row] as! SBDUserMessage
+        if msg.sender?.userId == Constants.currentUserSBD?.userId {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "senderMessageTVCell", for: indexPath) as! MessageSenderTableViewCell
+            cell.myProfileImageView.defaultOrDownloadedFrom(linkString: (msg.sender?.profileUrl)!, defaultName: "defaultUserProfilePicture")
+            cell.myProfileImageView.roundCorners()
+            cell.myNameLabel.text = msg.sender?.nickname
+            cell.myMessageLabel.text = msg.message
+            //cell.backgroundColor = UIColor(named: "SPTDarkGray")
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "tempMessageTVCell", for: indexPath) as! TempMessageTableViewCell
+            cell.senderProfileImageView.defaultOrDownloadedFrom(linkString: (msg.sender?.profileUrl)!, defaultName: "defaultUserProfilePicture")
+            cell.senderProfileImageView.roundCorners()
+            cell.messageTextLabel.text = msg.message
+            cell.senderNameLabel.text = msg.sender?.nickname
+            return cell
+        }
+    }
+    
+    /*func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tempMessageTVCell", for: indexPath) as! TempMessageTableViewCell
         let msg = self.previousMessages![indexPath.row] as! SBDUserMessage
         cell.messageTextLabel.text = msg.message
@@ -94,7 +115,8 @@ class OpenChannelChatViewController: UIViewController, UITableViewDelegate, UITa
         }
         
         return cell
-    }
+    }*/
+    
     
     // MARK: - Navigation
     

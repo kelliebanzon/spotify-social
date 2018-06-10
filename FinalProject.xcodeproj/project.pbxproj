@@ -53,6 +53,7 @@
 		AB72ED7120CD5A74000DA5C9 /* SearchArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72ED7020CD5A74000DA5C9 /* SearchArtistTableViewCell.swift */; };
 		AB72ED7320CD5BDC000DA5C9 /* SearchAlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72ED7220CD5BDC000DA5C9 /* SearchAlbumTableViewCell.swift */; };
 		AB72ED7520CD5D80000DA5C9 /* SearchPlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72ED7420CD5D80000DA5C9 /* SearchPlaylistTableViewCell.swift */; };
+		AB72ED7720CDAFE1000DA5C9 /* MessageSenderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72ED7620CDAFE1000DA5C9 /* MessageSenderTableViewCell.swift */; };
 		AB73635B20B9624F000AEA34 /* ProfileTimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73635A20B9624F000AEA34 /* ProfileTimelineTableViewController.swift */; };
 		AB73635D20B96361000AEA34 /* ProfileTimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73635C20B96361000AEA34 /* ProfileTimelineTableViewCell.swift */; };
 		AB73636020B968C8000AEA34 /* ProfileFollowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73635F20B968C8000AEA34 /* ProfileFollowTableViewController.swift */; };
@@ -143,6 +144,7 @@
 		AB72ED7020CD5A74000DA5C9 /* SearchArtistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchArtistTableViewCell.swift; sourceTree = "<group>"; };
 		AB72ED7220CD5BDC000DA5C9 /* SearchAlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAlbumTableViewCell.swift; sourceTree = "<group>"; };
 		AB72ED7420CD5D80000DA5C9 /* SearchPlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaylistTableViewCell.swift; sourceTree = "<group>"; };
+		AB72ED7620CDAFE1000DA5C9 /* MessageSenderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSenderTableViewCell.swift; sourceTree = "<group>"; };
 		AB73635A20B9624F000AEA34 /* ProfileTimelineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTimelineTableViewController.swift; sourceTree = "<group>"; };
 		AB73635C20B96361000AEA34 /* ProfileTimelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTimelineTableViewCell.swift; sourceTree = "<group>"; };
 		AB73635F20B968C8000AEA34 /* ProfileFollowTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFollowTableViewController.swift; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 				ABB6150E20CB448900929754 /* OperatorTableViewCell.xib */,
 				AB2DFEE620CBC7C4006DFB70 /* OpenChannelTableViewCell.swift */,
 				AB2DFEEA20CCA618006DFB70 /* TempMessageTableViewCell.swift */,
+				AB72ED7620CDAFE1000DA5C9 /* MessageSenderTableViewCell.swift */,
 			);
 			path = "TableViewCell Views";
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				ABB47FCF20BAC6A1006B83EB /* SPTImage.swift in Sources */,
 				AB72ED6B20CD4E34000DA5C9 /* TrackDynamicTableViewCell.swift in Sources */,
 				ABB47FCB20BAC519006B83EB /* SPTArtist.swift in Sources */,
+				AB72ED7720CDAFE1000DA5C9 /* MessageSenderTableViewCell.swift in Sources */,
 				AB72ED6420CD3A51000DA5C9 /* ArtistTableViewCell.swift in Sources */,
 				AB72ED6D20CD4ED6000DA5C9 /* ArtistDynamicTableViewCell.swift in Sources */,
 				ABB6152320CB9F9B00929754 /* CreateOpenChannelNavigationController.m in Sources */,
