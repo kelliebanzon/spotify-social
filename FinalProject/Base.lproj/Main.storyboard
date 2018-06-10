@@ -90,6 +90,7 @@
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SDBgroupChannel" translatesAutoresizingMaskIntoConstraints="NO" id="ytl-6u-UkS">
                                                     <rect key="frame" x="30" y="12" width="35" height="35"/>
+                                                    <color key="tintColor" name="SPTLightGray"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="ytl-6u-UkS" secondAttribute="height" multiplier="1:1" id="8xu-8A-mXc"/>
                                                     </constraints>
@@ -114,6 +115,7 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SDBopenChannel" translatesAutoresizingMaskIntoConstraints="NO" id="zbh-Dv-ptb">
                                                     <rect key="frame" x="30" y="12" width="35" height="35"/>
+                                                    <color key="tintColor" name="SPTLightGray"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="zbh-Dv-ptb" secondAttribute="height" multiplier="1:1" id="g4x-f5-j5H"/>
                                                     </constraints>
@@ -334,9 +336,16 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Bq-ri-Ogb">
-                                                    <rect key="frame" x="75" y="21" width="285" height="21"/>
+                                                    <rect key="frame" x="75" y="11" width="285" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="SPTWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJY-1d-5xG">
+                                                    <rect key="frame" x="75" y="32" width="285" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" name="SPTWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -345,6 +354,7 @@
                                         <connections>
                                             <outlet property="chatNameLabel" destination="9Bq-ri-Ogb" id="x9H-0d-6JW"/>
                                             <outlet property="chatProfilePictureImageView" destination="KBr-XT-y6B" id="pd3-T0-KjY"/>
+                                            <outlet property="participantNumberLabel" destination="QJY-1d-5xG" id="Bf3-Xl-dbL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -374,12 +384,83 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="PVj-1x-z0N" id="PLM-64-d4p"/>
+                        <segue destination="Dhe-do-JlB" kind="show" identifier="showOpenChannelChatVC" id="Yc9-iE-Nia"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnb-9F-Mog" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="xnF-58-qEY"/>
             </objects>
             <point key="canvasLocation" x="3728.8000000000002" y="-1347.0764617691154"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="otj-GH-jDk">
+            <objects>
+                <viewController id="Iwf-mw-LnP" customClass="OpenChannelChatViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zP7-Y7-SV9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wgd-XJ-2Mh">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tempMessageTVCell" rowHeight="80" id="WFL-e2-3ht" customClass="TempMessageTableViewCell" customModule="FinalProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WFL-e2-3ht" id="Nnb-9z-dSn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhP-QQ-CzQ">
+                                                    <rect key="frame" x="82" y="31" width="278" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="SPTWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2r8-9Q-O1h">
+                                                    <rect key="frame" x="82" y="11" width="211" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" name="SPTLightGray"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="arl-SF-3HA">
+                                                    <rect key="frame" x="15" y="11" width="54" height="58"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageTextLabel" destination="MhP-QQ-CzQ" id="s1P-cG-SBC"/>
+                                            <outlet property="senderNameLabel" destination="2r8-9Q-O1h" id="pDd-Lx-ARY"/>
+                                            <outlet property="senderProfileImageView" destination="arl-SF-3HA" id="euw-AW-4cy"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Iwf-mw-LnP" id="3XL-QZ-fL9"/>
+                                    <outlet property="delegate" destination="Iwf-mw-LnP" id="9Si-pt-odZ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Wgd-XJ-2Mh" secondAttribute="trailing" id="O7h-Kf-65o"/>
+                            <constraint firstItem="Wgd-XJ-2Mh" firstAttribute="bottom" secondItem="dzc-or-jI1" secondAttribute="bottom" id="XhH-Vu-G5T"/>
+                            <constraint firstItem="Wgd-XJ-2Mh" firstAttribute="leading" secondItem="zP7-Y7-SV9" secondAttribute="leading" id="qX9-KK-4X8"/>
+                            <constraint firstItem="Wgd-XJ-2Mh" firstAttribute="top" secondItem="dzc-or-jI1" secondAttribute="top" id="shB-h6-flo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dzc-or-jI1"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Chat" id="e1A-jP-J3h"/>
+                    <connections>
+                        <outlet property="tableView" destination="Wgd-XJ-2Mh" id="shc-sD-vTS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UzL-0h-6yK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5861.6000000000004" y="-1347.0764617691154"/>
         </scene>
         <!--Create Open Channel-->
         <scene sceneID="aEG-58-TFF">
@@ -490,7 +571,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vR-PE-Rbl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5852" y="-1347.0764617691154"/>
+            <point key="canvasLocation" x="5863" y="-2117"/>
         </scene>
         <!--Add Moderators-->
         <scene sceneID="f1T-xW-AKb">
@@ -545,7 +626,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qh9-vO-Cce" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Yub-yp-ooy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="7708" y="-1347.0764617691154"/>
+            <point key="canvasLocation" x="7719" y="-2117"/>
         </scene>
         <!--Search-->
         <scene sceneID="Hxu-hA-PkC">
@@ -784,7 +865,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNg-94-yTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4912.8000000000002" y="-1347.0764617691154"/>
+            <point key="canvasLocation" x="4924" y="-2117"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="d5Z-9N-uXB">
@@ -802,7 +883,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbq-Oh-cdO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6768.8000000000002" y="-1347.0764617691154"/>
+            <point key="canvasLocation" x="6780" y="-2117"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dfd-Fl-QHL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dhe-do-JlB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZAa-Qu-VbJ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Iwf-mw-LnP" kind="relationship" relationship="rootViewController" id="q1I-Hs-dAW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MRF-pO-ZnI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4924" y="-1347"/>
         </scene>
     </scenes>
     <resources>
@@ -822,6 +921,9 @@
         </namedColor>
         <namedColor name="SPTGray">
             <color red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SPTLightGray">
+            <color red="0.70196078431372544" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SPTWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

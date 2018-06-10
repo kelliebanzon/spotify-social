@@ -17,6 +17,8 @@ class OpenChannelsViewController: UIViewController, UITableViewDataSource, UITab
     var openChannelListQuery: SBDOpenChannelListQuery?
     var openChannelList: [SBDOpenChannel] = []
     
+    var channelToSegue: SBDOpenChannel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,10 +78,28 @@ class OpenChannelsViewController: UIViewController, UITableViewDataSource, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "OpenChannelTVCell", for: indexPath) as! OpenChannelTableViewCell
         let currentChannel = openChannelList[indexPath.row]
         cell.chatNameLabel.text = currentChannel.name
+        var participantString = " participant"
+        if currentChannel.participantCount != 1 {
+            participantString.append("s")
+        }
+        cell.participantNumberLabel.text = String(currentChannel.participantCount) + participantString
         cell.chatProfilePictureImageView.defaultOrDownloadedFrom(linkString: currentChannel.coverUrl!, defaultName: "defaultChatPicture")
         cell.chatProfilePictureImageView.roundCorners()
         //cell.chatProfilePictureImageView.setImageWith(URL(string: currentChannel.coverUrl!)!, placeholderImage: UIImage(named: "defaultChatPicture"))
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.channelToSegue = openChannelList[indexPath.row]
+        SBDOpenChannel.getWithUrl(self.channelToSegue.channelUrl) { (openChannel, error) in
+            if error != nil {
+                // Error!
+                return
+            }
+            self.performSegue(withIdentifier: "showOpenChannelChatVC", sender: self)
+            // Successfully fetched the channel.
+            // Do something with openChannel.
+        }
     }
     
 
@@ -90,12 +110,16 @@ class OpenChannelsViewController: UIViewController, UITableViewDataSource, UITab
         self.dismiss(animated: true, completion: nil)
     }
 
-    /*// In a storyboard-based application, you will often want to do a little preparation before navigation
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "showOpenChannelChatVC"){
+            let navVC = segue.destination as? UINavigationController
+            let destVC = navVC?.topViewController as? OpenChannelChatViewController
+            destVC?.currentChannelURL = self.channelToSegue.channelUrl
+        }
     }
-    */
     
 
 }

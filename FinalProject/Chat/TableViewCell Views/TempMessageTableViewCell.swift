@@ -1,5 +1,5 @@
 //
-//  OpenChannelTableViewCell.swift
+//  TempMessageTableViewCell.swift
 //  FinalProject
 //
 //  Created by Kellie Banzon on 06/09/18.
@@ -8,11 +8,12 @@
 
 import UIKit
 
-class OpenChannelTableViewCell: UITableViewCell {
+class TempMessageTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var chatProfilePictureImageView: UIImageView!
-    @IBOutlet weak var chatNameLabel: UILabel!
-    @IBOutlet weak var participantNumberLabel: UILabel!
+    @IBOutlet weak var senderProfileImageView: UIImageView!
+    @IBOutlet weak var senderNameLabel: UILabel!
+    @IBOutlet weak var messageTextLabel: UILabel!
+    @IBOutlet weak var timestampLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

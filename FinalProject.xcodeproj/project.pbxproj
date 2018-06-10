@@ -16,6 +16,8 @@
 		AB0EAC1420BC1457007D81D5 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0EAC1320BC1457007D81D5 /* ChatViewController.swift */; };
 		AB2DFEE520CBC693006DFB70 /* OpenChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DFEE420CBC693006DFB70 /* OpenChannelsViewController.swift */; };
 		AB2DFEE720CBC7C4006DFB70 /* OpenChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DFEE620CBC7C4006DFB70 /* OpenChannelTableViewCell.swift */; };
+		AB2DFEE920CC8544006DFB70 /* OpenChannelChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DFEE820CC8544006DFB70 /* OpenChannelChatViewController.swift */; };
+		AB2DFEEB20CCA618006DFB70 /* TempMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DFEEA20CCA618006DFB70 /* TempMessageTableViewCell.swift */; };
 		AB2E934420A18ECC004835A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2E934320A18ECC004835A8 /* AppDelegate.swift */; };
 		AB2E934620A18ECC004835A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2E934520A18ECC004835A8 /* ViewController.swift */; };
 		AB2E934920A18ECC004835A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB2E934720A18ECC004835A8 /* Main.storyboard */; };
@@ -91,6 +93,8 @@
 		AB0EAC1320BC1457007D81D5 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		AB2DFEE420CBC693006DFB70 /* OpenChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChannelsViewController.swift; sourceTree = "<group>"; };
 		AB2DFEE620CBC7C4006DFB70 /* OpenChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChannelTableViewCell.swift; sourceTree = "<group>"; };
+		AB2DFEE820CC8544006DFB70 /* OpenChannelChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChannelChatViewController.swift; sourceTree = "<group>"; };
+		AB2DFEEA20CCA618006DFB70 /* TempMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempMessageTableViewCell.swift; sourceTree = "<group>"; };
 		AB2E934020A18ECC004835A8 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2E934320A18ECC004835A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB2E934520A18ECC004835A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -332,6 +336,7 @@
 				ABB6151320CB8EFC00929754 /* TableViewCell Views */,
 				AB0EAC1320BC1457007D81D5 /* ChatViewController.swift */,
 				AB2DFEE420CBC693006DFB70 /* OpenChannelsViewController.swift */,
+				AB2DFEE820CC8544006DFB70 /* OpenChannelChatViewController.swift */,
 				ABB614FE20CA434300929754 /* CreateOpenChannelViewControllerA.h */,
 				ABB614FF20CA434300929754 /* CreateOpenChannelViewControllerA.m */,
 				ABB6151920CB953400929754 /* CreateOpenChannelViewControllerB.h */,
@@ -357,6 +362,7 @@
 				ABB6150D20CB448900929754 /* OperatorTableViewCell.m */,
 				ABB6150E20CB448900929754 /* OperatorTableViewCell.xib */,
 				AB2DFEE620CBC7C4006DFB70 /* OpenChannelTableViewCell.swift */,
+				AB2DFEEA20CCA618006DFB70 /* TempMessageTableViewCell.swift */,
 			);
 			path = "TableViewCell Views";
 			sourceTree = "<group>";
@@ -534,6 +540,7 @@
 				ABB47FCB20BAC519006B83EB /* SPTArtist.swift in Sources */,
 				ABB6152320CB9F9B00929754 /* CreateOpenChannelNavigationController.m in Sources */,
 				AB2DFEE720CBC7C4006DFB70 /* OpenChannelTableViewCell.swift in Sources */,
+				AB2DFEE920CC8544006DFB70 /* OpenChannelChatViewController.swift in Sources */,
 				ABB47FD720BB751D006B83EB /* SPTTrack.swift in Sources */,
 				AB2DFEE520CBC693006DFB70 /* OpenChannelsViewController.swift in Sources */,
 				AB0DE6E220BBFBBB000DE675 /* SearchViewController.swift in Sources */,
@@ -548,6 +555,7 @@
 				ABB47FC520BA58D2006B83EB /* SPTUser.swift in Sources */,
 				AB73636420B96A28000AEA34 /* ColorExtension.swift in Sources */,
 				AB38274A20B92D5E0006DA8C /* ProfileTabViewController.swift in Sources */,
+				AB2DFEEB20CCA618006DFB70 /* TempMessageTableViewCell.swift in Sources */,
 				ABB6150A20CA66EE00929754 /* SelectorOperatorsTableViewCell.m in Sources */,
 				AB2E934620A18ECC004835A8 /* ViewController.swift in Sources */,
 				AB38274E20B937430006DA8C /* ProfileFavoritesTabViewController.swift in Sources */,

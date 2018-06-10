@@ -60,7 +60,6 @@
 #pragma mark - TableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    printf("numberOfRowsInSection: %i\n", self.selectedUsersArray.count);
     return self.selectedUsersArray.count;
 }
 
