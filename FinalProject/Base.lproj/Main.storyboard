@@ -208,7 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgH-nW-zPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-188" y="-893"/>
+            <point key="canvasLocation" x="-188" y="-893.70314842578716"/>
         </scene>
         <!--Home-->
         <scene sceneID="YZF-7y-PHt">
@@ -639,21 +639,53 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkq-41-9vi">
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gi7-w4-vVH">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                                        <color key="tintColor" name="SPTGray"/>
-                                        <color key="barTintColor" name="SPTDarkGray"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pyb-g3-Vch">
+                                        <rect key="frame" x="8" y="56" width="359" height="542"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tempSearchResultTVCell" id="ZJv-oi-68Q" customClass="TempSearchResultTableViewCell" customModule="FinalProject" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="359" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZJv-oi-68Q" id="Scu-AT-0fV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SyS-w4-74r">
+                                                            <rect key="frame" x="15" y="12" width="329" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" name="SPTWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="tempLabel" destination="SyS-w4-74r" id="aJU-wy-IFF"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
                                         <connections>
-                                            <outlet property="delegate" destination="Nuy-D2-4bY" id="hiz-PZ-ca1"/>
+                                            <outlet property="dataSource" destination="Nuy-D2-4bY" id="pKA-37-3uD"/>
+                                            <outlet property="delegate" destination="Nuy-D2-4bY" id="2zG-bG-9eJ"/>
                                         </connections>
-                                    </searchBar>
+                                    </tableView>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="o6M-D5-tZ2">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Nuy-D2-4bY" id="ZIk-tA-xeV"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" name="SPTDarkGray"/>
                                 <constraints>
-                                    <constraint firstItem="gi7-w4-vVH" firstAttribute="top" secondItem="Gkq-41-9vi" secondAttribute="top" id="07W-8M-PFP"/>
-                                    <constraint firstAttribute="trailing" secondItem="gi7-w4-vVH" secondAttribute="trailing" id="B8d-JS-Tpm"/>
-                                    <constraint firstItem="gi7-w4-vVH" firstAttribute="leading" secondItem="Gkq-41-9vi" secondAttribute="leading" id="e6c-tP-tEZ"/>
+                                    <constraint firstItem="pyb-g3-Vch" firstAttribute="top" secondItem="Gkq-41-9vi" secondAttribute="top" constant="56" id="EHo-Sz-fmJ"/>
+                                    <constraint firstItem="pyb-g3-Vch" firstAttribute="leading" secondItem="Gkq-41-9vi" secondAttribute="leading" constant="8" id="aqI-0Q-oPa"/>
+                                    <constraint firstAttribute="bottom" secondItem="pyb-g3-Vch" secondAttribute="bottom" id="dT0-j6-u9j"/>
+                                    <constraint firstAttribute="trailing" secondItem="pyb-g3-Vch" secondAttribute="trailing" constant="8" id="rxq-6L-bFh"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -668,20 +700,21 @@
                     <tabBarItem key="tabBarItem" title="Search" image="search_transparent" id="kLK-F0-FXb"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="fSr-UY-J1c" id="XOp-eb-mo9"/>
+                        <outlet property="searchTextField" destination="o6M-D5-tZ2" id="lJg-mR-owf"/>
+                        <outlet property="tableView" destination="pyb-g3-Vch" id="Ghf-rr-J8L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Spf-q8-1In" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="fSr-UY-J1c">
                     <connections>
                         <outlet property="delegate" destination="Nuy-D2-4bY" id="tlT-SB-PcG"/>
-                        <outlet property="searchBar" destination="gi7-w4-vVH" id="DFF-zd-TEL"/>
                         <outlet property="searchContentsController" destination="Nuy-D2-4bY" id="Tis-n5-y0R"/>
                         <outlet property="searchResultsDataSource" destination="Nuy-D2-4bY" id="aAD-12-i7s"/>
                         <outlet property="searchResultsDelegate" destination="Nuy-D2-4bY" id="GFs-8b-3yM"/>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-1180" y="1030"/>
+            <point key="canvasLocation" x="-1180" y="1029.5352323838081"/>
         </scene>
         <!--Profile Timeline Table View Controller-->
         <scene sceneID="WL3-1u-XBt">
@@ -838,7 +871,6 @@
         <!--Chat-->
         <scene sceneID="5tb-9A-OHJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9iI-dw-51J" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="deX-d8-LwV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Chat" image="chat_transparent" id="cRa-3W-x3r"/>
                     <toolbarItems/>
@@ -851,6 +883,7 @@
                         <segue destination="ySr-Xi-RfH" kind="relationship" relationship="rootViewController" id="CBK-0C-Vwg"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9iI-dw-51J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2596" y="-1347"/>
         </scene>
@@ -923,9 +956,6 @@
         <image name="settings_transparent" width="25" height="25"/>
         <namedColor name="SPTDarkGray">
             <color red="0.12941176470588237" green="0.12941176470588237" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="SPTGray">
-            <color red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SPTLightGray">
             <color red="0.70196078431372544" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

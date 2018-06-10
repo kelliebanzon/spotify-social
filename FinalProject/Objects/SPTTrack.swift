@@ -8,6 +8,11 @@
 
 import Foundation
 
+struct SPTTrackListService: Codable {
+    var tracks: SPTTrackList
+}
+
+
 struct SPTTrackList: Codable {
     var items: [SPTTrack]
     var next: String?

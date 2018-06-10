@@ -8,9 +8,17 @@
 
 import Foundation
 
-/*struct SPTAlbum extends SPTAlbumSimple {
-    
-}*/
+struct SPTAlbumListService: Codable {
+    var albums: SPTAlbumList
+}
+
+
+struct SPTAlbumList: Codable {
+    var items: [SPTAlbumSimple]
+    var next: String?
+    var total: Int?
+    var href: String
+}
 
 
 struct SPTAlbumSimple: Codable {

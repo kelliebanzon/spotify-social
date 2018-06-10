@@ -92,8 +92,7 @@ class LoginViewController: UIViewController {
         // since this can be called from a notification which doesn't run on
         // the main thread, we must add this code to the main thread's queue
         DispatchQueue.main.async {
-            // Present next view controller or use performSegue(withIdentifier:, sender:)
-            
+    
             let session = URLSession(configuration: URLSessionConfiguration.default)
             var request = URLRequest(url: URL(string: self.apiStringCurrentUser)!)
             request.addValue("Bearer \(Constants.authKey)", forHTTPHeaderField: "Authorization")

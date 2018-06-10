@@ -8,7 +8,19 @@
 
 import Foundation
 
-struct SPTPlaylistSimple {
+struct SPTPlaylistSimpleListService: Codable {
+    var playlists: SPTPlaylistSimpleList
+}
+
+
+struct SPTPlaylistSimpleList: Codable {
+    var items: [SPTPlaylistSimple]
+    var next: String?
+    var total: Int
+    var href: String
+}
+
+struct SPTPlaylistSimple: Codable {
     
     var external_urls: [String: String]?
     var href: String
@@ -16,7 +28,12 @@ struct SPTPlaylistSimple {
     var images: [SPTImage]?
     var name: String
     var owner: SPTUser?
-    var tracks: [SPTTrack]?
+    //var tracks: [SPTTrack]?
+    var tracks: SPTPager?
     var type: String
     
+    struct SPTPager: Codable {
+        var href: String
+        var total: Int
+    }
 }

@@ -10,14 +10,14 @@ import Foundation
 
 struct SPTUser: Codable {
     var display_name: String?
-    var followers: SPTFollowers
+    var followers: SPTFollowers?
     var href: String
     var id: String
     var images: [SPTImage]?
     var type: String
     
     var description: String {
-        return "\(String(describing: display_name)), id: \(id), numfollowers: \(followers.total) type: \(type), href: \(href). images: \(String(describing: images))"
+        return "\(String(describing: display_name)), id: \(id), numfollowers: \(String(describing: followers?.total)) type: \(type), href: \(href). images: \(String(describing: images))"
     }
 
 }
