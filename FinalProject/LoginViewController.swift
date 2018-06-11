@@ -98,7 +98,7 @@ class LoginViewController: UIViewController {
         // When changing the UI, all actions must be done on the main thread,
         // since this can be called from a notification which doesn't run on
         // the main thread, we must add this code to the main thread's queue
-        DispatchQueue.main.async {
+        DispatchQueue.global(qos: .background).async {
     
             let session = URLSession(configuration: URLSessionConfiguration.default)
             var request = URLRequest(url: URL(string: self.apiStringCurrentUser)!)
@@ -111,19 +111,25 @@ class LoginViewController: UIViewController {
                 else if let data = receivedData {
                     do {
                         let decoder = JSONDecoder()
-                        self.currentUser = try decoder.decode(SPTUser.self, from: data)
-                        Constants.currentUser = self.currentUser
-                        
-                        /*var tempUserDict = ["href": Constants.currentUser!.href, "id": Constants.currentUser!.id]
-                        if let nickname = Constants.currentUser!.display_name {
-                            tempUserDict["display_name"] = nickname
+                        let currentUser = try decoder.decode(SPTUser.self, from: data)
+                        self.currentUser = currentUser
+                        Constants.currentUser = currentUser
+                        DispatchQueue.main.async {
+                            print(currentUser)
+                            
+                            print(self.currentUser)
+                            
+                            print(Constants.currentUser)
+                            if Constants.currentUser!.images!.count >= 1, let imageURL = Constants.currentUser!.images?[0].url {
+                                let tempFBUser = FBUser(display_name: Constants.currentUser!.display_name, href: Constants.currentUser!.href, id: Constants.currentUser!.id, imgURL: imageURL)
+                                self.usersRef.child(Constants.currentUser!.id).setValue(tempFBUser.toAnyObject())
+                            }
+                            else {
+                                let tempFBUser = FBUser(display_name: Constants.currentUser!.display_name, href: Constants.currentUser!.href, id: Constants.currentUser!.id, imgURL: nil)
+                                self.usersRef.child(Constants.currentUser!.id).setValue(tempFBUser.toAnyObject())
+                            }
+                            
                         }
-                        if let imgURL = Constants.currentUser!.images?[0].url {
-                            tempUserDict["profile_pic_url"] = imgURL
-                        }
-                        print(tempUserDict)*/
-                        let tempUser = FBUser(display_name: Constants.currentUser!.display_name, href: Constants.currentUser!.href, id: Constants.currentUser!.id, imgURL: Constants.currentUser!.images?[0].url)
-                        self.usersRef.child(Constants.currentUser!.id).setValue(tempUser.toAnyObject())
                         
                     } catch {
                         print("Exception on Decode: \(error)")

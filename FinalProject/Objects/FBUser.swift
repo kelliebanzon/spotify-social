@@ -16,6 +16,10 @@ class FBUser: NSObject, Codable {
     var id: String
     var imgURL: String?
     
+    override var description: String {
+        return "display_name: \(String(describing: display_name)), id: \(id). href: \(href), imgURL: \(String(describing: imgURL))"
+    }
+    
     init(display_name: String?, href: String, id: String, imgURL: String?){
         self.display_name = display_name
         self.href = href
@@ -31,7 +35,7 @@ class FBUser: NSObject, Codable {
         display_name = snapvals["display_name"] as? String
         href = snapvals["href"] as! String
         id = snapvals["id"] as! String
-        imgURL = snapvals["profile_pic_url"] as? String
+        imgURL = snapvals["imgURL"] as? String
     }
     
     func toAnyObject() -> Any {

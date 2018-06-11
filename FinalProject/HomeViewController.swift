@@ -12,6 +12,7 @@ import FirebaseDatabase
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
 
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var postButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
@@ -72,6 +73,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     DispatchQueue.main.async {
                         self.currentFBUsers = newUsers
                         print(self.currentFBUsers)
+                        
+                        self.tableView.rowHeight = UITableViewAutomaticDimension
+                        //self.tableView.estimatedRowHeight = 115
                         self.tableView.reloadData()
                     }
             })
@@ -95,6 +99,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeFeedItem", for: indexPath) as! PostTableViewCell
         let currentPost = self.timelinePosts![indexPath.row]
         let postSender = self.currentFBUsers![currentPost.senderID]
+        print(postSender?.description)
+        print("postSender imgURL")
         print(postSender?.imgURL)
         if let imageURL = postSender?.imgURL {
             cell.senderImageView.defaultOrDownloadedFrom(linkString: imageURL, defaultName: "defaultUserProfilePicture")
@@ -119,6 +125,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.setRetrieveCallback()
             self.tableView.reloadData()
         }
+    }
+    
+    @IBAction func cancelPost(){
+        self.textView.resignFirstResponder()
     }
 
     

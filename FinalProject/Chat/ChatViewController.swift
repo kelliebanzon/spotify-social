@@ -18,16 +18,41 @@ class ChatViewController: UITableViewController, SBDConnectionDelegate {
         SBDMain.connect(withUserId: Constants.currentUser!.id, completionHandler: { (user, error) in
             print("Connected to SendBird database")
             Constants.currentUserSBD = SBDMain.getCurrentUser()
-            if (Constants.currentUserSBD?.profileUrl != Constants.currentUser?.images?[0].url) || (Constants.currentUserSBD?.nickname != Constants.currentUser!.display_name) {
-                SBDMain.updateCurrentUserInfo(withNickname: (Constants.currentUser!.display_name ?? Constants.currentUser!.id), profileUrl: (Constants.currentUser?.images?[0].url ?? Constants.defaultCurrentUserProfilePictureName), completionHandler: { (error) in
-                    if (error != nil){
-                        print(error)
-                    }
-                    else{
-                        print("Updated nickname and profile picture")
-                    }
-                })
+            if Constants.currentUser!.images!.count >= 1, Constants.currentUserSBD?.profileUrl != Constants.currentUser?.images?[0].url {
+                if (Constants.currentUserSBD?.nickname != Constants.currentUser!.display_name) {
+                    SBDMain.updateCurrentUserInfo(withNickname: (Constants.currentUser!.display_name ?? Constants.currentUser!.id), profileUrl: (Constants.currentUser?.images?[0].url), completionHandler: { (error) in
+                        if (error != nil){
+                            print(error)
+                        }
+                        else{
+                            print("Updated nickname and profile picture URL")
+                        }
+                    })
+                }
+                else {
+                    SBDMain.updateCurrentUserInfo(withNickname: (nil), profileUrl: (Constants.currentUser?.images?[0].url), completionHandler: { (error) in
+                        if (error != nil){
+                            print(error)
+                        }
+                        else{
+                            print("Updated profile picture URL")
+                        }
+                    })
+                }
             }
+            else {
+                if (Constants.currentUserSBD?.nickname != Constants.currentUser!.display_name) {
+                    SBDMain.updateCurrentUserInfo(withNickname: Constants.currentUser!.display_name ?? Constants.currentUser!.id, profileImage: UIImagePNGRepresentation(UIImage(named: "defaultUserProfilePictureSquare")!), completionHandler: { (error) in
+                        if (error != nil){
+                            print(error)
+                        }
+                        else{
+                            print("Updated nickname and default UIImage")
+                        }
+                    })
+                }
+            }
+            
         })
     }
     
