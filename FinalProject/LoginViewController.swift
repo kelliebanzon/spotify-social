@@ -8,12 +8,15 @@
 
 import Foundation
 import SafariServices
+import FirebaseDatabase
 
 class LoginViewController: UIViewController {
     
     let apiStringCurrentUser = "https://api.spotify.com/v1/me"
     var authKey: String!
     var currentUser: SPTUser!
+    var ref: DatabaseReference!
+    var usersRef: DatabaseReference!
     
     
     @IBOutlet weak var loginButton: UIButton!
@@ -21,6 +24,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        ref = Database.database().reference()
+        usersRef = Database.database().reference(withPath: "users")
         
         
     }
@@ -107,6 +113,16 @@ class LoginViewController: UIViewController {
                         let decoder = JSONDecoder()
                         self.currentUser = try decoder.decode(SPTUser.self, from: data)
                         Constants.currentUser = self.currentUser
+                        
+                        var tempUserDict = ["href": Constants.currentUser!.href, "id": Constants.currentUser!.id]
+                        if let nickname = Constants.currentUser!.display_name {
+                            tempUserDict["display_name"] = nickname
+                        }
+                        if let imgURL = Constants.currentUser!.images?[0].url {
+                            tempUserDict["profile_pic_url"] = imgURL
+                        }
+                        print(tempUserDict)
+                        self.usersRef.child(Constants.currentUser!.id).setValue(tempUserDict)
                         
                     } catch {
                         print("Exception on Decode: \(error)")

@@ -7,16 +7,26 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
 
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var postButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    
+    var usersRef: DatabaseReference!
+    var postsRef: DatabaseReference!
+    
     var constraints = [NSLayoutConstraint]()
     var authKey: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        usersRef = Database.database().reference(withPath: "users")
+        postsRef = Database.database().reference(withPath: "posts")
+        
         // Do any additional setup after loading the view.
         //displayNavBar()
         
@@ -45,6 +55,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+    @IBAction func writePost(){
+        self.textView.resignFirstResponder()
+        if self.textView.hasText {
+            let timestamp = (Int(NSDate().timeIntervalSince1970.rounded(.down)))
+            let postToSubmit = Post(senderID: Constants.currentUser!.id, timestamp: timestamp, content: self.textView.text)
+            print(timestamp)
+            self.postsRef.child(String(timestamp)).setValue(postToSubmit.toAnyObject())
+            self.textView.text = ""
+            self.tableView.reloadData()
+        }
+    }
 
     
     // MARK: - Navigation

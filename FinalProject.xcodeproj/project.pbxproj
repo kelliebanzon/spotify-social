@@ -44,6 +44,8 @@
 		AB38274E20B937430006DA8C /* ProfileFavoritesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB38274D20B937430006DA8C /* ProfileFavoritesTabViewController.swift */; };
 		AB4F6CBF20CE9A4C0094853C /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F6CBE20CE9A4C0094853C /* AlbumViewController.swift */; };
 		AB4F6CC120CEA8130094853C /* AlbumTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F6CC020CEA8130094853C /* AlbumTrackTableViewCell.swift */; };
+		AB4F6CC420CECBEE0094853C /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F6CC320CECBEE0094853C /* PostTableViewCell.swift */; };
+		AB4F6CC620CECCB10094853C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F6CC520CECCB10094853C /* Post.swift */; };
 		AB72ED6120CD02A2000DA5C9 /* TempSearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72ED6020CD02A2000DA5C9 /* TempSearchResultTableViewCell.swift */; };
 		AB72ED6420CD3A51000DA5C9 /* ArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72ED6220CD3A51000DA5C9 /* ArtistTableViewCell.swift */; };
 		AB72ED6520CD3A51000DA5C9 /* ArtistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB72ED6320CD3A51000DA5C9 /* ArtistTableViewCell.xib */; };
@@ -143,6 +145,8 @@
 		AB38274D20B937430006DA8C /* ProfileFavoritesTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFavoritesTabViewController.swift; sourceTree = "<group>"; };
 		AB4F6CBE20CE9A4C0094853C /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		AB4F6CC020CEA8130094853C /* AlbumTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTrackTableViewCell.swift; sourceTree = "<group>"; };
+		AB4F6CC320CECBEE0094853C /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		AB4F6CC520CECCB10094853C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		AB72ED6020CD02A2000DA5C9 /* TempSearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempSearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		AB72ED6220CD3A51000DA5C9 /* ArtistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistTableViewCell.swift; sourceTree = "<group>"; };
 		AB72ED6320CD3A51000DA5C9 /* ArtistTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistTableViewCell.xib; sourceTree = "<group>"; };
@@ -284,6 +288,7 @@
 				AB73636620B9EA33000AEA34 /* FinalProject-Bridging-Header.h */,
 				AB72ED7A20CDC995000DA5C9 /* SPTArtist View */,
 				AB4F6CC220CEA81D0094853C /* SPTAlbum View */,
+				AB4F6CC320CECBEE0094853C /* PostTableViewCell.swift */,
 			);
 			path = FinalProject;
 			sourceTree = "<group>";
@@ -395,6 +400,7 @@
 				ABB47FC420BA58D2006B83EB /* SPTUser.swift */,
 				AB2DFEEC20CCEDBC006DFB70 /* SPTSearchResults.swift */,
 				AB2DFEEE20CCFF96006DFB70 /* SPTPagingObject.swift */,
+				AB4F6CC520CECCB10094853C /* Post.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -564,21 +570,25 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
 				"${PODS_ROOT}/SendBirdSDK/SendBirdSDK.framework",
 				"${PODS_ROOT}/SendBirdSDK/SendBirdSDK.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SendBirdSDK.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/SendBirdSDK.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -611,6 +621,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB4F6CC420CECBEE0094853C /* PostTableViewCell.swift in Sources */,
 				AB73637120B9F4FB000AEA34 /* NotificationExtension.swift in Sources */,
 				ABB6150F20CB448900929754 /* OperatorTableViewCell.m in Sources */,
 				ABB47FD920BB7561006B83EB /* SPTAlbum.swift in Sources */,
@@ -649,6 +660,7 @@
 				AB73635B20B9624F000AEA34 /* ProfileTimelineTableViewController.swift in Sources */,
 				AB2E935620A190DE004835A8 /* ProfileViewController.swift in Sources */,
 				AB4F6CBF20CE9A4C0094853C /* AlbumViewController.swift in Sources */,
+				AB4F6CC620CECCB10094853C /* Post.swift in Sources */,
 				ABB47FD120BAC8C8006B83EB /* SPTFollowers.swift in Sources */,
 				AB2DFEEF20CCFF96006DFB70 /* SPTPagingObject.swift in Sources */,
 				ABB47FC520BA58D2006B83EB /* SPTUser.swift in Sources */,

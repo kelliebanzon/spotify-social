@@ -8,6 +8,8 @@ target 'FinalProject' do
   # Pods for FinalProject
   pod 'XLPagerTabStrip', '~> 8.0'
   pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
   pod 'SendBirdSDK'
   pod 'AFNetworking', '~> 3.0'
   pod 'RSKImageCropper'
