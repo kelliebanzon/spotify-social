@@ -77,9 +77,15 @@ class ProfileFollowTableViewController: UITableViewController, IndicatorInfoProv
         let artist = currentUserFollowingList![indexPath.row]
         cell.artistNameLabel.text = artist.name
         cell.artistNameLabel.textColor = UIColor(named: "SPTWhite")
-        cell.artistNumFollowersLabel.text = "\(artist.followers.total.withCommas()) Followers"
+        if let numFollowers = artist.followers?.total {
+            cell.artistNumFollowersLabel.text = String(numFollowers.withCommas()) + " Followers"
+        }
+        else {
+            cell.artistNumFollowersLabel.text = ""
+        }
         cell.artistNumFollowersLabel.textColor = UIColor(named: "SPTWhite")
         cell.artistPictureImageView.defaultOrDownloadedFrom(imageList: artist.images, defaultName: Constants.defaultArtistProfilePictureName)
+        cell.artistPictureImageView.roundCorners()
         return cell
     }
     

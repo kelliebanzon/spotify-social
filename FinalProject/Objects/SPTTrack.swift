@@ -12,6 +12,9 @@ struct SPTTrackListService: Codable {
     var tracks: SPTTrackList
 }
 
+struct SPTTrackListBasic: Codable {
+    var tracks: [SPTTrack]
+}
 
 struct SPTTrackList: Codable {
     var items: [SPTTrack]

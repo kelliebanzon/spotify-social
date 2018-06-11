@@ -22,6 +22,8 @@ class ProfileTimelineTableViewController: UITableViewController, IndicatorInfoPr
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         let session = URLSession(configuration: URLSessionConfiguration.default)
         var requestTracks = URLRequest(url: URL(string: "tracks?time_range=short_term&limit=10", relativeTo: apiURLCurrentUserTop)!)
         requestTracks.addValue("Bearer \(Constants.authKey)", forHTTPHeaderField: "Authorization")
@@ -93,6 +95,29 @@ class ProfileTimelineTableViewController: UITableViewController, IndicatorInfoPr
         }
     }
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.frame = CGRect(x: 16, y: 0, width: UIScreen.main.bounds.width, height: 30)
+        label.font = UIFont(name: "CircularStd-Medium", size: 18)
+        label.textColor = UIColor(named: "SPTWhite")
+        label.text = self.tableView(tableView, titleForHeaderInSection: section)
+        
+        let headerView = UIView()
+        headerView.addSubview(label)
+        headerView.backgroundColor = UIColor(named: "SPTDarkGray")
+        return headerView
+    }
+    
+    /*override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        print("viewForHeaderInSection")
+        let headerView = UITableViewHeaderFooterView()
+        headerView.backgroundView?.backgroundColor = UIColor(named: "SPTDarkGray")
+        headerView.backgroundView?.tintColor = UIColor(named: "SPTDarkGray")
+        headerView.textLabel?.textColor = UIColor(named: "SPTWhite")
+        headerView.textLabel?.font = UIFont(name: "CircularStd-Medium", size:14)
+        return headerView
+    }*/
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 95
     }
@@ -115,7 +140,6 @@ class ProfileTimelineTableViewController: UITableViewController, IndicatorInfoPr
             let cell = tableView.dequeueReusableCell(withIdentifier: "trackDynamicTVCell") as! TrackDynamicTableViewCell
             let currentTrack = self.currentUserTopTracks![indexPath.row]
             cell.trackImageView.defaultOrDownloadedFrom(imageList: currentTrack.album.images, defaultName: "defaultSongPictureSquare")
-            cell.trackImageView.roundCorners()
             cell.trackNameLabel.text = currentTrack.name
             cell.artistNameLabel.text = currentTrack.artists[0].name
             cell.albumNameLabel.text = currentTrack.album.name
@@ -124,6 +148,7 @@ class ProfileTimelineTableViewController: UITableViewController, IndicatorInfoPr
             let cell = tableView.dequeueReusableCell(withIdentifier: "artistDynamicTVCell") as! ArtistDynamicTableViewCell
             let currentArtist = self.currentUserTopArtists![indexPath.row]
             cell.artistImageView.defaultOrDownloadedFrom(imageList: currentArtist.images, defaultName: "defaultArtistProfilePicture")
+            cell.artistImageView.roundCorners()
             cell.artistNameLabel.text = currentArtist.name
             return cell
         }

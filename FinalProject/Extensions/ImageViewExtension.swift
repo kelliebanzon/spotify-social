@@ -42,7 +42,6 @@ extension UIImageView {
         if let imgList = imageList, imgList.count > 0 {
             if ConstantFuncs().verifyUrl(urlString: imgList[0].url) == true {
                 self.downloadedFrom(url: URL(string: imgList[0].url)!, contentMode: .scaleAspectFill)
-                self.roundCorners()
             }
         }
         else{

@@ -24,7 +24,7 @@ struct SPTArtistList: Codable {
 struct SPTArtist: Codable {
     
     var external_urls: [String: String]?
-    var followers: SPTFollowers
+    var followers: SPTFollowers?
     var href: String
     var id: String
     var images: [SPTImage]?
@@ -33,7 +33,7 @@ struct SPTArtist: Codable {
     var type: String
     
     var description: String {
-        return "\(String(describing: name)), id: \(id), numfollowers: \(followers.total), popularity: \(popularity). type: \(type), href: \(href). images: \(String(describing: images)), external_urls: \(String(describing: external_urls))"
+        return "\(String(describing: name)), id: \(id), numfollowers: \(String(describing: followers?.total)), popularity: \(popularity). type: \(type), href: \(href). images: \(String(describing: images)), external_urls: \(String(describing: external_urls))"
     }
     
 }

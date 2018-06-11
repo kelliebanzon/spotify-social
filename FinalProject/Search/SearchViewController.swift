@@ -27,7 +27,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         //displaySearchBar()
 
-        
+        searchTextField.backgroundColor = UIColor(named: "SPTGray")
+        searchTextField.textColor = UIColor(named: "SPTWhite")
     }
 
     override func didReceiveMemoryWarning() {
@@ -98,9 +99,9 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         if let searchText = searchBar.text {
             let session = URLSession(configuration: URLSessionConfiguration.default)
-            let requestSearchTermsURL = URL(string: "?q=" + searchText + "*", relativeTo: self.apiSearchURL)
+            //let requestSearchTermsURL = URL(string: "?q=" + searchText + "*", relativeTo: self.apiSearchURL)
             let fullRequestSearchURL = URL(string: "?q=" + searchText + "*" + "&type=track%2Cartist%2Calbum%2Cplaylist&limit=1", relativeTo: self.apiSearchURL)
-            print(fullRequestSearchURL)
+            //print(fullRequestSearchURL)
             var requestSearch = URLRequest(url: fullRequestSearchURL!)
             requestSearch.addValue("Bearer \(Constants.authKey)", forHTTPHeaderField: "Authorization")
             print(requestSearch)
@@ -161,6 +162,25 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.frame = CGRect(x: 16, y: 0, width: UIScreen.main.bounds.width, height: 30)
+        label.font = UIFont(name: "CircularStd-Medium", size: 18)
+        label.textColor = UIColor(named: "SPTWhite")
+        label.text = self.tableView(tableView, titleForHeaderInSection: section)
+        
+        let headerView = UIView()
+        headerView.addSubview(label)
+        headerView.backgroundColor = UIColor(named: "SPTDarkGray")
+        return headerView
+    }
+    
+    /*func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let headerView = UITableViewHeaderFooterView()
+        headerView.textLabel?.textColor = UIColor(named: "SPTWhite")
+        return headerView
+    }*/
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
@@ -189,7 +209,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.artistNameLabel.text = currentTrack.artists[0].name
             cell.albumNameLabel.text = currentTrack.album.name
             cell.trackImageView.defaultOrDownloadedFrom(imageList: currentTrack.album.images, defaultName: "defaultSongPictureSquare")
-            cell.trackImageView.roundCorners()
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "searchArtistTVCell") as! SearchArtistTableViewCell
@@ -202,7 +221,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let cell = tableView.dequeueReusableCell(withIdentifier: "searchAlbumTVCell") as! SearchAlbumTableViewCell
             let currentAlbum = self.resultsAlbums![indexPath.row]
             cell.albumImageView.defaultOrDownloadedFrom(imageList: currentAlbum.images, defaultName: "defaultSongPictureSquare")
-            cell.albumImageView.roundCorners()
             cell.albumNameLabel.text = currentAlbum.name
             cell.artistNameLabel.text = currentAlbum.artists[0].name
             return cell
@@ -210,7 +228,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let cell = tableView.dequeueReusableCell(withIdentifier: "searchPlaylistTVCell") as! SearchPlaylistTableViewCell
             let currentPlaylist = self.resultsPlaylists![indexPath.row]
             cell.playlistImageView.defaultOrDownloadedFrom(imageList: currentPlaylist.images, defaultName: "defaultSongPictureSquare")
-            cell.playlistImageView.roundCorners()
             cell.playlistNameLabel.text = currentPlaylist.name
             cell.ownerNameLabel.text = currentPlaylist.owner?.display_name ?? currentPlaylist.owner?.id
             return cell
@@ -237,14 +254,26 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }*/
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showArtistResult" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let destVC = segue.destination as! SPTArtistViewController
+                destVC.artistID = self.resultsArtists![indexPath.row].id
+            }
+        }
+        else if segue.identifier == "showArtist" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let navVC = segue.destination as! UINavigationController
+                let destVC = navVC.topViewController as!                 ArtistCollectionViewController
+                destVC.artistID = self.resultsArtists![indexPath.row].id
+            }
+        }
     }
-    */
 
 }

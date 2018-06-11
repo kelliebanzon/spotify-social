@@ -27,6 +27,7 @@ class ProfileViewController: UIViewController {
         //sptQuery(urlString: apiStringCurrentUser, decodeType: SPTUser, completion: displayProfileCompletion)
         
         self.profilePictureImageView.defaultOrDownloadedFrom(imageList: Constants.currentUser?.images, defaultName: Constants.defaultCurrentUserProfilePictureName)
+        self.profilePictureImageView.roundCorners()
         self.displayDisplayName()
         
         
@@ -90,6 +91,7 @@ class ProfileViewController: UIViewController {
     func displayProfileCompletion(){
         Constants.currentUser = self.decodeVar as! SPTUser
         self.profilePictureImageView.defaultOrDownloadedFrom(imageList: Constants.currentUser?.images, defaultName: Constants.defaultCurrentUserProfilePictureName)
+        self.profilePictureImageView.roundCorners()
         self.displayDisplayName()
     }
 

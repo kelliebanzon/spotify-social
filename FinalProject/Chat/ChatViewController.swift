@@ -20,7 +20,12 @@ class ChatViewController: UITableViewController, SBDConnectionDelegate {
             Constants.currentUserSBD = SBDMain.getCurrentUser()
             if (Constants.currentUserSBD?.profileUrl != Constants.currentUser?.images?[0].url) || (Constants.currentUserSBD?.nickname != Constants.currentUser!.display_name) {
                 SBDMain.updateCurrentUserInfo(withNickname: (Constants.currentUser!.display_name ?? Constants.currentUser!.id), profileUrl: (Constants.currentUser?.images?[0].url ?? Constants.defaultCurrentUserProfilePictureName), completionHandler: { (error) in
-                    print("Updated nickname and profile picture")
+                    if (error != nil){
+                        print(error)
+                    }
+                    else{
+                        print("Updated nickname and profile picture")
+                    }
                 })
             }
         })
