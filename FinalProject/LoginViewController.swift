@@ -114,15 +114,16 @@ class LoginViewController: UIViewController {
                         self.currentUser = try decoder.decode(SPTUser.self, from: data)
                         Constants.currentUser = self.currentUser
                         
-                        var tempUserDict = ["href": Constants.currentUser!.href, "id": Constants.currentUser!.id]
+                        /*var tempUserDict = ["href": Constants.currentUser!.href, "id": Constants.currentUser!.id]
                         if let nickname = Constants.currentUser!.display_name {
                             tempUserDict["display_name"] = nickname
                         }
                         if let imgURL = Constants.currentUser!.images?[0].url {
                             tempUserDict["profile_pic_url"] = imgURL
                         }
-                        print(tempUserDict)
-                        self.usersRef.child(Constants.currentUser!.id).setValue(tempUserDict)
+                        print(tempUserDict)*/
+                        let tempUser = FBUser(display_name: Constants.currentUser!.display_name, href: Constants.currentUser!.href, id: Constants.currentUser!.id, imgURL: Constants.currentUser!.images?[0].url)
+                        self.usersRef.child(Constants.currentUser!.id).setValue(tempUser.toAnyObject())
                         
                     } catch {
                         print("Exception on Decode: \(error)")

@@ -10,6 +10,7 @@ import UIKit
 
 class PostTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var senderImageView: UIImageView!
     @IBOutlet weak var senderNameLabel: UILabel!
     @IBOutlet weak var messageText: UILabel!
 

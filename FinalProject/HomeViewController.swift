@@ -17,6 +17,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var usersRef: DatabaseReference!
     var postsRef: DatabaseReference!
+    var timelinePosts: [Post]?
+    var currentFBUsers: [String: FBUser]?
     
     var constraints = [NSLayoutConstraint]()
     var authKey: String!
@@ -27,6 +29,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         usersRef = Database.database().reference(withPath: "users")
         postsRef = Database.database().reference(withPath: "posts")
         
+        
+        self.setRetrieveCallback()
         // Do any additional setup after loading the view.
         //displayNavBar()
         
@@ -42,16 +46,65 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
     
+    func setRetrieveCallback() {
+        
+        DispatchQueue.global(qos: .background).async {
+            self.postsRef.queryOrdered(byChild: "posts").observe(.value, with:
+                { snapshot in
+                    var newPosts = [Post]()
+                    for item in snapshot.children {
+                        let tempPost = Post(snapshot: item as! DataSnapshot)
+                        newPosts.append(tempPost)
+                    }
+                    DispatchQueue.main.async {
+                        // Update the UI to indicate the work has been completed
+                        self.timelinePosts = newPosts
+                    }
+                    
+            })
+            self.usersRef.queryOrdered(byChild: "users").observe(.value, with:
+                { snapshot in
+                    var newUsers = [String: FBUser]()
+                    for item in snapshot.children {
+                        let tempUser = FBUser(snapshot: item as! DataSnapshot)
+                        newUsers[tempUser.id] = tempUser
+                    }
+                    DispatchQueue.main.async {
+                        self.currentFBUsers = newUsers
+                        print(self.currentFBUsers)
+                        self.tableView.reloadData()
+                    }
+            })
+        }
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.timelinePosts?.count ?? 0
     }
     
+    /*func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 125
+    }*/
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "homeFeedItem", for: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "homeFeedItem", for: indexPath) as! PostTableViewCell
+        let currentPost = self.timelinePosts![indexPath.row]
+        let postSender = self.currentFBUsers![currentPost.senderID]
+        print(postSender?.imgURL)
+        if let imageURL = postSender?.imgURL {
+            cell.senderImageView.defaultOrDownloadedFrom(linkString: imageURL, defaultName: "defaultUserProfilePicture")
+        }
+        else {
+            cell.senderImageView.image = UIImage(named: "defaultUserProfilePicture")
+        }
+        cell.senderImageView.roundCorners()
+        cell.senderNameLabel.text = postSender?.display_name ?? postSender?.id
+        cell.messageText.text = currentPost.content
         return cell
     }
     
@@ -63,6 +116,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             print(timestamp)
             self.postsRef.child(String(timestamp)).setValue(postToSubmit.toAnyObject())
             self.textView.text = ""
+            self.setRetrieveCallback()
             self.tableView.reloadData()
         }
     }

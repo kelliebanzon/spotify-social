@@ -46,6 +46,7 @@
 		AB4F6CC120CEA8130094853C /* AlbumTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F6CC020CEA8130094853C /* AlbumTrackTableViewCell.swift */; };
 		AB4F6CC420CECBEE0094853C /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F6CC320CECBEE0094853C /* PostTableViewCell.swift */; };
 		AB4F6CC620CECCB10094853C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F6CC520CECCB10094853C /* Post.swift */; };
+		AB4F6CC820CED0210094853C /* FBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F6CC720CED0210094853C /* FBUser.swift */; };
 		AB72ED6120CD02A2000DA5C9 /* TempSearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72ED6020CD02A2000DA5C9 /* TempSearchResultTableViewCell.swift */; };
 		AB72ED6420CD3A51000DA5C9 /* ArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72ED6220CD3A51000DA5C9 /* ArtistTableViewCell.swift */; };
 		AB72ED6520CD3A51000DA5C9 /* ArtistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB72ED6320CD3A51000DA5C9 /* ArtistTableViewCell.xib */; };
@@ -147,6 +148,7 @@
 		AB4F6CC020CEA8130094853C /* AlbumTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTrackTableViewCell.swift; sourceTree = "<group>"; };
 		AB4F6CC320CECBEE0094853C /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		AB4F6CC520CECCB10094853C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		AB4F6CC720CED0210094853C /* FBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUser.swift; sourceTree = "<group>"; };
 		AB72ED6020CD02A2000DA5C9 /* TempSearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempSearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		AB72ED6220CD3A51000DA5C9 /* ArtistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistTableViewCell.swift; sourceTree = "<group>"; };
 		AB72ED6320CD3A51000DA5C9 /* ArtistTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistTableViewCell.xib; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 				AB2DFEEC20CCEDBC006DFB70 /* SPTSearchResults.swift */,
 				AB2DFEEE20CCFF96006DFB70 /* SPTPagingObject.swift */,
 				AB4F6CC520CECCB10094853C /* Post.swift */,
+				AB4F6CC720CED0210094853C /* FBUser.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 				ABB47FD720BB751D006B83EB /* SPTTrack.swift in Sources */,
 				AB72ED6120CD02A2000DA5C9 /* TempSearchResultTableViewCell.swift in Sources */,
 				AB72ED7320CD5BDC000DA5C9 /* SearchAlbumTableViewCell.swift in Sources */,
+				AB4F6CC820CED0210094853C /* FBUser.swift in Sources */,
 				AB2DFEE520CBC693006DFB70 /* OpenChannelsViewController.swift in Sources */,
 				AB0DE6E220BBFBBB000DE675 /* SearchViewController.swift in Sources */,
 				AB72ED7520CD5D80000DA5C9 /* SearchPlaylistTableViewCell.swift in Sources */,
