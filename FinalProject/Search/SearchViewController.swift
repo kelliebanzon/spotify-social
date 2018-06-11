@@ -207,8 +207,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let currentTrack = self.resultsTracks![indexPath.row]
             cell.trackNameLabel.text = currentTrack.name
             cell.artistNameLabel.text = currentTrack.artists[0].name
-            cell.albumNameLabel.text = currentTrack.album.name
-            cell.trackImageView.defaultOrDownloadedFrom(imageList: currentTrack.album.images, defaultName: "defaultSongPictureSquare")
+            cell.albumNameLabel.text = currentTrack.album?.name
+            cell.trackImageView.defaultOrDownloadedFrom(imageList: currentTrack.album?.images, defaultName: "defaultSongPictureSquare")
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "searchArtistTVCell") as! SearchArtistTableViewCell
@@ -272,6 +272,18 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let navVC = segue.destination as! UINavigationController
                 let destVC = navVC.topViewController as!                 ArtistCollectionViewController
                 destVC.artistID = self.resultsArtists![indexPath.row].id
+            }
+        }
+        else if segue.identifier == "showAlbum" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let destVC = segue.destination as! AlbumViewController
+                destVC.albumID = self.resultsAlbums![indexPath.row].id
+            }
+        }
+        else if segue.identifier == "showAlbumFromTrack" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let destVC = segue.destination as! AlbumViewController
+                destVC.albumID = self.resultsTracks![indexPath.row].album?.id
             }
         }
     }

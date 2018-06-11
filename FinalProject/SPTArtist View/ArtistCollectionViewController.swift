@@ -169,9 +169,9 @@ class ArtistCollectionViewController: UICollectionViewController, UICollectionVi
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "trackCell", for: indexPath) as! TopTrackCollectionViewCell
             let track = self.topTracks![indexPath.row]
-            cell.albumImageView.defaultOrDownloadedFrom(imageList: track.album.images, defaultName: "defaultSongPictureSquare")
+            cell.albumImageView.defaultOrDownloadedFrom(imageList: track.album?.images, defaultName: "defaultSongPictureSquare")
             cell.trackNameLabel.text = track.name
-            cell.yearLabel.text = track.album.release_date
+            cell.yearLabel.text = track.album?.release_date
             return cell
         default:
             // TODO

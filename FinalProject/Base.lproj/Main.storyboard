@@ -17,6 +17,12 @@
         <array key="circular-bold.otf">
             <string>CircularStd-Bold</string>
         </array>
+        <array key="circular-book.otf">
+            <string>CircularStd-Book</string>
+        </array>
+        <array key="circular-medium.otf">
+            <string>CircularStd-Medium</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Profile-->
@@ -171,22 +177,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohJ-C1-Poc">
-                                <rect key="frame" x="155" y="323" width="64" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nickname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1g-Qc-oaO">
+                                <rect key="frame" x="16" y="299" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="50U-Um-UWu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
+                                <color key="textColor" name="SPTWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current User:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1n-UC-tw2">
+                                <rect key="frame" x="16" y="269" width="343" height="22"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="17"/>
+                                <color key="textColor" name="SPTWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3J-Oa-lEi">
+                                <rect key="frame" x="108" y="539" width="158" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="dG5-zE-rvH"/>
+                                </constraints>
+                                <state key="normal" image="spotifyLogOutButton">
+                                    <color key="titleColor" name="SPTWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOut" destination="uZ9-w8-3cN" eventType="touchUpInside" id="XhF-PE-Egw"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="SPTBlack"/>
+                        <constraints>
+                            <constraint firstItem="u1g-Qc-oaO" firstAttribute="centerY" secondItem="MND-gq-mIO" secondAttribute="centerY" id="5Qj-f7-Fuk"/>
+                            <constraint firstItem="W1n-UC-tw2" firstAttribute="leading" secondItem="MND-gq-mIO" secondAttribute="leadingMargin" id="SlI-7S-tyS"/>
+                            <constraint firstItem="yo5-U2-gqK" firstAttribute="bottom" secondItem="A3J-Oa-lEi" secondAttribute="bottom" constant="37" id="ll6-wQ-L8A"/>
+                            <constraint firstItem="A3J-Oa-lEi" firstAttribute="leading" secondItem="yo5-U2-gqK" secondAttribute="leading" constant="108" id="mK9-ZK-NID"/>
+                            <constraint firstItem="u1g-Qc-oaO" firstAttribute="top" secondItem="W1n-UC-tw2" secondAttribute="bottom" constant="8" symbolic="YES" id="qcY-8W-Yjc"/>
+                            <constraint firstItem="W1n-UC-tw2" firstAttribute="trailing" secondItem="MND-gq-mIO" secondAttribute="trailingMargin" id="qtw-X0-rLV"/>
+                            <constraint firstItem="u1g-Qc-oaO" firstAttribute="centerX" secondItem="A3J-Oa-lEi" secondAttribute="centerX" id="rnW-Vw-Mzx"/>
+                            <constraint firstItem="W1n-UC-tw2" firstAttribute="trailing" secondItem="u1g-Qc-oaO" secondAttribute="trailing" id="viR-7E-vJ5"/>
+                            <constraint firstItem="W1n-UC-tw2" firstAttribute="leading" secondItem="u1g-Qc-oaO" secondAttribute="leading" id="w79-dn-NCr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yo5-U2-gqK"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="settings_transparent" id="xa3-uF-YTF"/>
+                    <connections>
+                        <outlet property="currentUserLabel" destination="u1g-Qc-oaO" id="xFW-NM-Jrs"/>
+                        <outlet property="logOutButton" destination="A3J-Oa-lEi" id="T3Z-QF-Pln"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBu-68-yri" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1281" y="-664"/>
+            <point key="canvasLocation" x="1280.8" y="-664.31784107946032"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="RWu-NA-iO9">
@@ -196,9 +237,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pk2-xK-pee">
-                                <rect key="frame" x="79" y="314" width="217" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash75Opacity" translatesAutoresizingMaskIntoConstraints="NO" id="edv-dP-8g5">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pk2-xK-pee">
+                                <rect key="frame" x="78" y="570" width="217" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="217" id="gUc-rd-OFA"/>
+                                    <constraint firstAttribute="height" constant="38" id="tbn-gc-SYg"/>
+                                </constraints>
                                 <state key="normal" image="connectWithSpotifyButton.png">
                                     <color key="titleColor" name="SPTWhite"/>
                                 </state>
@@ -206,8 +253,32 @@
                                     <action selector="loginButtonPressed:" destination="XiX-q2-6wc" eventType="touchUpInside" id="C78-eD-9tX"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0C-qY-Tx6">
+                                <rect key="frame" x="52" y="523" width="270" height="29.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Discover music together.">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="23" name="CircularStd-Black"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" name="SPTLightGray"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="edv-dP-8g5" firstAttribute="leading" secondItem="Hfz-af-xyE" secondAttribute="leading" id="3EA-6s-Poc"/>
+                            <constraint firstItem="edv-dP-8g5" firstAttribute="centerX" secondItem="w0C-qY-Tx6" secondAttribute="centerX" id="UiF-9f-EpC"/>
+                            <constraint firstItem="edv-dP-8g5" firstAttribute="bottom" secondItem="9ar-g2-8iU" secondAttribute="bottom" id="WeC-dD-46s"/>
+                            <constraint firstItem="pk2-xK-pee" firstAttribute="top" secondItem="w0C-qY-Tx6" secondAttribute="bottom" constant="17" id="c98-Le-N1F"/>
+                            <constraint firstItem="edv-dP-8g5" firstAttribute="top" secondItem="9ar-g2-8iU" secondAttribute="top" id="cVl-HW-JoF"/>
+                            <constraint firstItem="edv-dP-8g5" firstAttribute="centerX" secondItem="pk2-xK-pee" secondAttribute="centerX" constant="1" id="lIt-Gm-ICc"/>
+                            <constraint firstAttribute="trailing" secondItem="edv-dP-8g5" secondAttribute="trailing" id="qOJ-Na-HSb"/>
+                            <constraint firstItem="9ar-g2-8iU" firstAttribute="bottom" secondItem="pk2-xK-pee" secondAttribute="bottom" constant="59" id="zFX-yT-KuQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9ar-g2-8iU"/>
                     </view>
                     <connections>
@@ -743,7 +814,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3AU-of-8d3">
-                                                    <rect key="frame" x="81" y="5" width="282" height="21"/>
+                                                    <rect key="frame" x="81" y="5" width="274" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="SPTWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -772,6 +843,7 @@
                                             <outlet property="albumImageView" destination="nH7-II-CfD" id="b5h-dL-iG8"/>
                                             <outlet property="trackNameLabel" destination="3AU-of-8d3" id="NrN-ej-B0v"/>
                                             <outlet property="yearLabel" destination="XRV-AM-1e1" id="OCV-hw-j0g"/>
+                                            <segue destination="EgJ-QS-mnm" kind="show" identifier="showAlbumFromTrack" id="OyI-W7-yvX"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="albumCell" id="UFp-Rk-fJ7" customClass="AlbumCollectionViewCell" customModule="FinalProject" customModuleProvider="target">
@@ -820,6 +892,7 @@
                                             <outlet property="albumImageView" destination="chV-kr-pKL" id="qui-No-s7X"/>
                                             <outlet property="albumNameLabel" destination="tNG-ms-k3h" id="EeR-Un-XTF"/>
                                             <outlet property="albumYearLabel" destination="tba-HT-SfF" id="sec-sq-HyJ"/>
+                                            <segue destination="EgJ-QS-mnm" kind="show" identifier="showAlbumFromAlbum" id="Vhw-TS-pQ7"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -895,7 +968,168 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Cg-gz-4H7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2202.4000000000001" y="552.77361319340332"/>
+            <point key="canvasLocation" x="-1647.2" y="602.24887556221893"/>
+        </scene>
+        <!--Album View Controller-->
+        <scene sceneID="fTf-r0-Ss4">
+            <objects>
+                <viewController id="EgJ-QS-mnm" customClass="AlbumViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yLf-8t-a0y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="51S-Bo-6xa">
+                                <rect key="frame" x="250" y="80" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="HMj-xQ-XKU"/>
+                                    <constraint firstAttribute="height" constant="100" id="VoT-Ia-Jqc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Album Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPU-t1-Bbe">
+                                <rect key="frame" x="16" y="45" width="223" height="54"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="20"/>
+                                <color key="textColor" name="SPTWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14I-xJ-g9k">
+                                <rect key="frame" x="16" y="107" width="223" height="23"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="18"/>
+                                <color key="textColor" name="SPTLightGray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="thZ-o1-o2Z">
+                                <rect key="frame" x="-1" y="196" width="376" height="471"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="albumTrackCell" rowHeight="76" id="bif-ZR-iMi" customClass="AlbumTrackTableViewCell" customModule="FinalProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="376" height="76"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bif-ZR-iMi" id="5PI-L4-z8Y">
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="75.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHD-LH-rn6">
+                                                    <rect key="frame" x="15" y="27" width="44" height="22"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Label">
+                                                            <attributes>
+                                                                <color key="NSColor" name="SPTLightGray"/>
+                                                                <font key="NSFont" size="17" name="CircularStd-Book"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqh-aS-w8k">
+                                                    <rect key="frame" x="309" y="27" width="42" height="22"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Label">
+                                                            <attributes>
+                                                                <color key="NSColor" name="SPTLightGray"/>
+                                                                <font key="NSFont" size="17" name="CircularStd-Book"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NjG-pr-Vz6">
+                                                    <rect key="frame" x="67" y="16" width="236" height="43.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Label long long long label name just to see what will happen">
+                                                            <attributes>
+                                                                <color key="NSColor" name="SPTWhite"/>
+                                                                <font key="NSFont" size="17" name="CircularStd-Book"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tHD-LH-rn6" firstAttribute="leading" secondItem="5PI-L4-z8Y" secondAttribute="leading" constant="25" id="5q8-mw-cUJ"/>
+                                                <constraint firstItem="eqh-aS-w8k" firstAttribute="centerY" secondItem="5PI-L4-z8Y" secondAttribute="centerY" id="VA2-Oq-vJ4"/>
+                                                <constraint firstItem="eqh-aS-w8k" firstAttribute="centerY" secondItem="NjG-pr-Vz6" secondAttribute="centerY" id="e2a-Dx-ABu"/>
+                                                <constraint firstItem="NjG-pr-Vz6" firstAttribute="leading" secondItem="tHD-LH-rn6" secondAttribute="trailing" constant="16" id="ffG-iM-V7f"/>
+                                                <constraint firstItem="NjG-pr-Vz6" firstAttribute="centerY" secondItem="5PI-L4-z8Y" secondAttribute="centerY" id="fxY-oP-MMm"/>
+                                                <constraint firstItem="NjG-pr-Vz6" firstAttribute="centerY" secondItem="5PI-L4-z8Y" secondAttribute="centerY" id="lvF-vC-LGT"/>
+                                                <constraint firstItem="tHD-LH-rn6" firstAttribute="centerY" secondItem="5PI-L4-z8Y" secondAttribute="centerY" id="oDI-Cu-jBw"/>
+                                                <constraint firstAttribute="trailing" secondItem="eqh-aS-w8k" secondAttribute="trailing" constant="25" id="qZV-M8-ejH"/>
+                                                <constraint firstItem="tHD-LH-rn6" firstAttribute="centerY" secondItem="NjG-pr-Vz6" secondAttribute="centerY" id="r7o-OW-9OV"/>
+                                                <constraint firstItem="eqh-aS-w8k" firstAttribute="leading" secondItem="NjG-pr-Vz6" secondAttribute="trailing" constant="16" id="tjO-rR-qLC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="SPTBlack"/>
+                                        <connections>
+                                            <outlet property="durationLabel" destination="eqh-aS-w8k" id="du8-eT-oK2"/>
+                                            <outlet property="nameLabel" destination="NjG-pr-Vz6" id="EaX-HS-TZX"/>
+                                            <outlet property="numLabel" destination="tHD-LH-rn6" id="iKq-GA-uqi"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="EgJ-QS-mnm" id="cmL-Hi-Jof"/>
+                                    <outlet property="delegate" destination="EgJ-QS-mnm" id="4Jm-kz-fhE"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16e-ct-YLy">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" name="SPTBlack"/>
+                                <items>
+                                    <navigationItem id="riz-SP-S4z">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" image="btn_back" id="Apy-An-041">
+                                            <color key="tintColor" name="SPTWhite"/>
+                                            <connections>
+                                                <action selector="back" destination="EgJ-QS-mnm" id="4E0-MU-Y3d"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAC-U1-KiA">
+                                <rect key="frame" x="16" y="138" width="223" height="23"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="18"/>
+                                <color key="textColor" name="SPTLightGray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="SPTBlack"/>
+                        <constraints>
+                            <constraint firstItem="Sl2-vX-Xhu" firstAttribute="bottom" secondItem="thZ-o1-o2Z" secondAttribute="bottom" id="0iZ-a6-3b7"/>
+                            <constraint firstItem="thZ-o1-o2Z" firstAttribute="top" secondItem="51S-Bo-6xa" secondAttribute="bottom" constant="16" id="A3h-mR-DWq"/>
+                            <constraint firstItem="14I-xJ-g9k" firstAttribute="centerY" secondItem="51S-Bo-6xa" secondAttribute="centerY" id="GV8-ph-XdX"/>
+                            <constraint firstItem="Sl2-vX-Xhu" firstAttribute="trailing" secondItem="51S-Bo-6xa" secondAttribute="trailing" constant="25" id="R6W-Yw-nbY"/>
+                            <constraint firstItem="pPU-t1-Bbe" firstAttribute="leading" secondItem="14I-xJ-g9k" secondAttribute="leading" id="XPq-oE-vMN"/>
+                            <constraint firstItem="51S-Bo-6xa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DAC-U1-KiA" secondAttribute="trailing" constant="16" id="Z4e-Ky-gNU"/>
+                            <constraint firstItem="Sl2-vX-Xhu" firstAttribute="leading" secondItem="thZ-o1-o2Z" secondAttribute="leading" constant="1" id="cgd-6h-0sB"/>
+                            <constraint firstItem="16e-ct-YLy" firstAttribute="leading" secondItem="Sl2-vX-Xhu" secondAttribute="leading" id="dAQ-dv-e2O"/>
+                            <constraint firstItem="DAC-U1-KiA" firstAttribute="top" secondItem="14I-xJ-g9k" secondAttribute="bottom" constant="8" id="dpa-qM-iEK"/>
+                            <constraint firstItem="pPU-t1-Bbe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="16e-ct-YLy" secondAttribute="bottom" constant="16" id="ea2-Rf-Rlw"/>
+                            <constraint firstItem="Sl2-vX-Xhu" firstAttribute="trailing" secondItem="16e-ct-YLy" secondAttribute="trailing" id="fGu-MS-XTD"/>
+                            <constraint firstItem="DAC-U1-KiA" firstAttribute="leading" secondItem="14I-xJ-g9k" secondAttribute="leading" id="gnQ-w4-SI1"/>
+                            <constraint firstItem="16e-ct-YLy" firstAttribute="top" secondItem="Sl2-vX-Xhu" secondAttribute="top" id="gx4-x8-WXT"/>
+                            <constraint firstItem="14I-xJ-g9k" firstAttribute="top" secondItem="pPU-t1-Bbe" secondAttribute="bottom" constant="8" id="jXp-5Y-0xn"/>
+                            <constraint firstItem="51S-Bo-6xa" firstAttribute="top" secondItem="16e-ct-YLy" secondAttribute="bottom" constant="16" id="sY9-eC-pKM"/>
+                            <constraint firstItem="pPU-t1-Bbe" firstAttribute="leading" secondItem="Sl2-vX-Xhu" secondAttribute="leading" constant="25" id="t4V-kt-oiQ"/>
+                            <constraint firstItem="Sl2-vX-Xhu" firstAttribute="trailing" secondItem="thZ-o1-o2Z" secondAttribute="trailing" id="t4a-gP-Fcd"/>
+                            <constraint firstItem="thZ-o1-o2Z" firstAttribute="top" relation="greaterThanOrEqual" secondItem="DAC-U1-KiA" secondAttribute="bottom" constant="16" id="utf-um-T0A"/>
+                            <constraint firstItem="51S-Bo-6xa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="14I-xJ-g9k" secondAttribute="trailing" constant="25" id="wfZ-su-GWB"/>
+                            <constraint firstItem="51S-Bo-6xa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pPU-t1-Bbe" secondAttribute="trailing" constant="25" id="xix-en-nC7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sl2-vX-Xhu"/>
+                    </view>
+                    <connections>
+                        <outlet property="albumImageView" destination="51S-Bo-6xa" id="2oD-Yl-EOA"/>
+                        <outlet property="albumNameLabel" destination="pPU-t1-Bbe" id="jDJ-j7-Qkd"/>
+                        <outlet property="artistNameLabel" destination="14I-xJ-g9k" id="HDC-si-H7B"/>
+                        <outlet property="navBar" destination="16e-ct-YLy" id="lOA-BF-Hdl"/>
+                        <outlet property="tableView" destination="thZ-o1-o2Z" id="jrk-gi-NOH"/>
+                        <outlet property="yearLabel" destination="DAC-U1-KiA" id="Oho-am-pge"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ML3-ew-ZLV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1647.2" y="1384.8575712143929"/>
         </scene>
         <!--Artist Collection View Controller-->
         <scene sceneID="PFd-KG-DF3">
@@ -1033,7 +1267,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zu0-lk-E0t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1263.2" y="1352.473763118441"/>
+            <point key="canvasLocation" x="-3786" y="553"/>
         </scene>
         <!--Search-->
         <scene sceneID="Hxu-hA-PkC">
@@ -1085,7 +1319,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhK-ZM-yb0">
-                                                            <rect key="frame" x="105" y="25" width="238" height="21"/>
+                                                            <rect key="frame" x="105" y="25" width="254" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" name="SPTWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -1116,6 +1350,7 @@
                                                     <outlet property="artistNameLabel" destination="UCP-H6-7Al" id="xxR-qw-9aa"/>
                                                     <outlet property="trackImageView" destination="c6C-wY-bxn" id="MAx-GS-b4X"/>
                                                     <outlet property="trackNameLabel" destination="rhK-ZM-yb0" id="Fsp-jm-2Ub"/>
+                                                    <segue destination="EgJ-QS-mnm" kind="show" identifier="showAlbumFromTrack" id="SOl-DG-er6"/>
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchArtistTVCell" rowHeight="95" id="NmA-fP-xp0" customClass="SearchArtistTableViewCell" customModule="FinalProject" customModuleProvider="target">
@@ -1193,6 +1428,7 @@
                                                     <outlet property="albumImageView" destination="2XM-A4-x62" id="Xs1-SN-UQI"/>
                                                     <outlet property="albumNameLabel" destination="fyt-fn-Wpa" id="N2J-gT-uqS"/>
                                                     <outlet property="artistNameLabel" destination="I4b-iJ-Mnq" id="NW0-2W-9be"/>
+                                                    <segue destination="EgJ-QS-mnm" kind="show" identifier="showAlbum" id="VTj-B7-CiM"/>
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchPlaylistTVCell" rowHeight="95" id="er3-3I-t5m" customClass="SearchPlaylistTableViewCell" customModule="FinalProject" customModuleProvider="target">
@@ -1601,7 +1837,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydw-A7-QUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2202.4000000000001" y="1352.473763118441"/>
+            <point key="canvasLocation" x="-4790" y="553"/>
         </scene>
     </scenes>
     <resources>
@@ -1617,6 +1853,8 @@
         <image name="profile_transparent" width="22" height="25"/>
         <image name="search_transparent" width="25" height="28"/>
         <image name="settings_transparent" width="25" height="25"/>
+        <image name="splash75Opacity" width="324" height="488"/>
+        <image name="spotifyLogOutButton" width="345" height="94"/>
         <namedColor name="SPTBlack">
             <color red="0.097999997437000275" green="0.078000001609325409" blue="0.078000001609325409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -1630,7 +1868,13 @@
             <color red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SPTLightGray">
+            <color red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SPTLightGray">
             <color red="0.70196078431372544" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SPTLightGray">
+            <color red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SPTLightGray">
             <color red="0.70196078431372544" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1642,4 +1886,7 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Vhw-TS-pQ7"/>
+    </inferredMetricsTieBreakers>
 </document>

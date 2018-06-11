@@ -27,17 +27,19 @@ struct SPTTrackList: Codable {
 
 struct SPTTrack: Codable {
     
-    var album: SPTAlbumSimple
+    var album: SPTAlbumSimple?
     var artists: [SPTArtistSimple]
+    var duration_ms: Int?
     var external_urls: [String: String]?
     var href: String
     var id: String
     var name: String
-    var popularity: Int
+    var popularity: Int?
+    var track_number: Int?
     var type: String
     
     var description: String {
-        return "\(String(describing: name)), by \(artists.description), on album \(album.description). id: \(id), popularity: \(popularity). type: \(type), href: \(href). external_urls: \(String(describing: external_urls))"
+        return "\(String(describing: name)), by \(artists.description), on album \(String(describing: album?.description)). id: \(id), popularity: \(String(describing: popularity)). type: \(type), href: \(href). external_urls: \(String(describing: external_urls))"
     }
     
 }

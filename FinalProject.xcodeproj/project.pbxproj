@@ -42,6 +42,8 @@
 		AB38274820B920B30006DA8C /* search_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = AB38274720B920B30006DA8C /* search_transparent.png */; };
 		AB38274A20B92D5E0006DA8C /* ProfileTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB38274920B92D5E0006DA8C /* ProfileTabViewController.swift */; };
 		AB38274E20B937430006DA8C /* ProfileFavoritesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB38274D20B937430006DA8C /* ProfileFavoritesTabViewController.swift */; };
+		AB4F6CBF20CE9A4C0094853C /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F6CBE20CE9A4C0094853C /* AlbumViewController.swift */; };
+		AB4F6CC120CEA8130094853C /* AlbumTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F6CC020CEA8130094853C /* AlbumTrackTableViewCell.swift */; };
 		AB72ED6120CD02A2000DA5C9 /* TempSearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72ED6020CD02A2000DA5C9 /* TempSearchResultTableViewCell.swift */; };
 		AB72ED6420CD3A51000DA5C9 /* ArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72ED6220CD3A51000DA5C9 /* ArtistTableViewCell.swift */; };
 		AB72ED6520CD3A51000DA5C9 /* ArtistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB72ED6320CD3A51000DA5C9 /* ArtistTableViewCell.xib */; };
@@ -139,6 +141,8 @@
 		AB38274720B920B30006DA8C /* search_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_transparent.png; sourceTree = "<group>"; };
 		AB38274920B92D5E0006DA8C /* ProfileTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabViewController.swift; sourceTree = "<group>"; };
 		AB38274D20B937430006DA8C /* ProfileFavoritesTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFavoritesTabViewController.swift; sourceTree = "<group>"; };
+		AB4F6CBE20CE9A4C0094853C /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		AB4F6CC020CEA8130094853C /* AlbumTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTrackTableViewCell.swift; sourceTree = "<group>"; };
 		AB72ED6020CD02A2000DA5C9 /* TempSearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempSearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		AB72ED6220CD3A51000DA5C9 /* ArtistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistTableViewCell.swift; sourceTree = "<group>"; };
 		AB72ED6320CD3A51000DA5C9 /* ArtistTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistTableViewCell.xib; sourceTree = "<group>"; };
@@ -279,6 +283,7 @@
 				AB0DE6E520BC01B8000DE675 /* GoogleService-Info.plist */,
 				AB73636620B9EA33000AEA34 /* FinalProject-Bridging-Header.h */,
 				AB72ED7A20CDC995000DA5C9 /* SPTArtist View */,
+				AB4F6CC220CEA81D0094853C /* SPTAlbum View */,
 			);
 			path = FinalProject;
 			sourceTree = "<group>";
@@ -320,6 +325,15 @@
 				ABB47FD420BAD83B006B83EB /* IntExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AB4F6CC220CEA81D0094853C /* SPTAlbum View */ = {
+			isa = PBXGroup;
+			children = (
+				AB4F6CBE20CE9A4C0094853C /* AlbumViewController.swift */,
+				AB4F6CC020CEA8130094853C /* AlbumTrackTableViewCell.swift */,
+			);
+			path = "SPTAlbum View";
 			sourceTree = "<group>";
 		};
 		AB72ED5F20CD026A000DA5C9 /* Search */ = {
@@ -614,6 +628,7 @@
 				AB73AC6720CE01A000155F96 /* ArtistProfileCollectionViewCell.swift in Sources */,
 				AB72ED7C20CDCA14000DA5C9 /* ArtistHeaderCollectionReusableView.swift in Sources */,
 				AB72ED6420CD3A51000DA5C9 /* ArtistTableViewCell.swift in Sources */,
+				AB4F6CC120CEA8130094853C /* AlbumTrackTableViewCell.swift in Sources */,
 				AB72ED6D20CD4ED6000DA5C9 /* ArtistDynamicTableViewCell.swift in Sources */,
 				ABB6152320CB9F9B00929754 /* CreateOpenChannelNavigationController.m in Sources */,
 				AB2DFEE720CBC7C4006DFB70 /* OpenChannelTableViewCell.swift in Sources */,
@@ -633,6 +648,7 @@
 				AB72ED7E20CDCE82000DA5C9 /* TopTrackCollectionViewCell.swift in Sources */,
 				AB73635B20B9624F000AEA34 /* ProfileTimelineTableViewController.swift in Sources */,
 				AB2E935620A190DE004835A8 /* ProfileViewController.swift in Sources */,
+				AB4F6CBF20CE9A4C0094853C /* AlbumViewController.swift in Sources */,
 				ABB47FD120BAC8C8006B83EB /* SPTFollowers.swift in Sources */,
 				AB2DFEEF20CCFF96006DFB70 /* SPTPagingObject.swift in Sources */,
 				ABB47FC520BA58D2006B83EB /* SPTUser.swift in Sources */,

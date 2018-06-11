@@ -175,9 +175,9 @@ class SPTArtistViewController: UIViewController, UICollectionViewDelegate, UICol
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "trackCell", for: indexPath) as! TopTrackCollectionViewCell
             let track = self.topTracks![indexPath.row]
-            cell.albumImageView.defaultOrDownloadedFrom(imageList: track.album.images, defaultName: "defaultSongPictureSquare")
+            cell.albumImageView.defaultOrDownloadedFrom(imageList: track.album?.images, defaultName: "defaultSongPictureSquare")
             cell.trackNameLabel.text = track.name
-            cell.yearLabel.text = track.album.release_date
+            cell.yearLabel.text = track.album?.release_date
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "albumCell", for: indexPath) as! AlbumCollectionViewCell
@@ -241,12 +241,22 @@ class SPTArtistViewController: UIViewController, UICollectionViewDelegate, UICol
      @IBAction func back(){
         self.dismiss(animated: true, completion: nil)
      }
-/*
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showAlbumFromAlbum" {
+            let destVC = segue.destination as! AlbumViewController
+            let currentAlbum = self.albums![(collectionView.indexPathsForSelectedItems?.first?.row)!]
+            destVC.albumID = currentAlbum.id
+        }
+        else if segue.identifier == "showAlbumFromTrack" {
+            let destVC = segue.destination as! AlbumViewController
+            let currentTrack = self.topTracks![(collectionView.indexPathsForSelectedItems?.first?.row)!]
+            destVC.albumID = currentTrack.album?.id
+        }
     }
-    */
+    
 
 }

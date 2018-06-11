@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import SendBirdSDK
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, SBDConnectionDelegate {
 
+    @IBOutlet weak var currentUserLabel: UILabel!
+    @IBOutlet weak var logOutButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        currentUserLabel.text = Constants.currentUser!.display_name ?? Constants.currentUser!.id
 
         // Do any additional setup after loading the view.
     }
@@ -22,11 +28,21 @@ class SettingsViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
+    
+    @IBAction func logOut(){
+        
+        SBDMain.disconnect {
+            Constants.currentUserSBD = nil
+            Constants.currentUser = nil
+            Constants.authKey = ""
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }

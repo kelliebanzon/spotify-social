@@ -38,3 +38,21 @@ struct SPTAlbumSimple: Codable {
     }
     
 }
+
+struct SPTAlbumFull: Codable {
+    var artists: [SPTArtistSimple]
+    var external_urls: [String: String]?
+    var href: String
+    var id: String
+    var images: [SPTImage]?
+    var name: String
+    var release_date: String
+    var release_date_precision: String
+    var tracks: SPTTrackList
+    var type: String
+    
+    
+    var description: String {
+        return "name: \(name) by \(artists), date: \(release_date), precision: \(release_date_precision). id:\(id). type: \(type), href: \(href). images: \(String(describing: images)), external_urls: \(String(describing: external_urls))"
+    }
+}

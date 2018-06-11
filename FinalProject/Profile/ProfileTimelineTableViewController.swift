@@ -139,10 +139,10 @@ class ProfileTimelineTableViewController: UITableViewController, IndicatorInfoPr
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "trackDynamicTVCell") as! TrackDynamicTableViewCell
             let currentTrack = self.currentUserTopTracks![indexPath.row]
-            cell.trackImageView.defaultOrDownloadedFrom(imageList: currentTrack.album.images, defaultName: "defaultSongPictureSquare")
+            cell.trackImageView.defaultOrDownloadedFrom(imageList: currentTrack.album?.images, defaultName: "defaultSongPictureSquare")
             cell.trackNameLabel.text = currentTrack.name
             cell.artistNameLabel.text = currentTrack.artists[0].name
-            cell.albumNameLabel.text = currentTrack.album.name
+            cell.albumNameLabel.text = currentTrack.album?.name
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "artistDynamicTVCell") as! ArtistDynamicTableViewCell
