@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITableView.appearance().backgroundColor = UIColor(named: "SPTBlack")
         UINavigationBar.appearance().backgroundColor = UIColor(named: "SPTDarkGray")
         
+        // TODO: change keyboard to dark background
         
         return true
     }

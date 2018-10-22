@@ -9,9 +9,11 @@
 import UIKit
 import SendBirdSDK
 
-class OpenChannelChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SBDChannelDelegate {
+class OpenChannelChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SBDChannelDelegate, UITextViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var sendButton: UIButton!
     
     var currentChannelURL: String!
     var currentChannel: SBDOpenChannel!
@@ -19,6 +21,10 @@ class OpenChannelChatViewController: UIViewController, UITableViewDelegate, UITa
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.textView.layer.cornerRadius = 16
+        self.textView.text = "  Write a message..."
+        self.textView.textColor = UIColor(named: "SPTWhite")
         
         DispatchQueue.main.async {
             SBDOpenChannel.getWithUrl(self.currentChannelURL) { (openChannel, error) in

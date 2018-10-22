@@ -16,6 +16,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var postButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
+    let placeholderText = "Write a post here to share your latest music find with your friends!"
+    
     var usersRef: DatabaseReference!
     var postsRef: DatabaseReference!
     var timelinePosts: [Post]?
@@ -30,6 +32,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         usersRef = Database.database().reference(withPath: "users")
         postsRef = Database.database().reference(withPath: "posts")
         
+        self.textView.text = self.placeholderText
+        self.textView.textColor = UIColor(named: "SPTWhite")
         
         self.setRetrieveCallback()
         // Do any additional setup after loading the view.
@@ -99,9 +103,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeFeedItem", for: indexPath) as! PostTableViewCell
         let currentPost = self.timelinePosts![indexPath.row]
         let postSender = self.currentFBUsers![currentPost.senderID]
-        print(postSender?.description)
-        print("postSender imgURL")
-        print(postSender?.imgURL)
         if let imageURL = postSender?.imgURL {
             cell.senderImageView.defaultOrDownloadedFrom(linkString: imageURL, defaultName: "defaultUserProfilePicture")
         }
@@ -109,9 +110,26 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.senderImageView.image = UIImage(named: "defaultUserProfilePicture")
         }
         cell.senderImageView.roundCorners()
+        let time = Date(timeIntervalSince1970: TimeInterval(currentPost.timestamp))
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        cell.timestampLabel.text = dateFormatter.string(from: time)
         cell.senderNameLabel.text = postSender?.display_name ?? postSender?.id
         cell.messageText.text = currentPost.content
         return cell
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == self.placeholderText {
+            textView.text = ""
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if !textView.hasText {
+            textView.text = self.placeholderText
+        }
     }
     
     @IBAction func writePost(){
@@ -121,7 +139,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             let postToSubmit = Post(senderID: Constants.currentUser!.id, timestamp: timestamp, content: self.textView.text)
             print(timestamp)
             self.postsRef.child(String(timestamp)).setValue(postToSubmit.toAnyObject())
-            self.textView.text = ""
+            self.textView.text = self.placeholderText
             self.setRetrieveCallback()
             self.tableView.reloadData()
         }

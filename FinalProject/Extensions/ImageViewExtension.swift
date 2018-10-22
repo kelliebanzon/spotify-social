@@ -50,9 +50,7 @@ extension UIImageView {
     }
     
     func defaultOrDownloadedFrom(linkString: String, defaultName: String){
-        print("defaultOrDownloadedFrom attempt URL " + linkString)
-        if ConstantFuncs().verifyUrl(urlString: linkString) {
-            print("defaultOrDownloadedFrom URL verified")
+       if ConstantFuncs().verifyUrl(urlString: linkString) {
             self.downloadedFrom(url: URL(string: linkString)!, contentMode: .scaleAspectFill)
         }
         else {

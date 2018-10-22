@@ -59,8 +59,8 @@ class ProfileTabViewController: ButtonBarPagerTabStripViewController {
     
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        let timeline = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "child1")
-        let favorites = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "child2")
+        let timeline = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "child2")
+        let favorites = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "child1")
         let following = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "child3")
         
         return [timeline, favorites, following]

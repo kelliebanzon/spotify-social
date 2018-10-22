@@ -51,7 +51,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - RSKImageCropper (2.1.0)
-  - SendBirdSDK (3.0.100)
+  - SendBirdSDK (3.0.101)
   - XLPagerTabStrip (8.0.1)
 
 DEPENDENCIES:
@@ -93,7 +93,7 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   RSKImageCropper: 0d0c6d8525a2381f03fde32a47c6703817a2feed
-  SendBirdSDK: 62f8572d855b624ab84958df9aada89a9127d7f3
+  SendBirdSDK: 51f37e53ca7e9a1cae5ede0d83c6224518ba676d
   XLPagerTabStrip: c908b17cbf42fcd2598ee1adfc49bae25444d88a
 
 PODFILE CHECKSUM: d9fb0457c75c4ef8d4ca4952436e21f0b6973093

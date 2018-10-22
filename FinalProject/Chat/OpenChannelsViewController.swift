@@ -78,7 +78,7 @@ class OpenChannelsViewController: UIViewController, UITableViewDataSource, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "OpenChannelTVCell", for: indexPath) as! OpenChannelTableViewCell
         let currentChannel = openChannelList[indexPath.row]
         cell.chatNameLabel.text = currentChannel.name
-        var participantString = " participant"
+        var participantString = " active participant"
         if currentChannel.participantCount != 1 {
             participantString.append("s")
         }
